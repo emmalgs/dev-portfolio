@@ -14,9 +14,9 @@ const ProjectsSection = () => {
   const filteredProjects = projects.filter((project) => project.tag.includes(tag))
 
   return (
-    <div>
-      <h2 className="text-center text-4xl font-bold text-stone-700 mt-4 mb-4 md:mb-1">
-        Projects
+    <div className="border-t-2 border-black">
+      <h2 className="text-center text-4xl font-bold text-black pt-8 mb-4 md:mb-1 font-mono">
+        PROJECTS
       </h2>
       <div className="flex flex-row justify-center gap-2 py-6">
         <ProjectTag
