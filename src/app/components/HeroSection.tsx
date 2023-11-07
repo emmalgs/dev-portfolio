@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
 
 export const HeroSection = () => {
   return (
@@ -9,7 +11,21 @@ export const HeroSection = () => {
           <span className="text-green-600">
             Hello there, I'm{" "}
           </span>
-          Emma
+          <br></br>
+          <TypeAnimation
+            sequence={[
+              'a web developer',
+              1000,
+              'a software engineer',
+              1000,
+              'Emma',
+              1000,
+            ]}
+            wrapper="span"
+            speed={20}
+            style={{ fontSize: "2rem", display: "inline-block" }}
+            repeat={Infinity}
+            />
         </h1>
         <p className="text-base sm:text-lg mb-6 lg:text-xl">Lorem ipsum git er done cmon give me some text and more thoughts and did you know that pythons have live births.</p>
         <div>
