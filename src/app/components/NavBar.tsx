@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import NavLink from "./Navlink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import MenuOverlay from "./MenuOverlay";
 
 
 const navLinks = [
@@ -23,7 +24,7 @@ const navLinks = [
 const NavBar = () => {
   const [navBarOpen, setNavBarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-slate-400 bg-opacity-90">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-slate-400 bg-opacity-100">
       <div className="flex flex-wrap items-center justify-between mx-auto px-4">
         <Link
           href="/"
@@ -58,6 +59,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
+      {navBarOpen ? <MenuOverlay links={navLinks} /> : null}
     </nav>
   );
 };
