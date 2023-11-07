@@ -24,7 +24,7 @@ const navLinks = [
 const NavBar = () => {
   const [navBarOpen, setNavBarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-slate-400 bg-opacity-100">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-stone-400 bg-opacity-100">
       <div className="flex flex-wrap items-center justify-between mx-auto px-4">
         <Link
           href="/"
@@ -36,14 +36,14 @@ const NavBar = () => {
           {navBarOpen ? (
             <button
               onClick={() => setNavBarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200  text-slate-200 hover:text-white hover:border-white"
+              className="flex items-center px-3 py-2 border rounded border-stone-200  text-stone-200 hover:text-white hover:border-white"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
           ) : (
             <button
               onClick={() => setNavBarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200  text-slate-200 hover:text-white hover:border-white"
+              className="flex items-center px-3 py-2 border rounded border-stone-200  text-stone-200 hover:text-white hover:border-white"
             >
               <Bars3Icon className="h-5 w-5" />
             </button>
