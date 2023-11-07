@@ -13,6 +13,8 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageUrl={project.image}
+            gitUrl={project.gitUrl}
+            previewUrl={project.previewUrl}
           />
         ))}
       </div>
