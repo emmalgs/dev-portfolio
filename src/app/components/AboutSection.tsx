@@ -61,7 +61,7 @@ const AboutSection: React.FC = () => {
     });
   };
   return (
-    <section className="text-white">
+    <section className="border-t-2 border-black mt-6">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           src="/images/computer.png"
@@ -70,7 +70,7 @@ const AboutSection: React.FC = () => {
           height={500}
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-stone-700 mb-4">About Me</h2>
+          <h2 className="text-4xl font-bold text-black mb-4 font-mono">ABOUT ME</h2>
           <p className="text-stone-500 md:text-lg">
             I am a software engineer and web developer with a background in
             farming, contemporary art, and education. I bring out-of-the-box
