@@ -12,8 +12,8 @@ const TabButton: React.FC<TabButtonProps> = ({
   children,
 }) => {
   const buttonClasses = active
-    ? "text-slate-700 border-b border-green-500"
-    : "text-slate-500";
+    ? "text-stone-700 border-b border-green-500"
+    : "text-stone-500";
   return (
     <button onClick={selectTab}>
       <p className={`mr-3 font-semibold hover:text-blue-600 ${buttonClasses}`}>
