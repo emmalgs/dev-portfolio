@@ -70,8 +70,8 @@ const AboutSection: React.FC = () => {
           height={500}
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-slate-700 mb-4">About Me</h2>
-          <p className="text-slate-500 md:text-lg">
+          <h2 className="text-4xl font-bold text-stone-700 mb-4">About Me</h2>
+          <p className="text-stone-500 md:text-lg">
             I am a software engineer and web developer with a background in
             farming, contemporary art, and education. I bring out-of-the-box
             thinking to solving problems for both users and code that results in
@@ -103,7 +103,7 @@ const AboutSection: React.FC = () => {
               Experience{" "}
             </TabButton>
           </div>
-          <div className="mt-8 text-slate-700">{TAB_DATA.find((t) => t.id === tab)?.content}</div>
+          <div className="mt-8 text-stone-700">{TAB_DATA.find((t) => t.id === tab)?.content}</div>
         </div>
       </div>
     </section>
