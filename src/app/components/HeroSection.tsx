@@ -27,7 +27,7 @@ export const HeroSection = () => {
             repeat={Infinity}
             />
         </h1>
-        <p className="text-base sm:text-lg mb-6 lg:text-xl">Lorem ipsum git er done cmon give me some text and more thoughts and did you know that pythons have live births.</p>
+        <p className="text-base sm:text-lg mb-6 lg:text-xl">With a background in contemporary art, I bring out-of-the-box thinking to solving problems for both users and code that results in readable and innovative solutions.</p>
         <div>
           <button className="font-mono px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent hover:bg-blue-500 border border-white hover:border-slate-800">
             Connect
