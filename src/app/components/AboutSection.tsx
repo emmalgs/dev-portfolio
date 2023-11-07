@@ -3,6 +3,54 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
+interface Tab {
+  title: string;
+  id: string;
+  content: React.ReactNode;
+}
+
+const TAB_DATA: Array<Tab> = [
+  {
+    title: "Skills",
+    id: "skills",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>Node.js</li>
+        <li>TypeScript</li>
+        <li>MySQL</li>
+        <li>React</li>
+        <li>JavaScript</li>
+        <li>C#</li>
+        <li>.NET</li>
+      </ul>
+    )
+  },
+  {
+    title: "Education",
+    id: "education",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>Epicodus: March - Sept 2023, Certificate in Full Stack Development</li>
+        <li>Oregon College of Art and Craft: Aug 2016 - May 2018, MFA in Craft</li>
+        <li>Goshen College: Aug 2010 - May 2014, BA in Art, Environmental Science, and Social Policy</li>
+      </ul>
+    )
+  },
+  {
+    title: "Experience",
+    id: "experience",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>Software Engineer: Present, Self-Employed</li>
+        <li>Artist: Present, Self-Employed</li>
+        <li>Software Engineer Intern: Aug 2023 - Sept 2023, Olio Apps</li>
+        <li>Kitchen Lead: July 2021 - December 2022, Angel Face</li>
+        <li>Farm Chef: June 2020 - July 2021, Our Table</li>
+      </ul>
+    )
+  }
+]
+
 const AboutSection: React.FC = () => {
   const [tab, setTab] = useState("skills");
   const [isPending, startTransition] = useTransition();
@@ -21,7 +69,7 @@ const AboutSection: React.FC = () => {
           width={500}
           height={500}
         />
-        <div>
+        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-slate-700 mb-4">About Me</h2>
           <p className="text-slate-500 md:text-lg">
             I am a software engineer and web developer with a background in
@@ -55,6 +103,7 @@ const AboutSection: React.FC = () => {
               Experience{" "}
             </TabButton>
           </div>
+          <div className="mt-8 text-slate-700">{TAB_DATA.find((t) => t.id === tab)?.content}</div>
         </div>
       </div>
     </section>
