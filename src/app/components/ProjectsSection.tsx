@@ -15,10 +15,10 @@ const ProjectsSection = () => {
 
   return (
     <div>
-      <h2 className="text-center text-4xl font-bold text-stone-700 mt-4 mb-4">
+      <h2 className="text-center text-4xl font-bold text-stone-700 mt-4 mb-4 md:mb-1">
         Projects
       </h2>
-      <div className="flex flex-row jusitfy-center items-center gap-2 py-6">
+      <div className="flex flex-row justify-center gap-2 py-6">
         <ProjectTag
           onSelection={handleTagChange}
           name="All"
