@@ -11,6 +11,7 @@ const EmailSection = () => {
     e.preventDefault();
     const data = {
       email: e.currentTarget.email.value,
+      name: e.currentTarget.name.value,
       subject: e.currentTarget.subject.value,
       message: e.currentTarget.message.value,
     }
@@ -81,6 +82,22 @@ const EmailSection = () => {
             name="email"
             required
             placeholder="dragon@fire.net"
+          />
+        </div>
+        <div className="mb-6">
+          <label
+            className="text-black block mb-2 text-sm font-mono"
+            htmlFor="name"
+          >
+            Name
+          </label>
+          <input
+            className="border-2 border-black rounded-sm px-4 py-2 block w-full"
+            id="name"
+            type="text"
+            name="name"
+            required
+            placeholder="Your Name"
           />
         </div>
         <div className="mb-6">
