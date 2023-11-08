@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const EmailSection = () => {
   return (
-    <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 border-t-2 border-black">
+    <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 border-t-2 border-black relative">
       <Image 
         src={Background}
         height={700}
@@ -39,7 +39,7 @@ const EmailSection = () => {
           </Link>
         </div>
       </div>
-      <form className="flex flex-col">
+      <form className="flex flex-col z-10">
         <div className="mb-6">
           <label
             className="text-black block mb-2 text-sm font-mono"
@@ -96,10 +96,15 @@ const EmailSection = () => {
           Send
         </button>
       </form>
+      <Image 
+        src="/images/greenbg.png"
+        height={700}
+        width={700}
+        alt="green squiggle"
+        className="absolute opacity-50 w-full h-full -bottom-40 right-20"
+      />
     </section>
   );
 };
 
 export default EmailSection;
-
-// <a className="text-blue-500" href="mailto:"></a>
