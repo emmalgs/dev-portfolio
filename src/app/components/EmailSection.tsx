@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import GitHubIcon from "../../../public/images/githubMove.png";
 import LinkedInIcon from "../../../public/images/linkedinMove.png";
@@ -6,6 +7,32 @@ import Link from "next/link";
 import Image from "next/image";
 
 const EmailSection = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = {
+      email: e.currentTarget.email.value,
+      subject: e.currentTarget.subject.value,
+      message: e.currentTarget.message.value,
+    }
+    const JSONdata = JSON.stringify(data);
+    const endpoint = "/api/send";
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSONdata,
+      }
+    const response = await fetch(endpoint, options);
+    const resData = await response.json();
+    if (resData.status === 200) {
+      console.log("Message sent.");
+    } else if (resData.status === "fail") {
+      console.log("Message failed to send.");
+    }
+  }
+
   return (
     <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 border-t-2 border-black relative">
       <Image 
@@ -39,7 +66,7 @@ const EmailSection = () => {
           </Link>
         </div>
       </div>
-      <form className="flex flex-col z-10">
+      <form onSubmit={handleSubmit} className="flex flex-col z-10">
         <div className="mb-6">
           <label
             className="text-black block mb-2 text-sm font-mono"
