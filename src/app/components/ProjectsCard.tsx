@@ -17,9 +17,9 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({
   previewUrl,
 }) => {
   return (
-    <div>
+    <div className="border-2 border-black rounded-sm">
       <div
-        className="h-52 md:h-72 rounded-t-xl relative group"
+        className="h-52 md:h-72 rounded-t-sm relative group"
         style={{ background: `url(${imageUrl})`, backgroundSize: "cover" }}
       >
         <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full hidden bg-stone-800 bg-opacity-0 group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
@@ -39,9 +39,9 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({
           )}
         </div>
       </div>
-      <div className="rounded-b-xl bg-stone-200 py-6 px-4 group-hover:bg-stone-300">
+      <div className="rounded-b-sm bg-stone-200 py-6 px-4 group-hover:bg-stone-300">
         <h5 className="text-xl font-semibold mb-2 text-stone-900">{title}</h5>
-        <p className="text-stone-600">{description}</p>
+        <p className="text-stone-600 h-10">{description}</p>
       </div>
     </div>
   );
