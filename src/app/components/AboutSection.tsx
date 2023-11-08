@@ -64,10 +64,11 @@ const AboutSection: React.FC = () => {
     <section className="border-t-2 border-black mt-6">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
-          src="/images/computer.png"
+          src="/images/colorbg.png"
           alt="computer"
-          width={500}
-          height={500}
+          width={800}
+          height={800}
+          className=""
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-black mb-4 font-mono">ABOUT ME</h2>
