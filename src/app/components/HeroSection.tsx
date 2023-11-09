@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 
@@ -14,7 +15,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-7 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="mb-4 text-4xl sm:text-5xl lg:text-6xl lg:leading-normal font-extrabold font-mono">
+          <h1 className="mb-4 text-4xl sm:text-5xl lg:text-5xl lg:leading-normal font-extrabold font-mono">
             <span className="text-green-600">Hello there, I'm </span>
             <br></br>
             <TypeAnimation
@@ -32,18 +33,18 @@ export const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-base sm:text-lg mb-6 lg:text-xl mr-10">
             With a background in contemporary art, I bring out-of-the-box
             thinking to solving problems for both users and code that results in
             readable and innovative solutions.
           </p>
-          <div>
-            <button className="font-mono px-6 py-3 w-full sm:w-fit mr-4 bg-transparent hover:bg-blue-500 border-2 border-black hover:border-stone-800">
+          <div className="flex flex-row gap-2 py-6">
+            <Link href="#contact" className="font-mono px-6 py-3 w-full sm:w-fit mt-2 bg-transparent hover:bg-stone-800 hover:text-white border-2 border-black">
               Connect
-            </button>
-            <button className="font-mono px-6 py-3 w-full sm:w-fit mt-2 bg-transparent hover:bg-stone-800 hover:text-white border-2 border-black">
+            </Link>
+            <Link href="https://github.com/emmalgs" className="font-mono px-6 py-3 w-full sm:w-fit mt-2 bg-transparent hover:bg-stone-800 hover:text-white border-2 border-black">
               Github
-            </button>
+            </Link>
           </div>
         </motion.div>
         <motion.div           
