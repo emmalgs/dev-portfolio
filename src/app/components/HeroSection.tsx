@@ -16,7 +16,7 @@ export const HeroSection = () => {
           className="col-span-7 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="mb-4 text-4xl sm:text-5xl lg:text-5xl lg:leading-normal font-extrabold font-mono">
-            <span className="text-green-600">Hello there, I'm </span>
+            <span className="text-green-600">Hello there, I&apos;m </span>
             <br></br>
             <TypeAnimation
               sequence={[
