@@ -18,8 +18,12 @@ const ProjectsSection = () => {
     project.tag.includes(tag)
   );
 
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
   return (
-    <section ref={ref}>
+    <section>
       <div className="border-t-2 border-black">
         <h2 className="text-center text-4xl font-bold text-black pt-8 mb-4 md:mb-1 font-mono">
           PROJECTS
@@ -41,19 +45,25 @@ const ProjectsSection = () => {
             isSelected={tag === "C#"}
           />
         </div>
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          {filteredProjects.map((project) => (
-            <motion.div key={project.id}>
-            <ProjectsCard
-              title={project.title}
-              description={project.description}
-              imageUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
-            </motion.div>
+        <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+          {filteredProjects.map((project, index) => (
+            <motion.li
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+              key={project.id}
+            >
+              <ProjectsCard
+                title={project.title}
+                description={project.description}
+                imageUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+              />
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
