@@ -1,12 +1,14 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import GitHubIcon from "../../../public/images/githubMove.png";
 import LinkedInIcon from "../../../public/images/linkedinMove.png";
-import Background from "../../../public/images/colorbg2.png"
+import Background from "../../../public/images/colorbg2.png";
 import Link from "next/link";
 import Image from "next/image";
 
 const EmailSection = () => {
+  const [status, setStatus] = useState("");
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = {
@@ -14,7 +16,7 @@ const EmailSection = () => {
       name: e.currentTarget.name.value,
       subject: e.currentTarget.subject.value,
       message: e.currentTarget.message.value,
-    }
+    };
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
 
@@ -24,19 +26,25 @@ const EmailSection = () => {
         "Content-Type": "application/json",
       },
       body: JSONdata,
-      }
+    };
     const response = await fetch(endpoint, options);
-    const resData = await response.json();
-    if (resData.status === 200) {
-      console.log("Message sent.");
-    } else if (resData.status === "fail") {
-      console.log("Message failed to send.");
+    if (response.status === 200) {
+      setStatus("Your message has been sent!");
+      // set timeout to clear status message after 5 seconds
+      setTimeout(() => {
+        setStatus("");
+      }, 10000);
+    } else if (response.status !== 200) {
+      setStatus("Sorry, message failed to send. Please try again.");
+      setTimeout(() => {
+        setStatus("");
+      }, 10000);
     }
-  }
+  };
 
   return (
     <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 border-t-2 border-black relative">
-      <Image 
+      <Image
         src={Background}
         height={700}
         width={700}
@@ -137,10 +145,11 @@ const EmailSection = () => {
           type="submit"
           className="bg-black text-white font-mono py-2 px-4 rounded-sm hover:bg-stone-700 hover:text-white w-full"
         >
-          Send
+          Send Message
         </button>
+        <p className="text-black font-mono text-center mt-4">{status}</p>
       </form>
-      <Image 
+      <Image
         src="/images/greenbg.png"
         height={700}
         width={700}
