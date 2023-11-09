@@ -6,16 +6,17 @@ import Background from "../../../public/images/colorbg2.png";
 import Link from "next/link";
 import Image from "next/image";
 
+
+
 const EmailSection = () => {
   const [status, setStatus] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
     const data = {
-      email: e.currentTarget.email.value,
-      name: e.currentTarget.name.value,
-      subject: e.currentTarget.subject.value,
-      message: e.currentTarget.message.value,
+      email: (e.currentTarget.email as HTMLInputElement).value,
+      name: (e.currentTarget.sender as HTMLInputElement).value,
+      subject: (e.currentTarget.subject as HTMLInputElement).value,
+      message: (e.currentTarget.message as HTMLInputElement).value,
     };
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
@@ -61,8 +62,8 @@ const EmailSection = () => {
         <p className="text-2xl text-black mb-4 md:mb-1 max-w-md font-mono">
           {" "}
           <em>
-            I'm actively seeking employment in the fields of web development and
-            software engineering. I'd love to hear from you! If you're looking
+            I&apos;m actively seeking employment in the fields of web development and
+            software engineering. I&apos;d love to hear from you! If you&apos;re looking
             for my paintings and fine art, head over to{" "}
             <Link className="text-blue-500" href="https://emmagerigscott.com">
               my painting website
@@ -98,16 +99,15 @@ const EmailSection = () => {
         <div className="mb-6">
           <label
             className="text-black block mb-2 text-sm font-mono"
-            htmlFor="name"
+            htmlFor="sender"
           >
             Name
           </label>
           <input
             className="border-2 border-black rounded-sm px-4 py-2 block w-full"
-            id="name"
+            id="sender"
             type="text"
-            name="name"
-            required
+            name="sender"
             placeholder="Your Name"
           />
         </div>
