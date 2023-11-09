@@ -43,7 +43,10 @@ const EmailSection = () => {
   };
 
   return (
-    <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 border-t-2 border-black relative">
+    <section
+      id="contact"
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 border-t-2 border-black relative"
+    >
       <Image
         src={Background}
         height={700}
