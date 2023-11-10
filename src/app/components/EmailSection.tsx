@@ -12,6 +12,7 @@ const EmailSection = () => {
   const [status, setStatus] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const data = {
       email: (e.currentTarget.email as HTMLInputElement).value,
       name: (e.currentTarget.sender as HTMLInputElement).value,
