@@ -29,7 +29,7 @@ const NavBar = () => {
         className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4"
       >
         <Link href="/">
-          <Image src="/images/logo.png" alt="logo" height={50} width={100} />
+          <Image src="/images/icons/favicon.ico" alt="logo" height={30} width={60} />
         </Link>
         <div className="block md:hidden">
           {navBarOpen ? (
