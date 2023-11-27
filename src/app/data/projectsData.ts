@@ -24,7 +24,7 @@ export const projects = [
     image: "/images/projects/3.png",
     tag: ["All", "JS/TS"],
     gitUrl: "https://github.com/emmalgs/buckeys-one-stop-art-shop",
-    previewUrl: "",
+    previewUrl: "https://buckeys-one-stop.web.app/",
   },
   {
     id: 4,
