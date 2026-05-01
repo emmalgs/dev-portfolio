@@ -9,13 +9,12 @@ const NavLink = ({ href, title }: NavLinkProps) => {
   return (
     <Link
       href={href}
-      className="block py-2 pl-3 pr-4 text-stone-200 sm:text-xl rounded md:p-0 hover:text-stone-800"
+      className="block py-2 pl-3 pr-4 text-stone-700 sm:text-base rounded md:p-0 hover:text-[#3535DC] transition-colors"
     >
       {title}
     </Link>
   );
 };
 
-export default NavLink 
+export default NavLink;
 export type { NavLinkProps };
-

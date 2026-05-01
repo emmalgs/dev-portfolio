@@ -8,10 +8,6 @@ import Image from "next/image";
 
 const navLinks = [
   {
-    title: "About",
-    href: "#about",
-  },
-  {
     title: "Projects",
     href: "#projects",
   },
@@ -24,10 +20,8 @@ const navLinks = [
 const NavBar = () => {
   const [navBarOpen, setNavBarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-20 bg-yellow-500 border-b-2 border-black mx-auto font-mono">
-      <div 
-        className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4"
-      >
+    <nav className="fixed top-0 left-0 right-0 z-20 bg-white border-b border-stone-200 mx-auto font-mono">
+      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4">
         <Link href="/">
           <Image src="/images/icons/favicon.ico" alt="logo" height={30} width={60} />
         </Link>
@@ -35,14 +29,14 @@ const NavBar = () => {
           {navBarOpen ? (
             <button
               onClick={() => setNavBarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-stone-200  text-stone-200 hover:text-white hover:border-white"
+              className="flex items-center px-3 py-2 border rounded border-stone-400 text-stone-700 hover:border-stone-700"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
           ) : (
             <button
               onClick={() => setNavBarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-stone-200  text-stone-200 hover:text-white hover:border-white"
+              className="flex items-center px-3 py-2 border rounded border-stone-400 text-stone-700 hover:border-stone-700"
             >
               <Bars3Icon className="h-5 w-5" />
             </button>
