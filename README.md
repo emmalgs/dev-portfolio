@@ -1,5 +1,5 @@
 # Web Dev Portfolio
-## by Emma Gerigscott
+## by Emma Gerig
 
 ## Description
 An updated portfolio to showcase my web development projects.
