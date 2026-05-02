@@ -1,0 +1,13 @@
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.proj-empty {
+  padding: 20px;
+  font-family: var(--vt);
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+  border-top: 2px solid var(--black);
+  grid-column: 1 / -1;
+}

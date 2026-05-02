@@ -1,0 +1,7 @@
+.sep {
+  width: 1.5px;
+  height: 16px;
+  background: var(--black);
+  margin: 0 3px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,13 @@
+.toolbar {
+  background: var(--panel);
+  border-bottom: 2px solid var(--black);
+  padding: 3px 8px;
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.tb-lbl {
+  font-family: var(--vt);
+  font-size: 11px;
+  color: #777;
+}

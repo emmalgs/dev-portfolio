@@ -1,0 +1,23 @@
+.sk {
+  padding: 2px 5px;
+  border-bottom: 1px dotted #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.sk:last-child {
+  border-bottom: none;
+}
+.sk-name {
+  font-family: var(--vt);
+  font-size: 10px;
+  color: #444;
+}
+.sk-bar {
+  height: 5px;
+  background: var(--off-white);
+  border: 1px solid #ccc;
+}
+.sk-fill {
+  height: 100%;
+}

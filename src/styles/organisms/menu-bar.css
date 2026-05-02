@@ -1,0 +1,27 @@
+.menu-bar {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--vt);
+  font-size: 15px;
+  padding: 3px 8px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  border-bottom: 3px solid var(--lime);
+}
+.menu-bar .logo {
+  color: var(--lime);
+  font-size: 18px;
+}
+.menu-item {
+  cursor: pointer;
+  padding: 1px 5px;
+}
+.menu-item:hover {
+  background: var(--pink);
+}
+.menu-bar .menu-right {
+  margin-left: auto;
+  color: var(--lime);
+  font-size: 12px;
+}

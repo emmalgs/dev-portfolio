@@ -1,0 +1,19 @@
+.legend-row {
+  display: flex;
+  gap: 2px;
+  padding: 3px 5px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.leg-item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--vt);
+  font-size: 9px;
+}
+.leg-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+}

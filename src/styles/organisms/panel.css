@@ -1,0 +1,19 @@
+.os-body {
+  display: grid;
+  grid-template-columns: 148px 1fr 148px;
+}
+.panel {
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+}
+.panel-l {
+  border-right: 2px solid var(--black);
+}
+.panel-r {
+  border-left: 2px solid var(--black);
+}
+.center-col {
+  display: flex;
+  flex-direction: column;
+}

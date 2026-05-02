@@ -1,0 +1,80 @@
+.hero {
+  position: relative;
+  background: var(--white);
+  border-bottom: 2px solid var(--black);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0, transparent 23px, rgba(0,0,0,0.035) 23px, rgba(0,0,0,0.035) 24px),
+    repeating-linear-gradient(90deg, transparent 0, transparent 23px, rgba(0,0,0,0.035) 23px, rgba(0,0,0,0.035) 24px);
+  pointer-events: none;
+}
+.hero-inner {
+  text-align: center;
+  z-index: 1;
+  padding: 16px;
+}
+.illo-box {
+  width: 210px;
+  height: 210px;
+  margin: 0 auto 12px;
+  border: 3px solid var(--black);
+  background: var(--lime-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s;
+}
+.illo-box:hover {
+  background: var(--pink-pale);
+}
+.illo-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+.illo-corner.tl { top: -1px; left: -1px; border-top: 3px solid var(--pink); border-left: 3px solid var(--pink); }
+.illo-corner.tr { top: -1px; right: -1px; border-top: 3px solid var(--orange); border-right: 3px solid var(--orange); }
+.illo-corner.bl { bottom: -1px; left: -1px; border-bottom: 3px solid var(--orange); border-left: 3px solid var(--orange); }
+.illo-corner.br { bottom: -1px; right: -1px; border-bottom: 3px solid var(--pink); border-right: 3px solid var(--pink); }
+.illo-hint {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--dark-green);
+  line-height: 1.6;
+  text-align: center;
+}
+.hero-name {
+  font-family: var(--vt);
+  font-size: 30px;
+  color: var(--black);
+  letter-spacing: 0.1em;
+}
+.hero-name em {
+  color: var(--pink);
+  font-style: normal;
+}
+.hero-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--dark-green);
+  margin: 3px 0 7px;
+}
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  flex-wrap: wrap;
+}

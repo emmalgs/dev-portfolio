@@ -1,0 +1,16 @@
+.dr {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 5px;
+  border-bottom: 1px dotted #ccc;
+  font-family: var(--vt);
+  font-size: 11px;
+}
+.dr:last-child {
+  border-bottom: none;
+}
+.dv { font-weight: bold; }
+.dv.g { color: var(--dark-green); }
+.dv.p { color: var(--pink); }
+.dv.o { color: var(--orange); }
+.dv.l { color: var(--lime-dark); }

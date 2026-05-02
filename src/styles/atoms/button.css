@@ -1,0 +1,23 @@
+.tb {
+  font-family: var(--vt);
+  font-size: 13px;
+  background: var(--white);
+  border: 1.5px solid var(--black);
+  padding: 1px 7px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--black);
+  display: inline-block;
+}
+.tb:hover,
+.tb.on {
+  background: var(--lime);
+}
+.tb.red {
+  color: var(--pink);
+  border-color: var(--pink);
+}
+.tb.red:hover {
+  background: var(--pink);
+  color: var(--white);
+}

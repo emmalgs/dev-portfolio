@@ -1,0 +1,18 @@
+.ticker {
+  background: var(--lime);
+  color: var(--black);
+  font-family: var(--vt);
+  font-size: 14px;
+  padding: 2px 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--black);
+}
+.ticker-inner {
+  display: inline-block;
+  animation: tick 40s linear infinite;
+}
+@keyframes tick {
+  from { transform: translateX(700px); }
+  to { transform: translateX(-100%); }
+}

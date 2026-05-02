@@ -1,8 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ── DESIGN SYSTEM ───────────────────────────────────────────────────────── */
+/* tokens → reset → atoms → molecules → organisms                            */
 
-body {
-  background-color: #FAF5EE;
-  color: #1c1c1e;
-}
+@import '../styles/tokens.css';
+@import '../styles/reset.css';
+
+/* atoms */
+@import '../styles/atoms/button.css';
+@import '../styles/atoms/tag.css';
+@import '../styles/atoms/separator.css';
+@import '../styles/atoms/blink.css';
+@import '../styles/atoms/cta-link.css';
+
+/* molecules */
+@import '../styles/molecules/skill-bar.css';
+@import '../styles/molecules/data-row.css';
+@import '../styles/molecules/thumb.css';
+@import '../styles/molecules/panel-section.css';
+@import '../styles/molecules/legend.css';
+@import '../styles/molecules/annotation.css';
+@import '../styles/molecules/timeline.css';
+@import '../styles/molecules/ticker.css';
+@import '../styles/molecules/project-card.css';
+
+/* organisms */
+@import '../styles/organisms/menu-bar.css';
+@import '../styles/organisms/toolbar.css';
+@import '../styles/organisms/panel.css';
+@import '../styles/organisms/hero.css';
+@import '../styles/organisms/project-grid.css';
+@import '../styles/organisms/status-bar.css';
+@import '../styles/organisms/modal.css';
+
+/* global layout */
+@import '../styles/main.css';

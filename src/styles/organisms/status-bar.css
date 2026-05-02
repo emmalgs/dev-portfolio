@@ -1,0 +1,15 @@
+.sbar {
+  background: var(--dark-green);
+  color: var(--lime);
+  font-family: var(--vt);
+  font-size: 12px;
+  padding: 3px 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 3px solid var(--black);
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.sbar .sbar-val {
+  color: var(--white);
+}

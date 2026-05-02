@@ -1,0 +1,21 @@
+.ps {
+  border-bottom: 1.5px solid var(--black);
+}
+.ps-head {
+  font-family: var(--vt);
+  font-size: 12px;
+  padding: 2px 5px;
+  border-bottom: 1px solid var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ps-head.blk { background: var(--black); color: var(--lime); }
+.ps-head.grn { background: var(--dark-green); color: var(--lime); }
+.ps-head.pnk { background: var(--pink); color: var(--white); }
+.ps-head.lim { background: var(--lime); color: var(--black); }
+.ps-head.org { background: var(--orange); color: var(--white); }
+.ps-head .badge {
+  font-size: 10px;
+  opacity: 0.7;
+}

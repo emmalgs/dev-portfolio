@@ -1,0 +1,31 @@
+.cta {
+  font-family: var(--vt);
+  font-size: 12px;
+  background: var(--white);
+  border: 1.5px solid var(--black);
+  border-bottom: none;
+  padding: 2px 5px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+}
+.cta:last-child {
+  border-bottom: 1.5px solid var(--black);
+}
+.cta:hover {
+  background: var(--lime);
+}
+.cta.p {
+  color: var(--pink);
+  border-color: var(--pink);
+  border-bottom: none;
+}
+.cta.p:last-child {
+  border-bottom: 1.5px solid var(--pink);
+}
+.cta.p:hover {
+  background: var(--pink);
+  color: var(--white);
+}

@@ -1,0 +1,11 @@
+.ann {
+  font-family: var(--vt);
+  font-size: 10px;
+  color: var(--black);
+  padding: 2px 5px;
+  line-height: 1.4;
+  background: var(--white);
+}
+.ann .red { color: var(--pink); }
+.ann .grn { color: var(--dark-green); }
+.ann .lim { color: var(--lime-dark); }
