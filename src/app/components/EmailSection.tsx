@@ -1,10 +1,31 @@
 "use client";
 import React, { useState } from "react";
-import GitHubIcon from "../../../public/images/githubMove.gif";
-import LinkedInIcon from "../../../public/images/linkedinMove.gif";
 import Background from "../../../public/images/colorbg2.png";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
+const links = [
+  {
+    label: "elgerig@gmail.com",
+    href: "mailto:elgerig@gmail.com",
+    note: null,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/emma-gerig/",
+    note: null,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/emmalgs",
+    note: null,
+  },
+  {
+    label: "emmagerig.com",
+    href: "https://emmagerig.com",
+    note: "check out my art",
+  },
+];
 
 const EmailSection = () => {
   const [status, setStatus] = useState("");
@@ -17,15 +38,11 @@ const EmailSection = () => {
       subject: (e.currentTarget.subject as HTMLInputElement).value,
       message: (e.currentTarget.message as HTMLInputElement).value,
     };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-    const options = {
+    const response = await fetch("/api/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSONdata,
-    };
-    const response = await fetch(endpoint, options);
+      body: JSON.stringify(data),
+    });
     if (response.status === 200) {
       setStatus("Your message has been sent!");
       setTimeout(() => setStatus(""), 10000);
@@ -38,38 +55,53 @@ const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 my-12 py-24 gap-4 border-t border-stone-300 relative"
+      className="grid md:grid-cols-2 my-12 py-24 gap-12 border-t border-stone-300 relative"
     >
       <Image
         src={Background}
         height={700}
         width={700}
-        alt="blue squiggle"
-        className="absolute opacity-40"
+        alt=""
+        aria-hidden
+        className="absolute opacity-40 pointer-events-none"
       />
-      <div className="z-10">
-        <h2 className="text-4xl font-bold text-stone-900 mb-4 font-mono">
-          CONNECT
-        </h2>
-        <p className="text-xl text-stone-600 mb-4 md:mb-1 max-w-md font-mono">
-          <em>
-            I&apos;m actively seeking employment in the fields of web development and
-            software engineering. I&apos;d love to hear from you! If you&apos;re looking
-            for my paintings and fine art, head over to{" "}
-            <Link className="text-[#3535DC] hover:underline" href="https://emmagerigscott.com">
-              my painting website
-            </Link>
-          </em>
-        </p>
-        <div className="socials flex flex-row gap-2 mt-6">
-          <Link href="https://github.com/emmalgs">
-            <Image src={GitHubIcon} alt="github" width={55} height={55} />
-          </Link>
-          <Link href="https://www.linkedin.com/in/emmagerigscott/">
-            <Image src={LinkedInIcon} alt="linkedin" width={50} height={50} />
-          </Link>
+
+      {/* Left column — direct contact links */}
+      <div className="z-10 flex flex-col gap-8">
+        <div>
+          <h2 className="text-4xl font-bold text-stone-900 mb-3 font-mono">
+            CONNECT
+          </h2>
+          <p className="text-stone-600 text-base leading-relaxed max-w-sm">
+            Open to new roles. Reach out directly or use the form.
+          </p>
         </div>
+
+        <ul className="flex flex-col gap-3">
+          {links.map(({ label, href, note }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                target={href.startsWith("mailto") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-sm text-stone-700 hover:text-[#3535DC] transition-colors group"
+              >
+                <span className="text-[#3535DC] group-hover:translate-x-0.5 transition-transform">
+                  →
+                </span>
+                {label}
+                {note && (
+                  <span className="text-blue-800 font-normal not-italic ml-1">
+                    — {note}
+                  </span>
+                )}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      {/* Right column — contact form */}
       <form onSubmit={handleSubmit} className="flex flex-col z-10 gap-4">
         <div>
           <label className="text-stone-700 block mb-2 text-sm font-mono font-semibold" htmlFor="email">
@@ -81,7 +113,7 @@ const EmailSection = () => {
             type="email"
             name="email"
             required
-            placeholder="dragon@fire.net"
+            placeholder="you@example.com"
           />
         </div>
         <div>
@@ -116,7 +148,7 @@ const EmailSection = () => {
           <textarea
             name="message"
             id="message"
-            rows={8}
+            rows={7}
             className="bg-white border border-stone-300 rounded-xl px-4 py-3 block w-full focus:outline-none focus:border-[#3535DC] focus:ring-2 focus:ring-[#3535DC]/20 transition-colors resize-none"
             placeholder="Your message here..."
             required
@@ -128,14 +160,18 @@ const EmailSection = () => {
         >
           Send Message
         </button>
-        {status && <p className="text-stone-700 font-mono text-center text-sm">{status}</p>}
+        {status && (
+          <p className="text-stone-700 font-mono text-center text-sm">{status}</p>
+        )}
       </form>
+
       <Image
         src="/images/greenbg.png"
         height={700}
         width={700}
-        alt="green squiggle"
-        className="absolute opacity-30 w-full h-full -bottom-40 right-20"
+        alt=""
+        aria-hidden
+        className="absolute opacity-30 w-full h-full -bottom-40 right-20 pointer-events-none"
       />
     </section>
   );
