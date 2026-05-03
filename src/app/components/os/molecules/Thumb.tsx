@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { useModal } from "../../../contexts/ModalContext";
 import { useGame } from "../../../contexts/GameContext";
@@ -62,7 +63,16 @@ export function CorralThumb() {
               className="thumb-corral__emoji"
               title={getSheepProject(s.projectIndex).displayName}
             >
-              🐑
+              <Image
+                className="thumb-corral__sheep-img"
+                src="/images/Sheep.gif"
+                alt=""
+                width={14}
+                height={14}
+                unoptimized
+                draggable={false}
+                aria-hidden
+              />
             </span>
           ))}
       </div>

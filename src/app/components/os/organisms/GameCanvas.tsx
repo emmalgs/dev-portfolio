@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { getBackpackItemById } from "../../../data/resumeBackpack";
 import { clearAllTouchKeys } from "../../../game/engine/InputHandler";
-import { PLAYER_H, PLAYER_W } from "../../../game/playspace";
+import { PLAYER_H, PLAYER_W, SHEEP_H, SHEEP_W } from "../../../game/playspace";
 import { GameState } from "../../../game/state/GameState";
 import { Button } from "../atoms/Button";
 import { GameTouchControls } from "./GameTouchControls";
@@ -99,7 +99,16 @@ export const GameCanvas: React.FC<Props> = ({
       {/* Sheep */}
       {gameState.sheep.map((s) => (
         <div key={s.id} style={{ position: "absolute", left: s.x, top: s.y }}>
-          🐑
+          <Image
+            className="game-canvas__sheep"
+            src="/images/Sheep.gif"
+            alt=""
+            width={SHEEP_W}
+            height={SHEEP_H}
+            unoptimized
+            draggable={false}
+            aria-hidden
+          />
         </div>
       ))}
 
@@ -196,7 +205,18 @@ export const GameCanvas: React.FC<Props> = ({
             </p>
             <p className="game-canvas__score-line">
               You corralled:{" "}
-              <strong>{gameState.gameOverScore.saved}</strong> 🐑
+              <strong>{gameState.gameOverScore.saved}</strong>{" "}
+              <span className="game-canvas__score-icon-sheep">
+                <Image
+                  src="/images/Sheep.gif"
+                  alt=""
+                  width={18}
+                  height={18}
+                  unoptimized
+                  draggable={false}
+                  aria-hidden
+                />
+              </span>
             </p>
             <p className="game-canvas__score-line">
               Dragon cooked:{" "}

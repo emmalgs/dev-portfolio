@@ -69,6 +69,24 @@
   user-select: none;
 }
 
+.hero-inner .game-canvas__sheep {
+  display: block;
+  object-fit: contain;
+  object-position: left bottom;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-inner .game-canvas__score-icon-sheep {
+  display: inline-block;
+  vertical-align: -0.2em;
+  line-height: 0;
+}
+
+.hero-inner .game-canvas__score-icon-sheep img {
+  display: block;
+}
+
 .hero-inner .game-canvas__pickup {
   position: absolute;
   z-index: 1;

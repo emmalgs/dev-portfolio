@@ -72,7 +72,15 @@
 .thumb-corral__emoji {
   font-style: normal;
   font-size: 14px;
-  line-height: 1;
+  line-height: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-corral__sheep-img {
+  display: block;
+  object-fit: contain;
 }
 
 .thumb-corral__tag {
