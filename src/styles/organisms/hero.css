@@ -61,6 +61,14 @@
   z-index: 0;
 }
 
+.hero-inner .game-canvas__player {
+  display: block;
+  object-fit: contain;
+  object-position: left bottom;
+  pointer-events: none;
+  user-select: none;
+}
+
 .hero-inner .game-canvas__pickup {
   position: absolute;
   z-index: 1;

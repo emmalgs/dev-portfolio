@@ -1,8 +1,10 @@
 // src/components/GameCanvas.tsx
 
+import Image from "next/image";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { getBackpackItemById } from "../../../data/resumeBackpack";
 import { clearAllTouchKeys } from "../../../game/engine/InputHandler";
+import { PLAYER_H, PLAYER_W } from "../../../game/playspace";
 import { GameState } from "../../../game/state/GameState";
 import { Button } from "../atoms/Button";
 import { GameTouchControls } from "./GameTouchControls";
@@ -83,7 +85,15 @@ export const GameCanvas: React.FC<Props> = ({
 
       {/* Player */}
       <div style={{ position: "absolute", left: gameState.player.x, top: gameState.player.y }}>
-        🤠🐎
+        <Image
+          className="game-canvas__player"
+          src="/images/Player.gif"
+          alt="Player"
+          width={PLAYER_W}
+          height={PLAYER_H}
+          unoptimized
+          draggable={false}
+        />
       </div>
 
       {/* Sheep */}

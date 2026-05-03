@@ -1,7 +1,7 @@
 /** Inner offset from canvas edge (aligns with fence overlay). */
 export const PLAY_PADDING = 10;
 
-/** Top-left anchor footprint — emoji blocks in GameCanvas. */
+/** Top-left anchor footprint — player sprite / sheep / dragon in GameCanvas. */
 export const PLAYER_W = 52;
 export const PLAYER_H = 36;
 export const SHEEP_W = 28;
