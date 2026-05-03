@@ -1,5 +1,6 @@
 .os-window {
   width: 960px;
+  height: vh;
   background: var(--white);
   border: 3px solid var(--black);
   box-shadow: 6px 6px 0 var(--lime), 12px 12px 0 var(--black);

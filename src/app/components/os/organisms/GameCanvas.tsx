@@ -10,6 +10,7 @@ type Props = {
 export const GameCanvas: React.FC<Props> = ({ gameState }) => {
   return (
     <div
+      tabIndex={0}
       style={{
         width: 600,
         height: 400,
@@ -36,6 +37,41 @@ export const GameCanvas: React.FC<Props> = ({ gameState }) => {
         <div style={{ position: "absolute", left: gameState.dragon.x, top: gameState.dragon.y }}>
           🐉🔥
         </div>
+      )}
+
+      {gameState.lasso && (
+        <>
+          {/* Rope */}
+          <div
+            style={{
+              position: "absolute",
+              left: gameState.player.x,
+              top: gameState.player.y,
+              width: Math.hypot(
+                gameState.lasso.x - gameState.player.x,
+                gameState.lasso.y - gameState.player.y
+              ),
+              height: 2,
+              background: "brown",
+              transformOrigin: "0 0",
+              transform: `rotate(${Math.atan2(
+                gameState.lasso.y - gameState.player.y,
+                gameState.lasso.x - gameState.player.x
+              )}rad)`,
+            }}
+          />
+
+          {/* Lasso head */}
+          <div
+            style={{
+              position: "absolute",
+              left: gameState.lasso.x,
+              top: gameState.lasso.y,
+            }}
+          >
+            🪢
+          </div>
+        </>
       )}
     </div>
   );

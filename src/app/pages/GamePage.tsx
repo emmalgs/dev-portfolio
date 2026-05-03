@@ -1,10 +1,14 @@
 // src/pages/GamePage.tsx
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { GameCanvas } from "../components/os/organisms/GameCanvas";
 import { useGameLoop } from "../hooks/useGameLoop";
-import { getInput } from "../game/engine/InputHandler";
+import { clearJustPressed, getInput } from "../game/engine/InputHandler";
 import { GameState } from "../game/state/GameState";
+import { updatePlayer } from "../game/systems/PlayerSystem";
+import { updateLasso } from "../game/systems/LassoSystem";
+import { handleLassoCollision } from "../game/systems/CollisionSystem";
+import { updateSheep } from "../game/systems/SheepSystem";
 
 const initialState: GameState = {
     player: { id: "p1", x: 100, y: 100, direction: "down" },
@@ -20,51 +24,56 @@ const initialState: GameState = {
 
 export const GamePage = () => {
     const [gameState, setGameState] = useState(initialState);
+    const [isFocused, setIsFocused] = useState(false);
+
+    useEffect(() => {
+        const canvas = document.getElementById("game-canvas");
+
+        if (!canvas) return;
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (!isFocused) return;
+
+            if (e.code === "Space") {
+                e.preventDefault();
+            }
+
+            if (!keys[e.code]) {
+                justPressed[e.code] = true;
+            }
+
+            keys[e.code] = true;
+        };
+
+        const handleKeyUp = (e: KeyboardEvent) => {
+            if (!isFocused) return;
+
+            keys[e.code] = false;
+        };
+
+        canvas.addEventListener("keydown", handleKeyDown);
+        canvas.addEventListener("keyup", handleKeyUp);
+
+        return () => {
+            canvas.removeEventListener("keydown", handleKeyDown);
+            canvas.removeEventListener("keyup", handleKeyUp);
+        };
+    }, []);
 
     const update = useCallback((delta: number) => {
         setGameState((prev) => {
             const input = getInput();
-            let { x, y } = prev.player;
 
-            if (input["ArrowUp"]) y -= 2;
-            if (input["ArrowDown"]) y += 2;
-            if (input["ArrowLeft"]) x -= 2;
-            if (input["ArrowRight"]) x += 2;
+            let next = { ...prev };
 
-            const updatedSheep = prev.sheep.map((s) => {
-                const dx = s.x - x;
-                const dy = s.y - y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+            next = updatePlayer(next, input.keys);
+            next = updateLasso(next, input, delta);
+            next = updateSheep(next);
+            next = handleLassoCollision(next);
 
-                if (distance < 30 && !s.caught) {
-                    return { ...s, caught: true };
-                }
+            clearJustPressed(); // 👈 important
 
-                return s;
-            });
-            if (input[" "] && !prev.lasso) {
-                return {
-                    ...prev,
-                    lasso: {
-                        x: prev.player.x,
-                        y: prev.player.y,
-                        direction: prev.player.direction,
-                        distanceTraveled: 0,
-                        maxDistance: 120,
-                        active: true,
-                    },
-                };
-            }
-
-            const caughtSheep = updatedSheep.filter((s) => s.caught);
-
-            return {
-                ...prev,
-                player: { ...prev.player, x, y },
-                sheep: updatedSheep.filter((s) => !s.caught),
-                corral: [...prev.corral, ...caughtSheep],
-                popup: caughtSheep.length ? "You caught me!" : null,
-            };
+            return next;
         });
     }, []);
 

@@ -33,5 +33,4 @@ type Lasso = {
   direction: "up" | "down" | "left" | "right";
   distanceTraveled: number;
   maxDistance: number;
-  active: boolean;
 };
