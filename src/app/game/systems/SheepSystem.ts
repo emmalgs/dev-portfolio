@@ -7,6 +7,7 @@ import {
   SHEEP_H,
   SHEEP_W,
   clampSheepPosition,
+  dragonBodyCenter,
 } from "../playspace";
 import { GameState } from "../state/GameState";
 
@@ -20,6 +21,10 @@ const SEP_STRENGTH = 0.52;
 /** Cowboy rides through — sheep scatter from this radius (px). */
 const PLAYER_PUSH_RADIUS = 78;
 const PLAYER_PUSH_STRENGTH = 2.35;
+
+/** Dragon panic — flee earlier than the burn radius. */
+const DRAGON_FEAR_RADIUS = 130;
+const DRAGON_FEAR_STRENGTH = 3.1;
 
 /** Slight jitter so the blob does not freeze. */
 const NOISE = 0.09;
@@ -61,6 +66,8 @@ export const updateSheep = (
   flockCy /= free.length;
 
   const pc = playerBodyCenter(state.player);
+  const dragonC =
+    state.dragon?.active === true ? dragonBodyCenter(state.dragon) : null;
 
   const sheep = state.sheep.map((s) => {
     if (s.caught) return s;
@@ -92,6 +99,17 @@ export const updateSheep = (
       const w = (PLAYER_PUSH_RADIUS - pd) / PLAYER_PUSH_RADIUS;
       fx += (pdx / pd) * w * PLAYER_PUSH_STRENGTH;
       fy += (pdy / pd) * PLAYER_PUSH_STRENGTH;
+    }
+
+    if (dragonC) {
+      const ddx = c.x - dragonC.x;
+      const ddy = c.y - dragonC.y;
+      const dd = Math.hypot(ddx, ddy);
+      if (dd < DRAGON_FEAR_RADIUS && dd > 1e-4) {
+        const w = (DRAGON_FEAR_RADIUS - dd) / DRAGON_FEAR_RADIUS;
+        fx += (ddx / dd) * w * DRAGON_FEAR_STRENGTH;
+        fy += (ddy / dd) * w * DRAGON_FEAR_STRENGTH;
+      }
     }
 
     fx += (Math.random() - 0.5) * NOISE;

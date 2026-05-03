@@ -16,12 +16,16 @@ export type Sheep = Entity & {
 
 export type Dragon = Entity & {
   active: boolean;
+  /** Time this dragon has been on the field (ms). */
+  ageMs: number;
 };
 
 export type GameState = {
   player: Player;
   sheep: Sheep[];
   dragon: Dragon | null;
+  /** Counts up while `dragon` is null; next spawn when this exceeds the interval. */
+  dragonSpawnTimerMs: number;
   corral: Sheep[];
   popup: string | null;
   lasso: Lasso | null;

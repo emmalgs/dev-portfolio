@@ -3,6 +3,37 @@
 const keys: Record<string, boolean> = {};
 const justPressed: Record<string, boolean> = {};
 
+/** Virtual controls (mobile); merged with keyboard in getInput. */
+const touchKeys: Record<string, boolean> = {};
+const touchJustPressed: Record<string, boolean> = {};
+
+const TOUCH_CONTROL_CODES = [
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "Space",
+] as const;
+
+export function setTouchKey(code: string, down: boolean) {
+  if (down) {
+    if (!touchKeys[code]) {
+      touchJustPressed[code] = true;
+    }
+    touchKeys[code] = true;
+  } else {
+    touchKeys[code] = false;
+  }
+}
+
+/** Call when a modal opens so a lifted finger off-screen does not leave keys stuck. */
+export function clearAllTouchKeys() {
+  for (const c of TOUCH_CONTROL_CODES) {
+    touchKeys[c] = false;
+    touchJustPressed[c] = false;
+  }
+}
+
 function gameCanvasIsFocused(): boolean {
   const el = document.activeElement;
   return el instanceof HTMLElement && el.classList.contains("game-canvas");
@@ -45,16 +76,31 @@ function attachInputListeners() {
 
 attachInputListeners();
 
+function mergeKeyRecords(
+  a: Record<string, boolean>,
+  b: Record<string, boolean>
+): Record<string, boolean> {
+  const codes = new Set([...Object.keys(a), ...Object.keys(b)]);
+  const out: Record<string, boolean> = {};
+  for (const c of codes) {
+    out[c] = !!a[c] || !!b[c];
+  }
+  return out;
+}
+
 export const getInput = () => {
   attachInputListeners();
   return {
-    keys,
-    justPressed,
+    keys: mergeKeyRecords(keys, touchKeys),
+    justPressed: mergeKeyRecords(justPressed, touchJustPressed),
   };
 };
 
 export const clearJustPressed = () => {
   for (const key in justPressed) {
     justPressed[key] = false;
+  }
+  for (const key in touchJustPressed) {
+    touchJustPressed[key] = false;
   }
 };

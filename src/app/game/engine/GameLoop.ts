@@ -6,6 +6,11 @@ export class GameLoop {
 
   start(update: (delta: number) => void) {
     const loop = (time: number) => {
+      if (this.lastTime === 0) {
+        this.lastTime = time;
+        this.rafId = requestAnimationFrame(loop);
+        return;
+      }
       const delta = time - this.lastTime;
       this.lastTime = time;
 

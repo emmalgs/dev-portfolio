@@ -1,8 +1,10 @@
 // src/components/GameCanvas.tsx
 
 import React, { useEffect, useLayoutEffect, useRef } from "react";
+import { clearAllTouchKeys } from "../../../game/engine/InputHandler";
 import { GameState } from "../../../game/state/GameState";
 import { Button } from "../atoms/Button";
+import { GameTouchControls } from "./GameTouchControls";
 
 type Props = {
   gameState: GameState;
@@ -33,6 +35,7 @@ export const GameCanvas: React.FC<Props> = ({
 
   useEffect(() => {
     if (!gameState.popup) return;
+    clearAllTouchKeys();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onDismissPopup();
     };
@@ -41,7 +44,11 @@ export const GameCanvas: React.FC<Props> = ({
   }, [gameState.popup, onDismissPopup]);
 
   return (
-    <div ref={canvasRef} tabIndex={0} className="game-canvas">
+    <div
+      ref={canvasRef}
+      tabIndex={0}
+      className={`game-canvas${gameState.popup ? " game-canvas--modal" : ""}`}
+    >
       <div className="game-canvas__fence" aria-hidden />
       {/* Player */}
       <div style={{ position: "absolute", left: gameState.player.x, top: gameState.player.y }}>
@@ -96,6 +103,8 @@ export const GameCanvas: React.FC<Props> = ({
           </div>
         </>
       )}
+
+      <GameTouchControls />
 
       {gameState.popup && (
         <div

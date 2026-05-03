@@ -15,6 +15,7 @@ import { GameState } from "../game/state/GameState";
 import { updatePlayer } from "../game/systems/PlayerSystem";
 import { updateLasso } from "../game/systems/LassoSystem";
 import { handleLassoCollision } from "../game/systems/CollisionSystem";
+import { updateDragon } from "../game/systems/DragonSystem";
 import { updateSheep } from "../game/systems/SheepSystem";
 
 const FLOCK_HOME = { x: 300, y: 175 };
@@ -38,6 +39,7 @@ const initialState: GameState = {
     caught: false,
   })),
   dragon: null,
+  dragonSpawnTimerMs: 6000,
   corral: [],
   popup: null,
   lasso: null,
@@ -78,6 +80,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       let next = { ...prev };
       next = updatePlayer(next, input.keys, bounds);
       next = updateLasso(next, input, delta, bounds);
+      next = updateDragon(next, bounds, delta);
       next = updateSheep(next, bounds);
       next = handleLassoCollision(next);
       return next;

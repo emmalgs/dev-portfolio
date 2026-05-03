@@ -7,6 +7,9 @@ export const PLAYER_H = 36;
 export const SHEEP_W = 28;
 export const SHEEP_H = 28;
 
+export const DRAGON_W = 44;
+export const DRAGON_H = 40;
+
 export type PlayBounds = {
   width: number;
   height: number;
@@ -66,4 +69,22 @@ export function isLassoInBounds(
     x <= bounds.width - pad &&
     y <= bounds.height - pad
   );
+}
+
+export function clampDragonPosition(
+  x: number,
+  y: number,
+  bounds: PlayBounds
+): { x: number; y: number } {
+  const min = PLAY_PADDING;
+  const maxX = Math.max(min, bounds.width - PLAY_PADDING - DRAGON_W);
+  const maxY = Math.max(min, bounds.height - PLAY_PADDING - DRAGON_H);
+  return {
+    x: clamp(x, min, maxX),
+    y: clamp(y, min, maxY),
+  };
+}
+
+export function dragonBodyCenter(d: { x: number; y: number }) {
+  return { x: d.x + DRAGON_W * 0.42, y: d.y + DRAGON_H * 0.48 };
 }
