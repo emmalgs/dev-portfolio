@@ -1,34 +1,66 @@
+/* ── HEADER ───────────────────────────── */
 .menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
   background: var(--black);
   color: var(--white);
-  font-family: var(--vt);
-  font-size: 15px;
-  padding: 3px 8px;
+  font-family: var(--mono);
+  font-size: 11px;
   display: flex;
-  gap: 16px;
   align-items: center;
-  border-bottom: 3px solid var(--lime);
+  justify-content: space-between;
+  padding: 0 12px;
+  z-index: 100;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--black);
 }
 
 .menu-bar .logo {
-  color: var(--lime);
-  font-size: 18px;
-  line-height: 1;
+  display: none;
+}
+
+.menu-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu-name {
+  color: var(--orange);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.menu-sep {
+  color: #555;
 }
 
 .menu-item {
   cursor: pointer;
-  padding: 1px 5px;
+  color: var(--white);
 }
 
 .menu-item:hover {
-  background: var(--pink);
+  color: var(--orange);
 }
 
 .menu-bar .menu-right,
 .menu-bar .right {
+  display: flex;
+  gap: 16px;
+  font-size: 10px;
+  color: #888;
   margin-left: auto;
-  color: var(--lime);
-  font-size: 12px;
-  font-family: var(--vt);
+}
+
+.menu-right a {
+  color: #888;
+  text-decoration: none;
+}
+
+.menu-right a:hover {
+  color: var(--orange);
 }

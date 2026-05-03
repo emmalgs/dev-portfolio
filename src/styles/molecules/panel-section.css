@@ -1,43 +1,31 @@
 .ps {
-  border-bottom: 1.5px solid var(--black);
+  border-bottom: 1px solid var(--gray-light);
 }
 
 .ps-head {
-  font-family: var(--vt);
-  font-size: 12px;
-  padding: 2px 5px;
-  border-bottom: 1px solid var(--black);
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  letter-spacing: 0.08em;
 }
 
-.ps-head.blk {
-  background: var(--black);
-  color: var(--lime);
-}
-
+.ps-head.blk,
 .ps-head.grn {
-  background: var(--dark-green);
-  color: var(--lime);
-}
-
-.ps-head.pnk {
-  background: var(--pink);
+  background: var(--black);
   color: var(--white);
 }
 
-.ps-head.lim {
-  background: var(--lime);
-  color: var(--black);
-}
-
+.ps-head.pnk,
+.ps-head.lim,
 .ps-head.org {
   background: var(--orange);
   color: var(--white);
 }
 
 .ps-head .badge {
-  font-size: 10px;
+  font-size: 9px;
   opacity: 0.7;
 }

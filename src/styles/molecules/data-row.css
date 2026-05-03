@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   padding: 1px 5px;
-  border-bottom: 1px dotted #ccc;
-  font-family: var(--vt);
+  border-bottom: 1px dotted var(--gray-light);
+  font-family: var(--mono);
   font-size: 11px;
 }
 
@@ -13,20 +13,12 @@
 
 .dv {
   font-weight: bold;
+  color: var(--black);
 }
 
-.dv.g {
-  color: var(--dark-green);
-}
-
-.dv.p {
-  color: var(--pink);
-}
-
-.dv.o {
-  color: var(--orange);
-}
-
+.dv.g,
+.dv.p,
+.dv.o,
 .dv.l {
-  color: var(--lime-dark);
+  color: var(--orange);
 }

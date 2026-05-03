@@ -1,30 +1,25 @@
 "use client";
 
 import React from "react";
-import { useModal } from "@/app/contexts/ModalContext";
 
 export function Header() {
-  const { openModal } = useModal();
-
   return (
     <header className="menu-bar">
-      <span className="logo">◈</span>
-      <span className="menu-item">FILE</span>
-      <span className="menu-item">WORK</span>
-      <span className="menu-item">SKILLS</span>
-      <span className="menu-item">CONTACT</span>
-      <span
-        className="menu-item"
-        onClick={() =>
-          openModal(
-            "// ALSO AN ARTIST",
-            "Active painting studio. Solo shows. Adjunct at PNCA. Illustrator, 2014–2023.<br><br><strong>↗ emmagerig.com</strong>",
-          )
-        }
-      >
-        ART ↗
-      </span>
-      <span className="menu-right">EMMA GERIG · PORTFOLIO 2026</span>
+      <div className="menu-left">
+        <span className="menu-name">EMMA GERIG</span>
+        <span className="menu-sep">·</span>
+        <span>Full Stack Engineer</span>
+        <span className="menu-sep">·</span>
+        <span>Hood River, OR</span>
+        <span className="menu-sep">·</span>
+        <span>Open to Remote</span>
+      </div>
+      <div className="menu-right">
+        <a href="https://linkedin.com/in/emma-gerig" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/emmalgs" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="http://emmagerig.com" target="_blank" rel="noopener noreferrer">emmagerig.com</a>
+        <a href="#" style={{ color: 'var(--orange)' }}>⬇ Resume</a>
+      </div>
     </header>
   );
 }

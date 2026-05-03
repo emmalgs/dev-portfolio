@@ -2,13 +2,21 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  min-width: 200px;
+  min-width: 220px;
   max-width: min(360px, calc(100vw - 48px));
   background: var(--white);
-  border: 3px solid var(--black);
-  box-shadow:
-    6px 6px 0 var(--lime),
-    12px 12px 0 var(--black);
+  border: 1.5px solid var(--black);
+  z-index: 20;
+  transition: box-shadow 0.15s;
+}
+
+.window:hover {
+  box-shadow: 4px 4px 0 var(--black);
+  z-index: 30;
+}
+
+.window.hidden {
+  display: none;
 }
 
 .window[data-window="projects"] {
@@ -19,6 +27,10 @@
 .body {
   flex: 1;
   min-height: 0;
-  border-top: none;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--black);
   background: var(--white);
 }

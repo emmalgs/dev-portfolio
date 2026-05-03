@@ -1,9 +1,11 @@
+/* Stack row */
 .sk {
-  padding: 2px 5px;
-  border-bottom: 1px dotted #ccc;
   display: flex;
-  flex-direction: column;
-  gap: 1px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0;
+  border-bottom: 1px dotted var(--gray-light);
+  font-size: 10px;
 }
 
 .sk:last-child {
@@ -11,17 +13,19 @@
 }
 
 .sk-name {
-  font-family: var(--vt);
+  font-family: var(--mono);
   font-size: 10px;
-  color: var(--text-soft);
+  color: var(--black);
 }
 
 .sk-bar {
+  width: 80px;
   height: 5px;
-  background: var(--off-white);
+  background: #e8e8e0;
   border: 1px solid #ccc;
 }
 
 .sk-fill {
   height: 100%;
+  background: var(--orange);
 }

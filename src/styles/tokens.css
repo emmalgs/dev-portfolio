@@ -1,63 +1,68 @@
 /*
- * Palette + roles — aligned with emma_portfolio_v3_grid_modals.html :root
- * Legacy aliases (--accent-*, --paper-*, --ink) kept so molecules keep working.
+ * Minimal palette — aligned with emma_portfolio_v3_grid_modals.html :root
+ * Three colors only: black, white, orange
  */
 :root {
+  /* Core palette */
   --black: #111111;
   --white: #f5f5f0;
   --orange: #EA3E17;
   --grid-line: rgba(0, 0, 0, 0.1);
 
-  /* Legacy colors for backwards compatibility */
-  --off-white: #eaeae3;
-  --lime: #b8d400;
-  --lime-pale: #e2f07a;
-  --lime-dark: #7a9000;
-  --pink: #e8638c;
-  --pink-pale: #f7c4d4;
-  --dark-green: #1a3d2b;
-  --mid-green: #2d6644;
-  --orange-pale: #f5c4a0;
-  --cobalt: #1a4a8a;
-  --panel: #e2e2da;
+  /* Grays */
+  --gray-light: #ddd;
+  --gray-medium: #999;
+  --gray-dark: #888;
+  --gray-darker: #555;
 
-  --paper: var(--white);
-  --paper-2: var(--off-white);
-  --paper-cool: var(--white);
-  --tile-blue: var(--off-white);
-  --tile-blue-deep: var(--panel);
+  /* Semantic colors */
   --ink: var(--black);
+  --paper: var(--white);
   --rule: var(--black);
-  --rule-muted: rgba(17, 17, 17, 0.35);
+  --rule-light: var(--gray-light);
+  --text-muted: var(--gray-dark);
+  --text-soft: var(--gray-darker);
 
-  --page-bg: var(--white);
-  --page-bg-highlight: transparent;
-
-  --text-muted: #888;
-  --text-soft: #555;
-  --umber: var(--text-soft);
-
+  /* Fonts */
   --mono: var(--font-share-tech-mono), "Space Mono", monospace;
   --serif: var(--font-im-fell), "IM Fell English", serif;
   --vt: var(--font-vt323), "VT323", monospace;
 
+  /* Legacy aliases for backwards compatibility */
+  --off-white: #eaeae3;
+  --lime: var(--orange);
+  --lime-pale: var(--white);
+  --lime-dark: var(--orange);
+  --pink: var(--orange);
+  --pink-pale: var(--white);
+  --dark-green: var(--black);
+  --mid-green: var(--black);
+  --orange-pale: var(--white);
+  --cobalt: var(--black);
+  --panel: var(--white);
+  --paper-2: var(--white);
+  --paper-cool: var(--white);
+  --tile-blue: var(--white);
+  --tile-blue-deep: var(--white);
+  --rule-muted: rgba(0, 0, 0, 0.1);
+  --page-bg: var(--white);
+  --page-bg-highlight: transparent;
+  --umber: var(--text-soft);
   --accent-orange: var(--orange);
-  --accent-orange-pale: var(--orange-pale);
-  --accent-cobalt: var(--cobalt);
-  --accent-cobalt-pale: #d4dce8;
-  --accent-yellow: var(--lime);
-  --accent-yellow-pale: var(--lime-pale);
-
-  --chart-lime: var(--lime);
-  --chart-lime-pale: var(--lime-pale);
-  --dust-rose: var(--pink);
-  --dust-rose-pale: var(--pink-pale);
-
-  --ochre: var(--lime);
-  --ochre-pale: var(--lime-pale);
+  --accent-orange-pale: var(--white);
+  --accent-cobalt: var(--black);
+  --accent-cobalt-pale: var(--white);
+  --accent-yellow: var(--orange);
+  --accent-yellow-pale: var(--white);
+  --chart-lime: var(--orange);
+  --chart-lime-pale: var(--white);
+  --dust-rose: var(--orange);
+  --dust-rose-pale: var(--white);
+  --ochre: var(--orange);
+  --ochre-pale: var(--white);
   --terracotta: var(--orange);
-  --terracotta-pale: var(--orange-pale);
-  --sage: var(--dark-green);
-  --sage-deep: var(--dark-green);
-  --slate: var(--cobalt);
+  --terracotta-pale: var(--white);
+  --sage: var(--black);
+  --sage-deep: var(--black);
+  --slate: var(--black);
 }

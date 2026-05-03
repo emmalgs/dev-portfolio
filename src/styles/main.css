@@ -1,12 +1,9 @@
 .os-window {
   width: min(960px, 100%);
-  background: var(--paper);
-  color: var(--ink);
-  border: 3px solid var(--black);
-  box-shadow:
-    6px 6px 0 var(--lime),
-    12px 12px 0 var(--black);
-  margin-bottom: 28px;
+  background: var(--white);
+  color: var(--black);
+  position: relative;
+  z-index: 10;
 }
 
 .mini-svg {
