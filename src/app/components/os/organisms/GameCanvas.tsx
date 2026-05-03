@@ -9,17 +9,7 @@ type Props = {
 
 export const GameCanvas: React.FC<Props> = ({ gameState }) => {
   return (
-    <div
-      tabIndex={0}
-      style={{
-        width: 600,
-        height: 400,
-        border: "2px solid black",
-        position: "relative",
-        overflow: "hidden",
-        background: "#e6f2ff",
-      }}
-    >
+    <div tabIndex={0} className="game-canvas">
       {/* Player */}
       <div style={{ position: "absolute", left: gameState.player.x, top: gameState.player.y }}>
         🤠🐎

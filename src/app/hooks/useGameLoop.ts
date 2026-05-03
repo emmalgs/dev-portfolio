@@ -7,5 +7,6 @@ export const useGameLoop = (update: (delta: number) => void) => {
   useEffect(() => {
     const loop = new GameLoop();
     loop.start(update);
+    return () => loop.stop();
   }, [update]);
 };

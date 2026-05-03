@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
-import { Tag } from "../atoms/Tag";
 import { ProjectCard } from "../molecules/ProjectCard";
 import { osProjects } from "../../../data/projectsData";
-import { useModal } from "../../../contexts/ModalContext";
 import { GamePage } from "@/app/pages/GamePage";
 
 interface CenterPanelProps {
@@ -11,8 +9,6 @@ interface CenterPanelProps {
 }
 
 export function CenterPanel({ filter }: CenterPanelProps) {
-  const { openModal } = useModal();
-
   const visible = filter === "ALL"
     ? osProjects
     : osProjects.filter((p) => p.categories.includes(filter));

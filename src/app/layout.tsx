@@ -1,17 +1,11 @@
 import type { Metadata } from 'next'
-import { VT323, Share_Tech_Mono, IM_Fell_English } from 'next/font/google'
+import { VT323, IM_Fell_English } from 'next/font/google'
 import './globals.css'
 
 const vt323 = VT323({
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-vt',
-})
-
-const shareTechMono = Share_Tech_Mono({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-mono',
+  variable: '--font-console',
 })
 
 const imFellEnglish = IM_Fell_English({
@@ -19,6 +13,7 @@ const imFellEnglish = IM_Fell_English({
   style: ['normal', 'italic'],
   subsets: ['latin'],
   variable: '--font-serif',
+  adjustFontFallback: false,
 })
 
 export const metadata: Metadata = {
@@ -28,10 +23,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${vt323.variable} ${shareTechMono.variable} ${imFellEnglish.variable}`}>
-        {children}
-      </body>
+    <html lang="en" className={`${vt323.variable} ${imFellEnglish.variable}`}>
+      <body>{children}</body>
     </html>
   )
 }

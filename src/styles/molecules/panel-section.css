@@ -1,21 +1,62 @@
 .ps {
-  border-bottom: 1.5px solid var(--black);
+  border-bottom: 2px solid var(--rule);
 }
+
+/* staggered “tile” edges */
+.panel-l .ps:nth-child(even),
+.panel-r .ps:nth-child(odd) {
+  border-bottom-style: dashed;
+  border-bottom-color: var(--rule-muted);
+}
+
 .ps-head {
-  font-family: var(--vt);
-  font-size: 12px;
-  padding: 2px 5px;
-  border-bottom: 1px solid var(--black);
+  font-family: var(--serif);
+  font-size: 11px;
+  font-weight: 400;
+  font-variant: all-small-caps;
+  letter-spacing: 0.14em;
+  padding: 4px 6px;
+  border-bottom: 2px solid var(--rule);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.ps-head.blk { background: var(--black); color: var(--lime); }
-.ps-head.grn { background: var(--dark-green); color: var(--lime); }
-.ps-head.pnk { background: var(--pink); color: var(--white); }
-.ps-head.lim { background: var(--lime); color: var(--black); }
-.ps-head.org { background: var(--orange); color: var(--white); }
+
+.ps-head.blk {
+  background: var(--ink);
+  color: var(--ochre-pale);
+  border-bottom-color: var(--ochre);
+}
+
+.ps-head.grn {
+  background: var(--sage-deep);
+  color: var(--paper-cool);
+  border-bottom-color: var(--sage);
+}
+
+.ps-head.pnk {
+  background: var(--terracotta);
+  color: var(--paper);
+  border-bottom-color: var(--ink);
+}
+
+.ps-head.lim {
+  background: var(--ochre);
+  color: var(--ink);
+  border-bottom-color: var(--umber);
+}
+
+.ps-head.org {
+  background: var(--orange);
+  color: var(--paper);
+  border-bottom-color: var(--ink);
+}
+
 .ps-head .badge {
-  font-size: 10px;
-  opacity: 0.7;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  font-variant: normal;
+  text-transform: uppercase;
+  opacity: 0.85;
 }

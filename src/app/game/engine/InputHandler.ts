@@ -3,9 +3,9 @@
 const keys: Record<string, boolean> = {};
 const justPressed: Record<string, boolean> = {};
 
-window.addEventListener("keydown", (e) => {
+function onKeyDown(e: KeyboardEvent) {
   if (e.code === "Space") {
-    e.preventDefault(); // 🚨 stops page scroll
+    e.preventDefault(); // stops page scroll
   }
 
   if (!keys[e.code]) {
@@ -13,16 +13,30 @@ window.addEventListener("keydown", (e) => {
   }
 
   keys[e.code] = true;
-});
+}
 
-window.addEventListener("keyup", (e) => {
-  keys[e.key] = false;
-});
+function onKeyUp(e: KeyboardEvent) {
+  keys[e.code] = false;
+}
 
-export const getInput = () => ({
-  keys,
-  justPressed,
-});
+let listenersAttached = false;
+
+function attachInputListeners() {
+  if (typeof window === "undefined" || listenersAttached) return;
+  listenersAttached = true;
+  window.addEventListener("keydown", onKeyDown);
+  window.addEventListener("keyup", onKeyUp);
+}
+
+attachInputListeners();
+
+export const getInput = () => {
+  attachInputListeners();
+  return {
+    keys,
+    justPressed,
+  };
+};
 
 export const clearJustPressed = () => {
   for (const key in justPressed) {

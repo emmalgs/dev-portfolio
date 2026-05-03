@@ -5,10 +5,32 @@
 }
 
 body {
-  background: var(--dark-green);
+  background-color: var(--page-bg);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% -20%, var(--page-bg-highlight), transparent 55%),
+    repeating-linear-gradient(
+      -12deg,
+      transparent,
+      transparent 14px,
+      rgba(0, 0, 0, 0.04) 14px,
+      rgba(0, 0, 0, 0.04) 15px
+    ),
+    repeating-linear-gradient(
+      98deg,
+      transparent,
+      transparent 17px,
+      rgba(255, 255, 255, 0.02) 17px,
+      rgba(255, 255, 255, 0.02) 18px
+    );
   display: flex;
   justify-content: center;
-  padding: 16px;
+  padding: 20px 14px 28px;
   font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--ink);
   min-height: 100vh;
+  /* sharper pixels for bitmap console fonts */
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }

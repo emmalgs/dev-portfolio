@@ -1,9 +1,12 @@
 .os-window {
-  width: 960px;
-  height: vh;
-  background: var(--white);
-  border: 3px solid var(--black);
-  box-shadow: 6px 6px 0 var(--lime), 12px 12px 0 var(--black);
+  width: min(980px, 100%);
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--rule);
+  box-shadow:
+    0 0 0 3px var(--ochre-pale),
+    0 0 0 5px var(--rule),
+    10px 12px 0 rgba(0, 0, 0, 0.18);
   margin-bottom: 32px;
 }
 

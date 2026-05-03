@@ -2,6 +2,7 @@
 
 export class GameLoop {
   private lastTime = 0;
+  private rafId: number | null = null;
 
   start(update: (delta: number) => void) {
     const loop = (time: number) => {
@@ -10,9 +11,16 @@ export class GameLoop {
 
       update(delta);
 
-      requestAnimationFrame(loop);
+      this.rafId = requestAnimationFrame(loop);
     };
 
-    requestAnimationFrame(loop);
+    this.rafId = requestAnimationFrame(loop);
+  }
+
+  stop() {
+    if (this.rafId !== null) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
   }
 }

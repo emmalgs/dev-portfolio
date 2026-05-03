@@ -1,13 +1,24 @@
 .proj-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* slightly irregular columns — reads as stitched tiles, works with any card count */
+  grid-template-columns: 1.12fr 0.94fr 1fr;
+  grid-auto-rows: minmax(96px, auto);
 }
+
 .proj-empty {
-  padding: 20px;
-  font-family: var(--vt);
+  padding: 22px;
+  font-family: var(--mono);
   font-size: 11px;
-  color: #999;
+  letter-spacing: 0.06em;
+  color: var(--umber);
   text-align: center;
-  border-top: 2px solid var(--black);
+  border-top: 2px solid var(--rule);
   grid-column: 1 / -1;
+  background: repeating-linear-gradient(
+    -8deg,
+    var(--paper-2),
+    var(--paper-2) 12px,
+    rgba(0, 0, 0, 0.04) 12px,
+    rgba(0, 0, 0, 0.04) 13px
+  );
 }

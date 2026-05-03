@@ -1,16 +1,33 @@
 .dr {
   display: flex;
   justify-content: space-between;
-  padding: 1px 5px;
-  border-bottom: 1px dotted #ccc;
-  font-family: var(--vt);
-  font-size: 11px;
+  padding: 2px 6px;
+  border-bottom: 1px dotted var(--rule-muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
 }
+
 .dr:last-child {
   border-bottom: none;
 }
-.dv { font-weight: bold; }
-.dv.g { color: var(--dark-green); }
-.dv.p { color: var(--pink); }
-.dv.o { color: var(--orange); }
-.dv.l { color: var(--lime-dark); }
+
+.dv {
+  font-weight: 600;
+}
+
+.dv.g {
+  color: var(--sage-deep);
+}
+
+.dv.p {
+  color: var(--terracotta);
+}
+
+.dv.o {
+  color: var(--orange);
+}
+
+.dv.l {
+  color: var(--lime-dark);
+}

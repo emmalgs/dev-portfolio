@@ -1,0 +1,31 @@
+.ticker {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ochre-pale),
+    var(--ochre-pale) 8px,
+    rgba(255, 255, 255, 0.35) 8px,
+    rgba(255, 255, 255, 0.35) 9px
+  );
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--rule);
+}
+
+.ticker-inner {
+  display: inline-block;
+  animation: tick 40s linear infinite;
+}
+
+@keyframes tick {
+  from {
+    transform: translateX(700px);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

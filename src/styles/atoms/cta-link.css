@@ -1,31 +1,38 @@
 .cta {
-  font-family: var(--vt);
-  font-size: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   background: var(--white);
-  border: 1.5px solid var(--black);
+  border: 2px solid var(--black);
   border-bottom: none;
-  padding: 2px 5px;
+  padding: 3px 6px;
   display: block;
   text-align: center;
   text-decoration: none;
   color: var(--black);
   cursor: pointer;
 }
+
 .cta:last-child {
-  border-bottom: 1.5px solid var(--black);
+  border-bottom: 2px solid var(--black);
 }
+
 .cta:hover {
-  background: var(--lime);
+  background: var(--tile-blue);
 }
+
 .cta.p {
-  color: var(--pink);
-  border-color: var(--pink);
+  color: var(--terracotta);
+  border-color: var(--terracotta);
   border-bottom: none;
 }
+
 .cta.p:last-child {
-  border-bottom: 1.5px solid var(--pink);
+  border-bottom: 2px solid var(--terracotta);
 }
+
 .cta.p:hover {
-  background: var(--pink);
-  color: var(--white);
+  background: var(--terracotta);
+  color: var(--paper);
 }

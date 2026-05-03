@@ -1,11 +1,21 @@
 .ann {
-  font-family: var(--vt);
+  font-family: var(--mono);
   font-size: 10px;
-  color: var(--black);
-  padding: 2px 5px;
-  line-height: 1.4;
-  background: var(--white);
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  padding: 3px 6px;
+  line-height: 1.45;
+  background: var(--paper);
 }
-.ann .red { color: var(--pink); }
-.ann .grn { color: var(--dark-green); }
-.ann .lim { color: var(--lime-dark); }
+
+.ann .red {
+  color: var(--terracotta);
+}
+
+.ann .grn {
+  color: var(--sage-deep);
+}
+
+.ann .lim {
+  color: var(--lime-dark);
+}

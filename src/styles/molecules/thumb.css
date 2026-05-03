@@ -1,13 +1,15 @@
 .thumb-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  padding: 1px;
-  background: var(--black);
+  grid-template-columns: 1fr 1.05fr;
+  gap: 2px;
+  padding: 2px;
+  background: var(--rule);
+  border: 1px dashed var(--rule-muted);
 }
+
 .thumb {
   aspect-ratio: 1;
-  background: var(--white);
+  background: var(--paper);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,28 +17,33 @@
   cursor: pointer;
   overflow: hidden;
 }
+
 .thumb:hover {
-  background: var(--lime-pale);
+  background: var(--tile-blue);
 }
+
 .thumb-label {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  font-family: var(--vt);
-  font-size: 9px;
-  background: rgba(0, 0, 0, 0.6);
-  color: var(--white);
-  padding: 1px 3px;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(20, 18, 15, 0.78);
+  color: var(--paper);
+  padding: 2px 4px;
 }
+
 .thumb-illo {
   aspect-ratio: 1;
   background: var(--off-white);
-  border: 1px dashed #aaa;
+  border: 1px dashed var(--rule-muted);
   font-family: var(--serif);
   font-style: italic;
   font-size: 9px;
-  color: #aaa;
+  color: var(--umber);
   text-align: center;
   padding: 4px;
   line-height: 1.3;

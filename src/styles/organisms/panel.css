@@ -1,19 +1,32 @@
 .os-body {
   display: grid;
-  grid-template-columns: 148px 1fr 148px;
+  /* uneven columns = patchwork strip widths */
+  grid-template-columns: minmax(124px, 0.88fr) minmax(300px, 2.35fr) minmax(128px, 0.92fr);
+  align-items: stretch;
 }
+
 .panel {
-  background: var(--panel);
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
+
 .panel-l {
-  border-right: 2px solid var(--black);
+  background: linear-gradient(165deg, var(--paper-2) 0%, #ddd2c4 48%, var(--paper) 100%);
+  border-right: 3px solid var(--rule);
+  box-shadow: inset -6px 0 0 -3px rgba(201, 160, 50, 0.25);
 }
+
 .panel-r {
-  border-left: 2px solid var(--black);
+  background: linear-gradient(195deg, var(--paper) 0%, #dcd4c8 55%, var(--paper-2) 100%);
+  border-left: 3px double var(--rule);
+  box-shadow: inset 6px 0 0 -3px rgba(47, 65, 52, 0.12);
 }
+
 .center-col {
   display: flex;
   flex-direction: column;
+  background: linear-gradient(180deg, var(--paper-cool) 0%, var(--tile-blue) 42%, var(--paper-cool) 100%);
+  border-left: 1px dashed var(--rule-muted);
+  border-right: 1px dashed var(--rule-muted);
 }

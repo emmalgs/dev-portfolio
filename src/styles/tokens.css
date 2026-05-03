@@ -1,19 +1,48 @@
 :root {
-  --white: #f5f5ef;
-  --off-white: #eaeae3;
-  --lime: #b8d400;
-  --lime-pale: #e2f07a;
-  --lime-dark: #7a9000;
-  --pink: #e8638c;
-  --pink-pale: #f7c4d4;
-  --dark-green: #1a3d2b;
-  --mid-green: #2d6644;
-  --orange: #e8621a;
-  --orange-pale: #f5c4a0;
-  --cobalt: #1a4a8a;
-  --black: #111111;
-  --panel: #e2e2da;
-  --mono: var(--font-mono), monospace;
-  --serif: var(--font-serif), serif;
-  --vt: var(--font-vt), monospace;
+  /* patchwork / garden-paper system (miniature + print + isotype cues) */
+  --page-bg: #3a4540;
+  --page-bg-highlight: #4d5a54;
+  --paper: #f3ece2;
+  --paper-2: #e6ddd0;
+  --paper-cool: #dee8e4;
+  --tile-blue: #c5ddd6;
+  --tile-blue-deep: #9ec4b8;
+  --ink: #14120f;
+  --rule: #0d0c0b;
+  --rule-muted: rgba(20, 18, 15, 0.35);
+
+  --ochre: #c9a032;
+  --ochre-pale: #e9d89a;
+  --terracotta: #b64a3c;
+  --terracotta-pale: #e8c9bf;
+  --sage: #4f6754;
+  --sage-deep: #2d4134;
+  --slate: #2a3d4f;
+  --umber: #5c4030;
+
+  --chart-lime: #9cb336;
+  --chart-lime-pale: #dde6a8;
+  --dust-rose: #b75d6e;
+  --dust-rose-pale: #efd8dd;
+
+  /* legacy names — mapped so existing components keep working */
+  --white: var(--paper);
+  --off-white: var(--paper-2);
+  --lime: var(--chart-lime);
+  --lime-pale: var(--chart-lime-pale);
+  --lime-dark: #5a6d24;
+  --pink: var(--dust-rose);
+  --pink-pale: var(--dust-rose-pale);
+  --dark-green: var(--sage-deep);
+  --mid-green: var(--sage);
+  --orange: #b8582e;
+  --orange-pale: #e5cdb8;
+  --cobalt: var(--slate);
+  --black: var(--ink);
+  --panel: #e0d8cb;
+
+  /* VT323 = bitmap DOS / terminal feel for all UI mono */
+  --mono: var(--font-console), "Courier New", Courier, monospace;
+  --serif: var(--font-serif), "Palatino Linotype", Palatino, Georgia, serif;
+  --vt: var(--font-console), "Courier New", Courier, monospace;
 }

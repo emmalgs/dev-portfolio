@@ -1,15 +1,17 @@
 .sbar {
-  background: var(--dark-green);
-  color: var(--lime);
-  font-family: var(--vt);
-  font-size: 12px;
-  padding: 3px 10px;
+  background: linear-gradient(90deg, var(--sage-deep) 0%, #243528 50%, var(--sage-deep) 100%);
+  color: var(--ochre-pale);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
   display: flex;
   justify-content: space-between;
-  border-top: 3px solid var(--black);
+  border-top: 3px solid var(--ochre);
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 6px;
 }
+
 .sbar .sbar-val {
-  color: var(--white);
+  color: var(--paper-cool);
 }

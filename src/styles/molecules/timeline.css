@@ -1,23 +1,29 @@
 .timeline {
   display: flex;
-  height: 20px;
+  height: 22px;
+  border: 1px solid var(--rule);
 }
+
 .tl-seg {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--vt);
-  font-size: 8px;
+  font-family: var(--mono);
+  font-size: 7px;
+  letter-spacing: 0.04em;
   border-right: 1px solid var(--black);
   cursor: default;
   text-align: center;
-  line-height: 1.1;
+  line-height: 1.15;
   overflow: hidden;
 }
+
 .tl-seg:last-child {
   border-right: none;
 }
+
 .tl-seg-sub {
-  font-size: 7px;
+  font-size: 6px;
+  opacity: 0.9;
 }
