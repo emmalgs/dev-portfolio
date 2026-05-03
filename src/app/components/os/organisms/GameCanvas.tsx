@@ -1,13 +1,24 @@
 // src/components/GameCanvas.tsx
 
-import React from "react";
+import React, { useEffect } from "react";
 import { GameState } from "../../../game/state/GameState";
+import { Button } from "../atoms/Button";
 
 type Props = {
   gameState: GameState;
+  onDismissPopup: () => void;
 };
 
-export const GameCanvas: React.FC<Props> = ({ gameState }) => {
+export const GameCanvas: React.FC<Props> = ({ gameState, onDismissPopup }) => {
+  useEffect(() => {
+    if (!gameState.popup) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onDismissPopup();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [gameState.popup, onDismissPopup]);
+
   return (
     <div tabIndex={0} className="game-canvas">
       {/* Player */}
@@ -62,6 +73,29 @@ export const GameCanvas: React.FC<Props> = ({ gameState }) => {
             🪢
           </div>
         </>
+      )}
+
+      {gameState.popup && (
+        <div
+          className="game-canvas__popup-backdrop"
+          role="presentation"
+          onClick={onDismissPopup}
+        >
+          <div
+            className="game-canvas__popup-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="game-catch-popup-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p id="game-catch-popup-title" className="game-canvas__popup-text">
+              {gameState.popup}
+            </p>
+            <Button type="button" onClick={onDismissPopup}>
+              GOT IT
+            </Button>
+          </div>
+        </div>
       )}
     </div>
   );

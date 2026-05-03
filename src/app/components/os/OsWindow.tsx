@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ModalProvider } from "../../contexts/ModalContext";
+import { GameProvider } from "../../contexts/GameContext";
 import { MenuBar } from "./organisms/MenuBar";
 import { Toolbar } from "./organisms/Toolbar";
 import { Ticker } from "./molecules/Ticker";
@@ -23,11 +24,13 @@ export function OsWindow() {
         <MenuBar />
         <Toolbar filter={filter} onFilterChange={setFilter} />
         <Ticker text={TICKER_TEXT} />
-        <div className="os-body">
-          <LeftPanel />
-          <CenterPanel filter={filter} />
-          <RightPanel />
-        </div>
+        <GameProvider>
+          <div className="os-body">
+            <LeftPanel />
+            <CenterPanel filter={filter} />
+            <RightPanel />
+          </div>
+        </GameProvider>
         <StatusBar />
       </div>
     </ModalProvider>

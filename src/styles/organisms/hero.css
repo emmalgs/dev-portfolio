@@ -43,11 +43,19 @@
   z-index: 1;
   padding: 14px 12px 18px;
   position: relative;
+  /* Avoid width: % on .game-canvas resolving against an intrinsic 0-width parent
+     (flex-centered block + only out-of-flow corner siblings → collapsed canvas). */
+  width: 100%;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 .hero-inner .game-canvas {
   margin: 0 auto;
-  width: min(100%, 600px);
+  width: 100%;
+  max-width: 600px;
   height: min(400px, 52vw);
   min-height: 260px;
   border: 3px solid var(--rule);
@@ -65,6 +73,39 @@
     inset 0 0 0 2px var(--ochre-pale),
     0 0 0 2px var(--terracotta),
     4px 5px 0 rgba(20, 18, 15, 0.15);
+}
+
+.hero-inner .game-canvas__popup-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(20, 18, 15, 0.28);
+  cursor: pointer;
+}
+
+.hero-inner .game-canvas__popup-card {
+  cursor: default;
+  max-width: 280px;
+  padding: 18px 20px 16px;
+  border: 3px solid var(--black);
+  background: var(--paper-cool);
+  box-shadow: 4px 5px 0 rgba(20, 18, 15, 0.2);
+  text-align: center;
+}
+
+.hero-inner .game-canvas__popup-text {
+  font-family: var(--serif);
+  font-size: 17px;
+  margin: 0 0 14px;
+  color: var(--black);
+}
+
+.hero-inner .game-canvas__popup-card .tb {
+  min-width: 100px;
 }
 
 .illo-box {

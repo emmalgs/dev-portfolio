@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { PanelSection } from "../molecules/PanelSection";
-import { Thumb, IlloThumb } from "../molecules/Thumb";
+import { Thumb, IlloThumb, CorralThumb } from "../molecules/Thumb";
 import { SkillBar } from "../molecules/SkillBar";
 import { DataRow } from "../molecules/DataRow";
 import { LegendRow } from "../molecules/LegendRow";
@@ -30,7 +30,7 @@ export function LeftPanel() {
     <div className="panel panel-l">
       <PanelSection title="// FIELD LOG" headColor="blk" badge="▸ OLIO 23–26">
         <div className="thumb-grid">
-          <IlloThumb />
+          <CorralThumb />
           <Thumb
             bg="var(--lime-pale)"
             label="APPTIO BI"
