@@ -10,6 +10,8 @@ export const updatePlayer = (
   input: Record<string, boolean>,
   bounds: PlayBounds
 ): GameState => {
+  if (state.gameOverScore) return state;
+
   let { x, y, direction } = state.player;
 
   let moving = false;

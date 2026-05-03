@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { PanelSection } from "../molecules/PanelSection";
-import { Thumb, IlloThumb } from "../molecules/Thumb";
+import { Thumb, IlloThumb, DragonSteakThumb } from "../molecules/Thumb";
 import { DataRow } from "../molecules/DataRow";
 import { Timeline } from "../molecules/Timeline";
 import { CtaLink } from "../atoms/CtaLink";
@@ -33,7 +33,7 @@ export function RightPanel() {
               <line x1="0" y1="42" x2="60" y2="42" stroke="#0a0a0a" strokeWidth="0.5" />
             </svg>
           </Thumb>
-          <IlloThumb />
+          <DragonSteakThumb />
           <IlloThumb />
           <Thumb
             bg="var(--accent-orange-pale)"

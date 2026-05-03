@@ -96,6 +96,54 @@
   min-width: 100px;
 }
 
+.hero-inner .game-canvas__score-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(10, 10, 10, 0.35);
+  cursor: pointer;
+}
+
+.hero-inner .game-canvas__score-card {
+  cursor: default;
+  max-width: 300px;
+  padding: 16px 18px 14px;
+  border: 1px solid var(--black);
+  background: var(--paper);
+  text-align: center;
+}
+
+.hero-inner .game-canvas__score-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  margin: 0 0 10px;
+  color: var(--black);
+}
+
+.hero-inner .game-canvas__score-line {
+  font-family: var(--serif);
+  font-size: 14px;
+  margin: 0 0 6px;
+  color: var(--black);
+}
+
+.hero-inner .game-canvas__score-verdict {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  margin: 10px 0 14px;
+  color: var(--umber);
+}
+
+.hero-inner .game-canvas__score-card .tb {
+  min-width: 120px;
+}
+
 .hero-inner .game-canvas--modal .game-canvas__touch {
   opacity: 0;
   pointer-events: none;

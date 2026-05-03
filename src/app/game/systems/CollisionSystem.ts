@@ -3,6 +3,7 @@
 import { GameState } from "../state/GameState";
 
 export const handleLassoCollision = (state: GameState): GameState => {
+  if (state.gameOverScore) return state;
   // ✅ Early return = TypeScript is happy
   if (!state.lasso) return state;
 

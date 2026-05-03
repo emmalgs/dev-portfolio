@@ -9,6 +9,8 @@ export const updateLasso = (
   _delta: number,
   bounds: PlayBounds
 ): GameState => {
+  if (state.gameOverScore) return state;
+
   let lasso = state.lasso;
 
   // 🎯 1. Spawn lasso on press

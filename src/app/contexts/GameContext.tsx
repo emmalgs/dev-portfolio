@@ -11,50 +11,26 @@ import React, {
 import { useGameLoop } from "../hooks/useGameLoop";
 import { clearJustPressed, getInput } from "../game/engine/InputHandler";
 import { defaultPlayBounds } from "../game/playspace";
-import { GameState } from "../game/state/GameState";
+import { buildInitialGameState } from "../game/state/buildInitialGameState";
 import { updatePlayer } from "../game/systems/PlayerSystem";
 import { updateLasso } from "../game/systems/LassoSystem";
 import { handleLassoCollision } from "../game/systems/CollisionSystem";
 import { updateDragon } from "../game/systems/DragonSystem";
 import { updateSheep } from "../game/systems/SheepSystem";
-
-const FLOCK_HOME = { x: 300, y: 175 };
-const FLOCK_OFFSETS: [number, number][] = [
-  [0, 0],
-  [24, -6],
-  [-20, 14],
-  [32, 16],
-  [-14, -20],
-  [10, 24],
-  [-30, 8],
-  [18, -22],
-];
-
-const initialState: GameState = {
-  player: { id: "p1", x: 100, y: 100, direction: "down" },
-  sheep: FLOCK_OFFSETS.map(([dx, dy], i) => ({
-    id: `s${i + 1}`,
-    x: FLOCK_HOME.x + dx,
-    y: FLOCK_HOME.y + dy,
-    caught: false,
-  })),
-  dragon: null,
-  dragonSpawnTimerMs: 6000,
-  corral: [],
-  popup: null,
-  lasso: null,
-};
+import { checkGameOver } from "../game/systems/GameOverSystem";
+import { GameState } from "../game/state/GameState";
 
 type GameContextValue = {
   gameState: GameState;
   dismissPopup: () => void;
+  restartGame: () => void;
   setPlayBounds: (width: number, height: number) => void;
 };
 
 const GameContext = createContext<GameContextValue | null>(null);
 
 export function GameProvider({ children }: { children: React.ReactNode }) {
-  const [gameState, setGameState] = useState(initialState);
+  const [gameState, setGameState] = useState(() => buildInitialGameState());
   const playBoundsRef = useRef(defaultPlayBounds());
 
   const setPlayBounds = useCallback((width: number, height: number) => {
@@ -64,8 +40,12 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
+  const restartGame = useCallback(() => {
+    setGameState(buildInitialGameState());
+  }, []);
+
   const dismissPopup = useCallback(() => {
-    setGameState((prev) => ({ ...prev, popup: null }));
+    setGameState((prev) => checkGameOver({ ...prev, popup: null }));
   }, []);
 
   const update = useCallback((delta: number) => {
@@ -77,12 +57,15 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     const bounds = playBoundsRef.current;
 
     setGameState((prev) => {
+      if (prev.gameOverScore) return prev;
+
       let next = { ...prev };
       next = updatePlayer(next, input.keys, bounds);
       next = updateLasso(next, input, delta, bounds);
       next = updateDragon(next, bounds, delta);
       next = updateSheep(next, bounds);
       next = handleLassoCollision(next);
+      next = checkGameOver(next);
       return next;
     });
 
@@ -92,8 +75,13 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
   useGameLoop(update);
 
   const value = useMemo(
-    () => ({ gameState, dismissPopup, setPlayBounds }),
-    [gameState, dismissPopup, setPlayBounds]
+    () => ({
+      gameState,
+      dismissPopup,
+      restartGame,
+      setPlayBounds,
+    }),
+    [gameState, dismissPopup, restartGame, setPlayBounds]
   );
 
   return (

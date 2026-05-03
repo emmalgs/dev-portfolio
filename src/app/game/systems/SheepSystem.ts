@@ -50,6 +50,8 @@ export const updateSheep = (
   state: GameState,
   bounds: PlayBounds
 ): GameState => {
+  if (state.gameOverScore) return state;
+
   const free = state.sheep.filter((s) => !s.caught);
   if (free.length === 0) {
     return state;

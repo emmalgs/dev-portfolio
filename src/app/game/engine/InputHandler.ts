@@ -80,9 +80,11 @@ function mergeKeyRecords(
   a: Record<string, boolean>,
   b: Record<string, boolean>
 ): Record<string, boolean> {
-  const codes = new Set([...Object.keys(a), ...Object.keys(b)]);
   const out: Record<string, boolean> = {};
-  for (const c of codes) {
+  for (const c of Object.keys(a)) {
+    out[c] = !!a[c] || !!b[c];
+  }
+  for (const c of Object.keys(b)) {
     out[c] = !!a[c] || !!b[c];
   }
   return out;

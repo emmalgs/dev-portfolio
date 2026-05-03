@@ -9,12 +9,14 @@ import { GameTouchControls } from "./GameTouchControls";
 type Props = {
   gameState: GameState;
   onDismissPopup: () => void;
+  onRestart: () => void;
   setPlayBounds: (width: number, height: number) => void;
 };
 
 export const GameCanvas: React.FC<Props> = ({
   gameState,
   onDismissPopup,
+  onRestart,
   setPlayBounds,
 }) => {
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -43,11 +45,23 @@ export const GameCanvas: React.FC<Props> = ({
     return () => window.removeEventListener("keydown", onKey);
   }, [gameState.popup, onDismissPopup]);
 
+  useEffect(() => {
+    if (!gameState.gameOverScore) return;
+    clearAllTouchKeys();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onRestart();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [gameState.gameOverScore, onRestart]);
+
+  const modalOpen = !!(gameState.popup || gameState.gameOverScore);
+
   return (
     <div
       ref={canvasRef}
       tabIndex={0}
-      className={`game-canvas${gameState.popup ? " game-canvas--modal" : ""}`}
+      className={`game-canvas${modalOpen ? " game-canvas--modal" : ""}`}
     >
       <div className="game-canvas__fence" aria-hidden />
       {/* Player */}
@@ -124,6 +138,44 @@ export const GameCanvas: React.FC<Props> = ({
             </p>
             <Button type="button" onClick={onDismissPopup}>
               GOT IT
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {gameState.gameOverScore && (
+        <div
+          className="game-canvas__score-backdrop"
+          role="presentation"
+          onClick={onRestart}
+        >
+          <div
+            className="game-canvas__score-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="game-score-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p id="game-score-title" className="game-canvas__score-title">
+              ROUND OVER
+            </p>
+            <p className="game-canvas__score-line">
+              You corralled:{" "}
+              <strong>{gameState.gameOverScore.saved}</strong> 🐑
+            </p>
+            <p className="game-canvas__score-line">
+              Dragon cooked:{" "}
+              <strong>{gameState.gameOverScore.eaten}</strong> 🥩
+            </p>
+            <p className="game-canvas__score-verdict">
+              {gameState.gameOverScore.saved > gameState.gameOverScore.eaten
+                ? "You out-herded the dragon."
+                : gameState.gameOverScore.eaten > gameState.gameOverScore.saved
+                  ? "Dragon wins this round."
+                  : "Dead heat."}
+            </p>
+            <Button type="button" onClick={onRestart}>
+              PLAY AGAIN
             </Button>
           </div>
         </div>

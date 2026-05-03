@@ -53,7 +53,7 @@ export function CorralThumb() {
   const corral = gameState.corral;
 
   return (
-    <div className="thumb-illo thumb-corral" aria-label="Corral">
+    <div className="thumb-illo thumb-corral" aria-label="Your corral">
       <div className="thumb-corral__sheep" aria-hidden>
         {corral.map((s) => (
           <span key={s.id} className="thumb-corral__emoji" title={s.id}>
@@ -62,6 +62,25 @@ export function CorralThumb() {
         ))}
       </div>
       <div className="thumb-corral__tag">CORRAL</div>
+    </div>
+  );
+}
+
+/** SPECIMENS cell: steaks for every sheep the dragon caught. */
+export function DragonSteakThumb() {
+  const { gameState } = useGame();
+  const steaks = gameState.dragonSteaks;
+
+  return (
+    <div className="thumb-illo thumb-dragon-pit" aria-label="Dragon corral">
+      <div className="thumb-dragon-pit__steaks" aria-hidden>
+        {steaks.map((t) => (
+          <span key={t.id} className="thumb-dragon-pit__emoji" title={t.id}>
+            🥩
+          </span>
+        ))}
+      </div>
+      <div className="thumb-dragon-pit__tag">DRAGON</div>
     </div>
   );
 }

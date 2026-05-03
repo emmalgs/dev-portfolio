@@ -43,7 +43,7 @@ export const updateDragon = (
   bounds: PlayBounds,
   deltaMs: number
 ): GameState => {
-  if (state.popup) {
+  if (state.popup || state.gameOverScore) {
     return state;
   }
 
@@ -103,13 +103,26 @@ export const updateDragon = (
 
   const dCenter = dragonBodyCenter(moved);
   let sheep = state.sheep;
+  let dragonSteaks = state.dragonSteaks;
+
   if (free.length > 0) {
-    sheep = state.sheep.filter((s) => {
-      if (s.caught) return true;
+    const nextSheep: Sheep[] = [];
+    const newSteaks: typeof dragonSteaks = [...dragonSteaks];
+    for (const s of state.sheep) {
+      if (s.caught) {
+        nextSheep.push(s);
+        continue;
+      }
       const sc = sheepCenter(s);
       const dist = Math.hypot(sc.x - dCenter.x, sc.y - dCenter.y);
-      return dist > BURN_RADIUS;
-    });
+      if (dist <= BURN_RADIUS) {
+        newSteaks.push({ id: s.id });
+      } else {
+        nextSheep.push(s);
+      }
+    }
+    sheep = nextSheep;
+    dragonSteaks = newSteaks;
   }
 
   const preyLeft = sheep.some((s) => !s.caught);
@@ -119,6 +132,7 @@ export const updateDragon = (
       dragon: null,
       dragonSpawnTimerMs: 0,
       sheep,
+      dragonSteaks,
     };
   }
 
@@ -126,5 +140,6 @@ export const updateDragon = (
     ...state,
     dragon: moved,
     sheep,
+    dragonSteaks,
   };
 };
