@@ -1,3 +1,4 @@
+import { buildBackpackPickups } from "./buildBackpackPickups";
 import { GameState } from "./GameState";
 
 const FLOCK_HOME = { x: 300, y: 175 };
@@ -20,11 +21,14 @@ export function buildInitialGameState(): GameState {
       x: FLOCK_HOME.x + dx,
       y: FLOCK_HOME.y + dy,
       caught: false,
+      projectIndex: i,
     })),
     dragon: null,
     dragonSpawnTimerMs: 6000,
     corral: [],
     dragonSteaks: [],
+    backpackPickups: buildBackpackPickups(),
+    collectedBackpackIds: [],
     popup: null,
     lasso: null,
     gameOverScore: null,

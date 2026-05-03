@@ -10,6 +10,10 @@ export const SHEEP_H = 28;
 export const DRAGON_W = 44;
 export const DRAGON_H = 40;
 
+/** Backpack token on the field (matches sidebar chip footprint). */
+export const PICKUP_W = 28;
+export const PICKUP_H = 24;
+
 export type PlayBounds = {
   width: number;
   height: number;
@@ -87,4 +91,26 @@ export function clampDragonPosition(
 
 export function dragonBodyCenter(d: { x: number; y: number }) {
   return { x: d.x + DRAGON_W * 0.42, y: d.y + DRAGON_H * 0.48 };
+}
+
+export function playerBodyCenter(p: { x: number; y: number }) {
+  return { x: p.x + PLAYER_W * 0.38, y: p.y + PLAYER_H * 0.55 };
+}
+
+export function pickupCenter(p: { x: number; y: number }) {
+  return { x: p.x + PICKUP_W / 2, y: p.y + PICKUP_H / 2 };
+}
+
+export function clampPickupPosition(
+  x: number,
+  y: number,
+  bounds: PlayBounds
+): { x: number; y: number } {
+  const min = PLAY_PADDING;
+  const maxX = Math.max(min, bounds.width - PLAY_PADDING - PICKUP_W);
+  const maxY = Math.max(min, bounds.height - PLAY_PADDING - PICKUP_H);
+  return {
+    x: clamp(x, min, maxX),
+    y: clamp(y, min, maxY),
+  };
 }

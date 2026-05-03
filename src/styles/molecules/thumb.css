@@ -124,3 +124,48 @@
   color: var(--paper);
   padding: 2px 4px;
 }
+
+.backpack-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 2px 0 4px;
+}
+
+.backpack-chip {
+  margin: 0;
+  padding: 0;
+  min-width: 40px;
+  min-height: 40px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--paper);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  box-shadow: 1px 2px 0 rgba(10, 10, 10, 0.08);
+}
+
+.backpack-chip:hover {
+  background: var(--tile-blue);
+}
+
+.backpack-chip:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+.backpack-chip--locked {
+  opacity: 0.4;
+  filter: grayscale(0.35);
+}
+
+.backpack-chip__letter {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--black);
+}

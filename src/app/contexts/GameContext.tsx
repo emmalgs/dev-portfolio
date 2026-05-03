@@ -17,6 +17,7 @@ import { updateLasso } from "../game/systems/LassoSystem";
 import { handleLassoCollision } from "../game/systems/CollisionSystem";
 import { updateDragon } from "../game/systems/DragonSystem";
 import { updateSheep } from "../game/systems/SheepSystem";
+import { collectBackpackPickups } from "../game/systems/BackpackPickupSystem";
 import { checkGameOver } from "../game/systems/GameOverSystem";
 import { GameState } from "../game/state/GameState";
 
@@ -61,6 +62,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
 
       let next = { ...prev };
       next = updatePlayer(next, input.keys, bounds);
+      next = collectBackpackPickups(next);
       next = updateLasso(next, input, delta, bounds);
       next = updateDragon(next, bounds, delta);
       next = updateSheep(next, bounds);

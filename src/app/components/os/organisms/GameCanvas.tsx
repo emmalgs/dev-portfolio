@@ -1,6 +1,7 @@
 // src/components/GameCanvas.tsx
 
 import React, { useEffect, useLayoutEffect, useRef } from "react";
+import { getBackpackItemById } from "../../../data/resumeBackpack";
 import { clearAllTouchKeys } from "../../../game/engine/InputHandler";
 import { GameState } from "../../../game/state/GameState";
 import { Button } from "../atoms/Button";
@@ -64,6 +65,22 @@ export const GameCanvas: React.FC<Props> = ({
       className={`game-canvas${modalOpen ? " game-canvas--modal" : ""}`}
     >
       <div className="game-canvas__fence" aria-hidden />
+
+      {gameState.backpackPickups.map((p) => {
+        const item = getBackpackItemById(p.itemId);
+        return (
+          <div
+            key={p.id}
+            className="game-canvas__pickup"
+            style={{ left: p.x, top: p.y }}
+            title={item?.modalTitle.replace(/^\/\/\s*/, "") ?? "Pickup"}
+            aria-hidden
+          >
+            <span className="game-canvas__pickup-letter">{item?.letter ?? "?"}</span>
+          </div>
+        );
+      })}
+
       {/* Player */}
       <div style={{ position: "absolute", left: gameState.player.x, top: gameState.player.y }}>
         🤠🐎
@@ -130,12 +147,20 @@ export const GameCanvas: React.FC<Props> = ({
             className="game-canvas__popup-card"
             role="dialog"
             aria-modal="true"
-            aria-labelledby="game-catch-popup-title"
+            aria-labelledby="game-catch-popup-hook"
             onClick={(e) => e.stopPropagation()}
           >
-            <p id="game-catch-popup-title" className="game-canvas__popup-text">
-              {gameState.popup}
+            <p id="game-catch-popup-hook" className="game-canvas__popup-hook">
+              {gameState.popup.hook}
             </p>
+            <p className="game-canvas__popup-project-name">
+              {gameState.popup.displayName}
+            </p>
+            <p className="game-canvas__popup-project-sub">{gameState.popup.subtitle}</p>
+            <div
+              className="game-canvas__popup-detail"
+              dangerouslySetInnerHTML={{ __html: gameState.popup.detailHtml }}
+            />
             <Button type="button" onClick={onDismissPopup}>
               GOT IT
             </Button>

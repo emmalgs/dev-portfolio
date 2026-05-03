@@ -1,13 +1,12 @@
 // src/game/systems/SheepSystem.ts
 
 import {
-  PLAYER_H,
-  PLAYER_W,
   PlayBounds,
   SHEEP_H,
   SHEEP_W,
   clampSheepPosition,
   dragonBodyCenter,
+  playerBodyCenter,
 } from "../playspace";
 import { GameState } from "../state/GameState";
 
@@ -34,10 +33,6 @@ const MAX_STEP = 1.45;
 
 function sheepCenter(s: { x: number; y: number }) {
   return { x: s.x + SHEEP_W / 2, y: s.y + SHEEP_H / 2 };
-}
-
-function playerBodyCenter(p: { x: number; y: number }) {
-  return { x: p.x + PLAYER_W * 0.38, y: p.y + PLAYER_H * 0.55 };
 }
 
 function clampVec(mx: number, my: number, cap: number) {

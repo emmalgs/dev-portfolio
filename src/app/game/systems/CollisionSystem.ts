@@ -1,6 +1,7 @@
 // src/game/systems/CollisionSystem.ts
 
-import { GameState } from "../state/GameState";
+import { getSheepProject } from "../../data/gameSheepProjects";
+import { CatchPopup, GameState } from "../state/GameState";
 
 export const handleLassoCollision = (state: GameState): GameState => {
   if (state.gameOverScore) return state;
@@ -29,11 +30,20 @@ export const handleLassoCollision = (state: GameState): GameState => {
     return state;
   }
 
+  const lead = caughtSheep[0];
+  const meta = getSheepProject(lead.projectIndex);
+  const popup: CatchPopup = {
+    hook: "You caught me!",
+    displayName: meta.displayName,
+    subtitle: meta.modalTitle,
+    detailHtml: meta.modalBody,
+  };
+
   return {
     ...state,
     sheep: remainingSheep,
     corral: [...state.corral, ...caughtSheep],
     lasso: null, // ✅ safe here
-    popup: "You caught me!",
+    popup,
   };
 };

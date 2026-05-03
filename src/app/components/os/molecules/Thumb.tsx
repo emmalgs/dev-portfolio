@@ -1,6 +1,7 @@
 import React from "react";
 import { useModal } from "../../../contexts/ModalContext";
 import { useGame } from "../../../contexts/GameContext";
+import { getSheepProject } from "../../../data/gameSheepProjects";
 
 interface ThumbProps {
   modalTitle?: string;
@@ -54,12 +55,16 @@ export function CorralThumb() {
 
   return (
     <div className="thumb-illo thumb-corral" aria-label="Your corral">
-      <div className="thumb-corral__sheep" aria-hidden>
-        {corral.map((s) => (
-          <span key={s.id} className="thumb-corral__emoji" title={s.id}>
-            🐑
-          </span>
-        ))}
+        <div className="thumb-corral__sheep" aria-hidden>
+          {corral.map((s) => (
+            <span
+              key={s.id}
+              className="thumb-corral__emoji"
+              title={getSheepProject(s.projectIndex).displayName}
+            >
+              🐑
+            </span>
+          ))}
       </div>
       <div className="thumb-corral__tag">CORRAL</div>
     </div>

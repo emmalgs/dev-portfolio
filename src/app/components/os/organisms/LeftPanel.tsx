@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { PanelSection } from "../molecules/PanelSection";
+import { BackpackStrip } from "../molecules/BackpackStrip";
 import { CorralThumb } from "../molecules/Thumb";
 import { SkillBar } from "../molecules/SkillBar";
 import { DataRow } from "../molecules/DataRow";
@@ -30,6 +31,10 @@ export function LeftPanel() {
     <div className="panel panel-l">
       <PanelSection title="// FIELD LOG" headColor="blk" badge="▸ OLIO 23–26">
         <CorralThumb />
+      </PanelSection>
+
+      <PanelSection title="// BACKPACK" headColor="blk" badge="▸ STACK">
+        <BackpackStrip />
       </PanelSection>
 
       <PanelSection title="// STACK LOG" headColor="grn">
