@@ -1,0 +1,329 @@
+/* Portfolio v3 shell — graph-paper canvas + right dock (architecture phases 1–6). */
+
+.portfolio-root {
+  display: flex;
+  flex-direction: column;
+  width: min(1120px, 100%);
+  min-height: calc(100vh - 40px);
+  margin: 0 auto;
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid var(--black);
+  box-shadow:
+    6px 6px 0 var(--lime),
+    12px 12px 0 rgba(10, 10, 10, 0.82);
+}
+
+.portfolio-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.portfolio-canvas {
+  flex: 1;
+  position: relative;
+  min-height: 580px;
+  overflow: auto;
+  background-color: var(--paper-cool);
+  background-image:
+    linear-gradient(0deg, rgba(10, 10, 10, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.portfolio-right-nav {
+  width: 148px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--black);
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.portfolio-right-nav__label {
+  padding: 6px 8px;
+  background: var(--black);
+  color: var(--lime-pale);
+  letter-spacing: 0.12em;
+}
+
+.portfolio-right-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  text-align: left;
+  padding: 6px 8px;
+  border: none;
+  border-bottom: 1px solid var(--rule-muted);
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.portfolio-right-nav__btn:hover {
+  background: var(--accent-yellow-pale);
+}
+
+.portfolio-right-nav__dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border: 1px solid var(--black);
+}
+
+.portfolio-ticker-wrap {
+  border-top: 2px solid var(--black);
+}
+
+.window-body-prose {
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.55;
+  padding: 8px 10px;
+  max-height: min(340px, 46vh);
+  overflow: auto;
+  color: var(--ink);
+}
+
+.window-body-prose p {
+  margin: 0 0 8px;
+}
+
+.window-body-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.window-body-prose h3 {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.window-body-prose a {
+  color: var(--accent-cobalt);
+}
+
+.window-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 8px 4px;
+  border-bottom: 1px solid var(--rule-muted);
+}
+
+.window-filter-row .tb {
+  font-size: 9px;
+  padding: 2px 6px;
+}
+
+.proj-mini {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--rule-muted);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  background: transparent;
+  font-family: inherit;
+  color: inherit;
+}
+
+.proj-mini:hover {
+  background: var(--accent-yellow-pale);
+}
+
+.proj-mini__title {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+.proj-mini__desc {
+  font-size: 9px;
+  line-height: 1.4;
+  opacity: 0.88;
+}
+
+/* ── ≤1024px: vertical stack, no absolute tiles (drag already disabled in hook) ── */
+@media (max-width: 1024px) {
+  .portfolio-canvas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 10px 14px;
+    min-height: 0;
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .portfolio-window {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    z-index: auto !important;
+    flex-shrink: 0;
+  }
+
+  .portfolio-window[data-window="projects"] {
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+
+  .portfolio-window-bar {
+    cursor: default !important;
+  }
+
+  .window-body-prose {
+    max-height: none;
+  }
+}
+
+/* ── 768–1024px: compact icon dock ───────────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .portfolio-right-nav {
+    width: 44px;
+  }
+
+  .portfolio-right-nav__label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    padding: 10px 6px;
+    text-align: center;
+  }
+
+  .portfolio-right-nav__btn {
+    justify-content: center;
+    padding: 10px 6px;
+    gap: 0;
+  }
+
+  .portfolio-right-nav__text {
+    display: none;
+  }
+
+  .portfolio-right-nav__dot {
+    margin: 0 auto;
+  }
+}
+
+/* ── <768px: single column, dock hidden, CLOSED chips row ───────────────── */
+@media (max-width: 767px) {
+  .portfolio-root {
+    width: 100%;
+    min-height: 100%;
+    border-width: 2px;
+    box-shadow:
+      4px 4px 0 var(--lime),
+      8px 8px 0 rgba(10, 10, 10, 0.78);
+  }
+
+  .portfolio-body {
+    flex-direction: column;
+  }
+
+  .portfolio-right-nav {
+    display: none;
+  }
+
+  .menu-bar {
+    flex-wrap: wrap;
+    row-gap: 6px;
+    padding-bottom: 8px;
+  }
+
+  .menu-bar .menu-right {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+    padding-top: 6px;
+    border-top: 1px solid var(--rule-muted);
+  }
+
+  .mobile-closed-dock {
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+    border-top: 2px solid var(--black);
+    background: var(--panel);
+    font-family: var(--mono);
+    font-size: 10px;
+    max-width: 100%;
+  }
+
+  .mobile-closed-dock__label {
+    flex-shrink: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-orientation: mixed;
+    padding: 8px 6px;
+    background: var(--black);
+    color: var(--lime-pale);
+    letter-spacing: 0.12em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-closed-dock__scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 8px 10px;
+    align-items: center;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .mobile-closed-dock__chip {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .mobile-closed-dock__chip:active {
+    background: var(--accent-yellow-pale);
+  }
+
+  .mobile-closed-dock__dot {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--black);
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-closed-dock {
+    display: none;
+  }
+}

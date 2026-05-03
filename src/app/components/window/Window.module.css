@@ -1,0 +1,24 @@
+.window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  max-width: min(360px, calc(100vw - 48px));
+  background: var(--paper);
+  border: 2px solid var(--black);
+  box-shadow:
+    4px 4px 0 var(--lime),
+    7px 7px 0 rgba(10, 10, 10, 0.65);
+}
+
+.window[data-window="projects"] {
+  min-width: 280px;
+  max-width: min(400px, calc(100vw - 48px));
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  border-top: 1px solid var(--rule);
+  background: var(--paper-cool);
+}

@@ -10,29 +10,32 @@ import { CenterPanel } from "./organisms/CenterPanel";
 import { RightPanel } from "./organisms/RightPanel";
 import { StatusBar } from "./organisms/StatusBar";
 import { Modal } from "./organisms/Modal";
+import { GameModal } from "./organisms/GameModal";
 
 const TICKER_TEXT =
   "◈ TypeScript · React · Next.js · Node.js · PostgreSQL · LLM APIs · Vector DB · Twilio · AWS · Swift · C#/.NET · GitHub Actions · Docker · Playwright · Jest · Vercel · Neon ◈ Hood River OR · Open to Remote ◈ 3+ yrs production · Full-stack · Artist ◈";
 
 export function OsWindow() {
   const [filter, setFilter] = useState("ALL");
+  const [pastureOpen, setPastureOpen] = useState(false);
 
   return (
-    <ModalProvider>
-      <Modal />
-      <div className="os-window">
-        <MenuBar />
-        <Toolbar filter={filter} onFilterChange={setFilter} />
-        <Ticker text={TICKER_TEXT} />
-        <GameProvider>
+    <GameProvider>
+      <ModalProvider>
+        <Modal />
+        <GameModal open={pastureOpen} onClose={() => setPastureOpen(false)} />
+        <div className="os-window">
+          <MenuBar />
+          <Toolbar filter={filter} onFilterChange={setFilter} />
+          <Ticker text={TICKER_TEXT} />
           <div className="os-body">
             <LeftPanel />
-            <CenterPanel filter={filter} />
+            <CenterPanel filter={filter} onOpenPasture={() => setPastureOpen(true)} />
             <RightPanel />
           </div>
-        </GameProvider>
-        <StatusBar />
-      </div>
-    </ModalProvider>
+          <StatusBar />
+        </div>
+      </ModalProvider>
+    </GameProvider>
   );
 }

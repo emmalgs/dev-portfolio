@@ -30,6 +30,9 @@ type GameContextValue = {
 
 const GameContext = createContext<GameContextValue | null>(null);
 
+/** Tick fn for {@link GameLoopGate} only — keeps the loop out of unrelated UI trees. */
+const GameTickContext = createContext<((delta: number) => void) | null>(null);
+
 export function GameProvider({ children }: { children: React.ReactNode }) {
   const [gameState, setGameState] = useState(() => buildInitialGameState());
   const playBoundsRef = useRef(defaultPlayBounds());
@@ -49,7 +52,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     setGameState((prev) => checkGameOver({ ...prev, popup: null }));
   }, []);
 
-  const update = useCallback((delta: number) => {
+  const tickFrame = useCallback((_delta: number) => {
     const raw = getInput();
     const input = {
       keys: { ...raw.keys },
@@ -63,8 +66,8 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       let next = { ...prev };
       next = updatePlayer(next, input.keys, bounds);
       next = collectBackpackPickups(next);
-      next = updateLasso(next, input, delta, bounds);
-      next = updateDragon(next, bounds, delta);
+      next = updateLasso(next, input, _delta, bounds);
+      next = updateDragon(next, bounds, _delta);
       next = updateSheep(next, bounds);
       next = handleLassoCollision(next);
       next = checkGameOver(next);
@@ -73,8 +76,6 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
 
     clearJustPressed();
   }, []);
-
-  useGameLoop(update);
 
   const value = useMemo(
     () => ({
@@ -87,8 +88,20 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <GameContext.Provider value={value}>{children}</GameContext.Provider>
+    <GameContext.Provider value={value}>
+      <GameTickContext.Provider value={tickFrame}>{children}</GameTickContext.Provider>
+    </GameContext.Provider>
   );
+}
+
+/** Mount only while the pasture modal is open so input/simulation stay isolated. */
+export function GameLoopGate() {
+  const tickFrame = useContext(GameTickContext);
+  if (!tickFrame) {
+    throw new Error("GameLoopGate must be used inside GameProvider");
+  }
+  useGameLoop(tickFrame);
+  return null;
 }
 
 export function useGame(): GameContextValue {

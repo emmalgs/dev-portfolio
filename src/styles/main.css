@@ -2,8 +2,10 @@
   width: min(980px, 100%);
   background: var(--paper);
   color: var(--ink);
-  border: 1px solid var(--rule);
-  box-shadow: 3px 3px 0 rgba(10, 10, 10, 0.08);
+  border: 3px solid var(--black);
+  box-shadow:
+    6px 6px 0 var(--lime),
+    12px 12px 0 rgba(10, 10, 10, 0.82);
   margin-bottom: 28px;
 }
 

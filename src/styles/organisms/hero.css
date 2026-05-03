@@ -2,7 +2,7 @@
   position: relative;
   background: var(--paper-cool);
   border-bottom: 1px solid var(--rule);
-  min-height: 260px;
+  min-height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,20 @@
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+}
+
+.hero-pasture-invite {
+  position: relative;
+  padding: 6px 4px 8px;
+}
+
+.hero-pasture-invite .illo-box {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.hero-pasture-invite__cta {
+  min-width: 180px;
 }
 
 .hero-inner .game-canvas {

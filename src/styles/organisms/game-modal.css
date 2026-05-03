@@ -1,0 +1,66 @@
+.game-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(10, 10, 10, 0.58);
+}
+
+.game-modal-overlay.open {
+  display: flex;
+}
+
+.game-modal-shell {
+  width: min(760px, 100%);
+  max-height: min(92vh, 900px);
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 3px solid var(--black);
+  box-shadow:
+    6px 6px 0 var(--lime),
+    12px 12px 0 rgba(10, 10, 10, 0.85);
+}
+
+.game-modal-bar {
+  flex-shrink: 0;
+  background: var(--black);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--lime);
+}
+
+.game-modal-bar__title {
+  color: var(--lime-pale);
+}
+
+.game-modal-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 14px 14px 16px;
+  background: var(--paper-cool);
+}
+
+.game-modal__hero-inner {
+  max-width: 640px;
+}
+
+.game-modal-hint {
+  margin: 12px 0 0;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--umber);
+  line-height: 1.5;
+}

@@ -1,5 +1,5 @@
-import { OsWindow } from './components/os/OsWindow'
+import { Portfolio } from "./components/portfolio/Portfolio";
 
 export default function Home() {
-  return <OsWindow />
+  return <Portfolio />;
 }

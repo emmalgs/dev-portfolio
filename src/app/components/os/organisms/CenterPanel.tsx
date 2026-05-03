@@ -2,13 +2,14 @@
 import React from "react";
 import { ProjectCard } from "../molecules/ProjectCard";
 import { osProjects } from "../../../data/projectsData";
-import { GamePage } from "@/app/pages/GamePage";
+import { HeroPastureInvite } from "./HeroPastureInvite";
 
 interface CenterPanelProps {
   filter: string;
+  onOpenPasture: () => void;
 }
 
-export function CenterPanel({ filter }: CenterPanelProps) {
+export function CenterPanel({ filter, onOpenPasture }: CenterPanelProps) {
   const visible = filter === "ALL"
     ? osProjects
     : osProjects.filter((p) => p.categories.includes(filter));
@@ -17,11 +18,7 @@ export function CenterPanel({ filter }: CenterPanelProps) {
     <div className="center-col">
       <div className="hero">
         <div className="hero-inner">
-            <div className="illo-corner tl" />
-            <div className="illo-corner tr" />
-            <div className="illo-corner bl" />
-            <div className="illo-corner br" />
-            <GamePage />
+          <HeroPastureInvite onOpenPasture={onOpenPasture} />
         </div>
       </div>
 

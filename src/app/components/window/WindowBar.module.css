@@ -1,0 +1,59 @@
+.bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  cursor: grab;
+  user-select: none;
+}
+
+.barAccent {
+  composes: bar;
+  background: var(--accent-orange);
+  color: var(--paper);
+  border-bottom: 2px solid var(--black);
+}
+
+.barPlain {
+  composes: bar;
+  background: var(--black);
+  color: var(--lime-pale);
+  border-bottom: 2px solid var(--lime);
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.close {
+  flex-shrink: 0;
+  cursor: pointer;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 1px 6px;
+  line-height: 1.2;
+}
+
+.close:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.barAccent .close {
+  border-color: rgba(255, 252, 245, 0.6);
+}
+
+.barAccent .close:hover {
+  background: var(--paper);
+  color: var(--accent-orange);
+}

@@ -30,6 +30,10 @@
 @import '../styles/organisms/project-grid.css';
 @import '../styles/organisms/status-bar.css';
 @import '../styles/organisms/modal.css';
+@import '../styles/organisms/game-modal.css';
+
+/* portfolio v3 shell */
+@import '../styles/portfolio-layout.css';
 
 /* global layout */
 @import '../styles/main.css';
