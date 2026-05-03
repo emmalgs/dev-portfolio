@@ -8,22 +8,22 @@ import { DataRow } from "../molecules/DataRow";
 import { LegendRow } from "../molecules/LegendRow";
 
 const SKILLS = [
-  { name: "TYPESCRIPT", pct: 92, color: "var(--accent-yellow)" },
-  { name: "REACT", pct: 90, color: "var(--accent-yellow)" },
-  { name: "NEXT.JS", pct: 80, color: "var(--accent-cobalt)" },
-  { name: "NODE.JS", pct: 82, color: "var(--accent-cobalt)" },
-  { name: "POSTGRESQL", pct: 78, color: "var(--accent-cobalt)" },
-  { name: "LLM APIs", pct: 75, color: "var(--accent-orange)" },
-  { name: "SWIFT / iOS", pct: 54, color: "var(--accent-orange)" },
-  { name: "C#/.NET", pct: 60, color: "var(--accent-yellow)" },
+  { name: "TYPESCRIPT", pct: 92, color: "var(--lime)" },
+  { name: "REACT", pct: 90, color: "var(--lime)" },
+  { name: "NEXT.JS", pct: 80, color: "var(--lime)" },
+  { name: "NODE.JS", pct: 82, color: "var(--dark-green)" },
+  { name: "POSTGRESQL", pct: 78, color: "var(--dark-green)" },
+  { name: "LLM APIs", pct: 75, color: "var(--pink)" },
+  { name: "SWIFT / iOS", pct: 54, color: "var(--orange)" },
+  { name: "C#/.NET", pct: 60, color: "var(--orange)" },
 ];
 
 const LEGEND_ITEMS = [
-  { color: "var(--accent-yellow)", label: "FRONT" },
-  { color: "var(--accent-cobalt)", label: "BACK" },
-  { color: "var(--accent-orange)", label: "AI" },
-  { color: "var(--accent-orange)", label: "MOBILE" },
-  { color: "var(--accent-cobalt)", label: "INFRA" },
+  { color: "var(--lime)", label: "FRONT" },
+  { color: "var(--dark-green)", label: "BACK" },
+  { color: "var(--pink)", label: "AI" },
+  { color: "var(--orange)", label: "MOBILE" },
+  { color: "var(--cobalt)", label: "INFRA" },
 ];
 
 export function LeftPanel() {

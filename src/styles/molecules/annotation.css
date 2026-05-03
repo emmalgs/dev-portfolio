@@ -1,21 +1,20 @@
 .ann {
-  font-family: var(--mono);
+  font-family: var(--vt);
   font-size: 10px;
-  letter-spacing: 0.03em;
-  color: var(--ink);
-  padding: 3px 6px;
-  line-height: 1.45;
-  background: var(--paper);
+  color: var(--black);
+  padding: 2px 5px;
+  line-height: 1.4;
+  background: var(--white);
 }
 
 .ann .red {
-  color: var(--terracotta);
+  color: var(--pink);
 }
 
 .ann .grn {
-  color: var(--accent-cobalt);
+  color: var(--dark-green);
 }
 
 .ann .lim {
-  color: #9a7200;
+  color: var(--lime-dark);
 }

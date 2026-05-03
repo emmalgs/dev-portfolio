@@ -34,6 +34,7 @@
 
 /* portfolio v3 shell */
 @import '../styles/portfolio-layout.css';
+@import '../styles/game-window.css';
 
 /* global layout */
 @import '../styles/main.css';

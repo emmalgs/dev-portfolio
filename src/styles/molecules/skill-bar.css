@@ -1,9 +1,9 @@
 .sk {
-  padding: 3px 6px;
-  border-bottom: 1px dotted var(--rule-muted);
+  padding: 2px 5px;
+  border-bottom: 1px dotted #ccc;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .sk:last-child {
@@ -11,18 +11,15 @@
 }
 
 .sk-name {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--umber);
+  font-family: var(--vt);
+  font-size: 10px;
+  color: var(--text-soft);
 }
 
 .sk-bar {
-  height: 6px;
+  height: 5px;
   background: var(--off-white);
-  border: 1px solid var(--rule-muted);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid #ccc;
 }
 
 .sk-fill {

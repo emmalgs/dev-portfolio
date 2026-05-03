@@ -4,11 +4,11 @@
   flex-direction: column;
   min-width: 200px;
   max-width: min(360px, calc(100vw - 48px));
-  background: var(--paper);
-  border: 2px solid var(--black);
+  background: var(--white);
+  border: 3px solid var(--black);
   box-shadow:
-    4px 4px 0 var(--lime),
-    7px 7px 0 rgba(10, 10, 10, 0.65);
+    6px 6px 0 var(--lime),
+    12px 12px 0 var(--black);
 }
 
 .window[data-window="projects"] {
@@ -19,6 +19,6 @@
 .body {
   flex: 1;
   min-height: 0;
-  border-top: 1px solid var(--rule);
-  background: var(--paper-cool);
+  border-top: none;
+  background: var(--white);
 }

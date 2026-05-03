@@ -6,16 +6,16 @@ export function Footer() {
   return (
     <footer className="sbar">
       <span>
-        PROJ: <span className="sbar-val">6 loaded</span>
+        PROJ: <span>6 loaded</span>
       </span>
       <span>
-        STACK: <span className="sbar-val">TS · REACT · NODE · POSTGRES · LLM</span>
+        STACK: <span>TS · REACT · NODE · POSTGRES · LLM</span>
       </span>
       <span>
-        MODE: <span className="sbar-val">AVAILABLE</span>
+        MODE: <span>AVAILABLE</span>
       </span>
       <span>
-        ◈ <span className="sbar-val">emmagerig.com</span>
+        ◈ <span>emmalgs.com</span>
       </span>
     </footer>
   );

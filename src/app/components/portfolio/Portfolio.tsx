@@ -5,6 +5,7 @@ import { GameProvider } from "@/app/contexts/GameContext";
 import { ModalProvider } from "@/app/contexts/ModalContext";
 import { PastureGateProvider } from "@/app/contexts/PastureGateContext";
 import { WindowProvider } from "@/state/windowContext";
+import { Toolbar } from "@/app/components/os/organisms/Toolbar";
 import { Ticker } from "@/app/components/os/molecules/Ticker";
 import { Modal } from "@/app/components/os/organisms/Modal";
 import { GameModal } from "@/app/components/os/organisms/GameModal";
@@ -19,6 +20,7 @@ const TICKER_TEXT =
 
 export function Portfolio() {
   const [pastureOpen, setPastureOpen] = useState(false);
+  const [projectFilter, setProjectFilter] = useState("ALL");
 
   return (
     <GameProvider>
@@ -29,8 +31,9 @@ export function Portfolio() {
             <GameModal open={pastureOpen} onClose={() => setPastureOpen(false)} />
             <div className="portfolio-root">
               <Header />
+              <Toolbar filter={projectFilter} onFilterChange={setProjectFilter} />
               <div className="portfolio-body">
-                <Canvas />
+                <Canvas projectFilter={projectFilter} />
                 <RightNav />
               </div>
               <MobileClosedDock />

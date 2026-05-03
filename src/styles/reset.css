@@ -1,23 +1,16 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: var(--page-bg);
-  background-image:
-    radial-gradient(ellipse 100% 70% at 50% 0%, var(--page-bg-highlight), transparent 50%),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 24px,
-      rgba(10, 10, 10, 0.02) 24px,
-      rgba(10, 10, 10, 0.02) 25px
-    );
+  background: var(--dark-green);
   display: flex;
   justify-content: center;
-  padding: 16px 12px 24px;
+  padding: 16px;
   font-family: var(--mono);
   font-size: 13px;
   line-height: 1.4;

@@ -1,11 +1,10 @@
 .dr {
   display: flex;
   justify-content: space-between;
-  padding: 2px 6px;
-  border-bottom: 1px dotted var(--rule-muted);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.04em;
+  padding: 1px 5px;
+  border-bottom: 1px dotted #ccc;
+  font-family: var(--vt);
+  font-size: 11px;
 }
 
 .dr:last-child {
@@ -13,21 +12,21 @@
 }
 
 .dv {
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .dv.g {
-  color: var(--accent-cobalt);
+  color: var(--dark-green);
 }
 
 .dv.p {
-  color: var(--accent-orange);
+  color: var(--pink);
 }
 
 .dv.o {
-  color: var(--accent-orange);
+  color: var(--orange);
 }
 
 .dv.l {
-  color: #9a7200;
+  color: var(--lime-dark);
 }

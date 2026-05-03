@@ -1,18 +1,16 @@
 .sbar {
-  background: linear-gradient(90deg, #152a6e 0%, var(--accent-cobalt) 50%, #152a6e 100%);
-  color: var(--paper);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.04em;
-  padding: 4px 10px;
+  background: var(--dark-green);
+  color: var(--lime);
+  font-family: var(--vt);
+  font-size: 12px;
+  padding: 3px 10px;
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid var(--rule);
-  box-shadow: inset 0 2px 0 var(--accent-orange);
+  border-top: 3px solid var(--black);
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 4px;
 }
 
-.sbar .sbar-val {
-  color: var(--accent-yellow-pale);
+.sbar span {
+  color: var(--white);
 }

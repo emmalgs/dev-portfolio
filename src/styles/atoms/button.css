@@ -1,28 +1,26 @@
 .tb {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  padding: 2px 7px;
+  font-family: var(--vt);
+  font-size: 13px;
+  background: var(--white);
+  border: 1.5px solid var(--black);
+  padding: 1px 7px;
   cursor: pointer;
   text-decoration: none;
-  color: var(--ink);
+  color: var(--black);
   display: inline-block;
 }
 
 .tb:hover,
 .tb.on {
-  background: var(--accent-cobalt-pale);
+  background: var(--lime);
 }
 
 .tb.red {
-  color: var(--accent-orange);
-  border-color: var(--accent-orange);
+  color: var(--pink);
+  border-color: var(--pink);
 }
 
 .tb.red:hover {
-  background: var(--accent-orange);
-  color: var(--paper);
+  background: var(--pink);
+  color: var(--white);
 }

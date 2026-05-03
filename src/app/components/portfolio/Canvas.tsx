@@ -14,12 +14,16 @@ import { ContactWindow } from "@/app/components/windows/ContactWindow";
 import { ArtWindow } from "@/app/components/windows/ArtWindow";
 import { GameWindow } from "@/app/components/windows/GameWindow";
 
-function WindowPane({ id }: { id: WindowId }) {
+type CanvasProps = {
+  projectFilter: string;
+};
+
+function WindowPane({ id, projectFilter }: { id: WindowId; projectFilter: string }) {
   switch (id) {
     case "hello":
       return <HelloWindow />;
     case "projects":
-      return <ProjectsWindow />;
+      return <ProjectsWindow filter={projectFilter} />;
     case "stack":
       return <StackWindow />;
     case "status":
@@ -36,14 +40,14 @@ function WindowPane({ id }: { id: WindowId }) {
 }
 
 function sortOpenForDisplay<T extends { id: WindowId }>(open: ReadonlyArray<T>): T[] {
-  const rank = (id: WindowId) => {
-    const i = WINDOW_DISPLAY_ORDER.indexOf(id);
+  const rank = (wid: WindowId) => {
+    const i = WINDOW_DISPLAY_ORDER.indexOf(wid);
     return i === -1 ? WINDOW_DISPLAY_ORDER.length : i;
   };
   return [...open].sort((a, b) => rank(a.id) - rank(b.id));
 }
 
-export function Canvas() {
+export function Canvas({ projectFilter }: CanvasProps) {
   const { state } = useWindows();
   const open = sortOpenForDisplay(state.windows.filter((w) => w.status === "open"));
 
@@ -58,7 +62,7 @@ export function Canvas() {
           position={w.position}
           zIndex={w.zIndex}
         >
-          <WindowPane id={w.id} />
+          <WindowPane id={w.id} projectFilter={projectFilter} />
         </Window>
       ))}
     </div>

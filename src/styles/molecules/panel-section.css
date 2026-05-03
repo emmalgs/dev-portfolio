@@ -1,61 +1,43 @@
 .ps {
-  border-bottom: 1px solid var(--rule);
-}
-
-.panel-l .ps:nth-child(even),
-.panel-r .ps:nth-child(odd) {
-  border-bottom-style: dotted;
-  border-bottom-color: var(--rule-muted);
+  border-bottom: 1.5px solid var(--black);
 }
 
 .ps-head {
-  font-family: var(--serif);
-  font-size: 10px;
-  font-weight: 700;
-  font-variant: all-small-caps;
-  letter-spacing: 0.12em;
-  padding: 3px 6px;
-  border-bottom: 1px solid var(--rule);
+  font-family: var(--vt);
+  font-size: 12px;
+  padding: 2px 5px;
+  border-bottom: 1px solid var(--black);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .ps-head.blk {
-  background: var(--ink);
-  color: var(--paper);
-  border-bottom-color: var(--accent-yellow);
+  background: var(--black);
+  color: var(--lime);
 }
 
 .ps-head.grn {
-  background: var(--accent-cobalt);
-  color: var(--paper);
-  border-bottom-color: var(--ink);
+  background: var(--dark-green);
+  color: var(--lime);
 }
 
 .ps-head.pnk {
-  background: var(--accent-orange);
-  color: var(--paper);
-  border-bottom-color: var(--ink);
+  background: var(--pink);
+  color: var(--white);
 }
 
 .ps-head.lim {
-  background: var(--accent-yellow);
-  color: var(--ink);
-  border-bottom-color: var(--rule);
+  background: var(--lime);
+  color: var(--black);
 }
 
 .ps-head.org {
-  background: var(--accent-orange);
-  color: var(--paper);
-  border-bottom-color: var(--ink);
+  background: var(--orange);
+  color: var(--white);
 }
 
 .ps-head .badge {
-  font-family: var(--mono);
-  font-size: 8px;
-  letter-spacing: 0.04em;
-  font-variant: normal;
-  text-transform: uppercase;
-  opacity: 0.9;
+  font-size: 10px;
+  opacity: 0.7;
 }

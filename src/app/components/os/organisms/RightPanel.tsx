@@ -12,16 +12,16 @@ const TIMELINE_SEGMENTS = [
     label: "2014–18",
     sublabel: "ART",
     flex: 2,
-    bg: "var(--accent-yellow-pale)",
+    bg: "var(--lime-pale)",
   },
   {
     label: "18–22",
     sublabel: "STUDIO",
     flex: 2,
-    bg: "var(--accent-cobalt-pale)",
+    bg: "var(--orange-pale)",
   },
-  { label: "23", sublabel: "EPIC", flex: 1, bg: "var(--accent-orange-pale)" },
-  { label: "23–NOW", sublabel: "OLIO", flex: 3, bg: "var(--accent-yellow)" },
+  { label: "23", sublabel: "EPIC", flex: 1, bg: "var(--pink-pale)" },
+  { label: "23–NOW", sublabel: "OLIO", flex: 3, bg: "var(--lime)" },
 ];
 
 export function RightPanel() {
@@ -39,7 +39,7 @@ export function RightPanel() {
           <br />
           Full Stack Dev
           <br />
-          <span style={{ color: "var(--accent-orange)" }}>
+          <span style={{ color: "var(--pink)" }}>
             ↳ Olio Apps intern
           </span>
         </div>
