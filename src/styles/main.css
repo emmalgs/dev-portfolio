@@ -2,12 +2,9 @@
   width: min(980px, 100%);
   background: var(--paper);
   color: var(--ink);
-  border: 2px solid var(--rule);
-  box-shadow:
-    0 0 0 3px var(--ochre-pale),
-    0 0 0 5px var(--rule),
-    10px 12px 0 rgba(0, 0, 0, 0.18);
-  margin-bottom: 32px;
+  border: 1px solid var(--rule);
+  box-shadow: 3px 3px 0 rgba(10, 10, 10, 0.08);
+  margin-bottom: 28px;
 }
 
 .mini-svg {

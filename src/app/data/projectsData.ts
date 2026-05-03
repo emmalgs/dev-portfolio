@@ -30,7 +30,7 @@ export const osProjects: OsProject[] = [
     numLabel: "01 · AI/LLM",
     desc: "Context builder + AI agent for post-hospital patient outreach",
     stackDisplay: "TS · NODE · POSTGRES · LLM · VECTOR DB · TWILIO · AWS",
-    accentColor: "var(--pink)",
+    accentColor: "var(--accent-orange)",
     categories: ["AI/LLM", "BACKEND"],
     modalTitle: "// ONEFLO",
     modalBody:
@@ -42,7 +42,7 @@ export const osProjects: OsProject[] = [
     numLabel: "02 · AI/SMS",
     desc: "AI-contextualized SMS with vector conversation memory",
     stackDisplay: "NEXT.JS · TS · LLM · VECTOR DB · TWILIO · POSTGRES · VERCEL",
-    accentColor: "var(--lime)",
+    accentColor: "var(--accent-cobalt)",
     categories: ["AI/LLM", "FRONTEND"],
     modalTitle: "// SCHAIDULER",
     modalBody:
@@ -54,7 +54,7 @@ export const osProjects: OsProject[] = [
     numLabel: "03 · iOS",
     desc: "Swift quantizer resolving in-flight barometric crash",
     stackDisplay: "REACT NATIVE · SWIFT · XCODE · iOS SDK",
-    accentColor: "var(--orange)",
+    accentColor: "var(--accent-yellow)",
     categories: ["FRONTEND"],
     modalTitle: "// EARPLANES",
     modalBody:
@@ -66,7 +66,7 @@ export const osProjects: OsProject[] = [
     numLabel: "04 · ENTERPRISE",
     desc: "Chart switcher · user-editable BI · Fortune 5 · shipped in sprint",
     stackDisplay: "TS · REACT · POSTGRES · RUSH MONOREPO · JIRA · CONFLUENCE",
-    accentColor: "var(--dark-green)",
+    accentColor: "var(--accent-cobalt)",
     categories: ["FRONTEND"],
     modalTitle: "// APPTIO BI",
     modalBody:
@@ -78,7 +78,7 @@ export const osProjects: OsProject[] = [
     numLabel: "05 · AUTH",
     desc: "SSO configuration UIs for enterprise auth workflows",
     stackDisplay: "TS · REACT · C#/.NET · PLAYWRIGHT · JEST · AXIOS",
-    accentColor: "var(--pink)",
+    accentColor: "var(--accent-orange)",
     categories: ["FRONTEND", "BACKEND"],
     modalTitle: "// APPTIO SSO",
     modalBody:
@@ -90,7 +90,7 @@ export const osProjects: OsProject[] = [
     numLabel: "06 · DEVOPS",
     desc: "23 steps · 6 suites · 2 months · Fortune 5",
     stackDisplay: "GITHUB ACTIONS · JAVA · BASH · TEAMCITY · LINUX",
-    accentColor: "var(--lime)",
+    accentColor: "var(--accent-yellow)",
     categories: ["BACKEND"],
     modalTitle: "// CI/CD MIGRATION",
     modalBody:

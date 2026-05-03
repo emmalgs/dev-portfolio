@@ -12,21 +12,19 @@
 }
 
 .panel-l {
-  background: linear-gradient(165deg, var(--paper-2) 0%, #ddd2c4 48%, var(--paper) 100%);
-  border-right: 3px solid var(--rule);
-  box-shadow: inset -6px 0 0 -3px rgba(201, 160, 50, 0.25);
+  background: linear-gradient(165deg, var(--paper-2) 0%, var(--paper) 100%);
+  border-right: 1px solid var(--rule);
 }
 
 .panel-r {
-  background: linear-gradient(195deg, var(--paper) 0%, #dcd4c8 55%, var(--paper-2) 100%);
-  border-left: 3px double var(--rule);
-  box-shadow: inset 6px 0 0 -3px rgba(47, 65, 52, 0.12);
+  background: linear-gradient(195deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-left: 1px solid var(--rule);
 }
 
 .center-col {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, var(--paper-cool) 0%, var(--tile-blue) 42%, var(--paper-cool) 100%);
-  border-left: 1px dashed var(--rule-muted);
-  border-right: 1px dashed var(--rule-muted);
+  background: linear-gradient(180deg, var(--paper-cool) 0%, var(--tile-blue) 38%, var(--paper-cool) 100%);
+  border-left: 1px solid var(--rule-muted);
+  border-right: 1px solid var(--rule-muted);
 }

@@ -1,22 +1,21 @@
 .ps {
-  border-bottom: 2px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 
-/* staggered “tile” edges */
 .panel-l .ps:nth-child(even),
 .panel-r .ps:nth-child(odd) {
-  border-bottom-style: dashed;
+  border-bottom-style: dotted;
   border-bottom-color: var(--rule-muted);
 }
 
 .ps-head {
   font-family: var(--serif);
-  font-size: 11px;
-  font-weight: 400;
+  font-size: 10px;
+  font-weight: 700;
   font-variant: all-small-caps;
-  letter-spacing: 0.14em;
-  padding: 4px 6px;
-  border-bottom: 2px solid var(--rule);
+  letter-spacing: 0.12em;
+  padding: 3px 6px;
+  border-bottom: 1px solid var(--rule);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,39 +23,39 @@
 
 .ps-head.blk {
   background: var(--ink);
-  color: var(--ochre-pale);
-  border-bottom-color: var(--ochre);
+  color: var(--paper);
+  border-bottom-color: var(--accent-yellow);
 }
 
 .ps-head.grn {
-  background: var(--sage-deep);
-  color: var(--paper-cool);
-  border-bottom-color: var(--sage);
+  background: var(--accent-cobalt);
+  color: var(--paper);
+  border-bottom-color: var(--ink);
 }
 
 .ps-head.pnk {
-  background: var(--terracotta);
+  background: var(--accent-orange);
   color: var(--paper);
   border-bottom-color: var(--ink);
 }
 
 .ps-head.lim {
-  background: var(--ochre);
+  background: var(--accent-yellow);
   color: var(--ink);
-  border-bottom-color: var(--umber);
+  border-bottom-color: var(--rule);
 }
 
 .ps-head.org {
-  background: var(--orange);
+  background: var(--accent-orange);
   color: var(--paper);
   border-bottom-color: var(--ink);
 }
 
 .ps-head .badge {
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.06em;
+  font-size: 8px;
+  letter-spacing: 0.04em;
   font-variant: normal;
   text-transform: uppercase;
-  opacity: 0.85;
+  opacity: 0.9;
 }

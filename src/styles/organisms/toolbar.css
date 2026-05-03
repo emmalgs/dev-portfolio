@@ -1,16 +1,16 @@
 .toolbar {
   background: var(--paper-2);
-  border-bottom: 2px dashed var(--rule-muted);
-  padding: 5px 10px;
+  border-bottom: 1px dotted var(--rule-muted);
+  padding: 4px 8px;
   display: flex;
-  gap: 5px;
+  gap: 4px;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .tb-lbl {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 9px;
   color: var(--umber);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }

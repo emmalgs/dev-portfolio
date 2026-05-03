@@ -7,22 +7,22 @@ import { DataRow } from "../molecules/DataRow";
 import { LegendRow } from "../molecules/LegendRow";
 
 const SKILLS = [
-  { name: "TYPESCRIPT", pct: 92, color: "var(--lime)" },
-  { name: "REACT", pct: 90, color: "var(--lime)" },
-  { name: "NEXT.JS", pct: 80, color: "var(--lime)" },
-  { name: "NODE.JS", pct: 82, color: "var(--dark-green)" },
-  { name: "POSTGRESQL", pct: 78, color: "var(--dark-green)" },
-  { name: "LLM APIs", pct: 75, color: "var(--pink)" },
-  { name: "SWIFT / iOS", pct: 54, color: "var(--orange)" },
-  { name: "C#/.NET", pct: 60, color: "var(--orange)" },
+  { name: "TYPESCRIPT", pct: 92, color: "var(--accent-yellow)" },
+  { name: "REACT", pct: 90, color: "var(--accent-yellow)" },
+  { name: "NEXT.JS", pct: 80, color: "var(--accent-cobalt)" },
+  { name: "NODE.JS", pct: 82, color: "var(--accent-cobalt)" },
+  { name: "POSTGRESQL", pct: 78, color: "var(--accent-cobalt)" },
+  { name: "LLM APIs", pct: 75, color: "var(--accent-orange)" },
+  { name: "SWIFT / iOS", pct: 54, color: "var(--accent-orange)" },
+  { name: "C#/.NET", pct: 60, color: "var(--accent-yellow)" },
 ];
 
 const LEGEND_ITEMS = [
-  { color: "var(--lime)", label: "FRONT" },
-  { color: "var(--dark-green)", label: "BACK" },
-  { color: "var(--pink)", label: "AI" },
-  { color: "var(--orange)", label: "MOBILE" },
-  { color: "var(--cobalt)", label: "INFRA" },
+  { color: "var(--accent-yellow)", label: "FRONT" },
+  { color: "var(--accent-cobalt)", label: "BACK" },
+  { color: "var(--accent-orange)", label: "AI" },
+  { color: "var(--accent-orange)", label: "MOBILE" },
+  { color: "var(--accent-cobalt)", label: "INFRA" },
 ];
 
 export function LeftPanel() {
@@ -32,36 +32,36 @@ export function LeftPanel() {
         <div className="thumb-grid">
           <CorralThumb />
           <Thumb
-            bg="var(--lime-pale)"
+            bg="var(--accent-yellow-pale)"
             label="APPTIO BI"
             modalTitle="// APPTIO BI"
             modalBody="Fortune 5 enterprise BI platform. Chart-swapping feature: 5 visualization types, all props persisting. Owned spec → design doc → stakeholder sign-off → tickets → production. Within sprint."
           >
             <svg viewBox="0 0 60 44" className="mini-svg">
-              <rect x="4" y="28" width="8" height="14" fill="#1a3d2b" />
-              <rect x="14" y="18" width="8" height="24" fill="#b8d400" />
-              <rect x="24" y="22" width="8" height="20" fill="#e8638c" />
-              <rect x="34" y="10" width="8" height="32" fill="#1a3d2b" />
-              <rect x="44" y="16" width="8" height="26" fill="#b8d400" />
-              <rect x="4" y="42" width="48" height="1" fill="#111" />
+              <rect x="4" y="28" width="8" height="14" fill="#1e4ed8" />
+              <rect x="14" y="18" width="8" height="24" fill="#e2b400" />
+              <rect x="24" y="22" width="8" height="20" fill="#e04a18" />
+              <rect x="34" y="10" width="8" height="32" fill="#1e4ed8" />
+              <rect x="44" y="16" width="8" height="26" fill="#e2b400" />
+              <rect x="4" y="42" width="48" height="1" fill="#0a0a0a" />
             </svg>
           </Thumb>
           <Thumb
-            bg="var(--pink-pale)"
+            bg="var(--accent-orange-pale)"
             label="ONEFLO"
             modalTitle="// ONEFLO"
             modalBody="AI agent for post-hospital patient outreach. Context builder fed JSON discharge notes into LLM API. Vector DB for session persistence. Contact prioritization algorithm."
           >
             <svg viewBox="0 0 60 44" className="mini-svg">
-              <circle cx="12" cy="30" r="3" fill="#e8638c" />
-              <circle cx="22" cy="18" r="2" fill="#1a3d2b" />
-              <circle cx="32" cy="24" r="4" fill="#e8621a" />
-              <circle cx="42" cy="12" r="2" fill="#e8638c" />
-              <circle cx="18" cy="36" r="2" fill="#b8d400" />
-              <circle cx="48" cy="28" r="3" fill="#1a3d2b" />
-              <circle cx="8" cy="14" r="2" fill="#e8621a" />
-              <circle cx="38" cy="38" r="2" fill="#b8d400" />
-              <line x1="0" y1="42" x2="60" y2="42" stroke="#111" strokeWidth="0.5" />
+              <circle cx="12" cy="30" r="3" fill="#e04a18" />
+              <circle cx="22" cy="18" r="2" fill="#1e4ed8" />
+              <circle cx="32" cy="24" r="4" fill="#e2b400" />
+              <circle cx="42" cy="12" r="2" fill="#e04a18" />
+              <circle cx="18" cy="36" r="2" fill="#e2b400" />
+              <circle cx="48" cy="28" r="3" fill="#1e4ed8" />
+              <circle cx="8" cy="14" r="2" fill="#e04a18" />
+              <circle cx="38" cy="38" r="2" fill="#e2b400" />
+              <line x1="0" y1="42" x2="60" y2="42" stroke="#0a0a0a" strokeWidth="0.5" />
             </svg>
           </Thumb>
           <IlloThumb />

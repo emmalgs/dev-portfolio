@@ -1,8 +1,8 @@
 .hero {
   position: relative;
   background: var(--paper-cool);
-  border-bottom: 3px solid var(--rule);
-  min-height: 280px;
+  border-bottom: 1px solid var(--rule);
+  min-height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,37 +14,17 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(0deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0,
-      transparent 21px,
-      rgba(20, 18, 15, 0.04) 21px,
-      rgba(20, 18, 15, 0.04) 22px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 21px,
-      rgba(20, 18, 15, 0.04) 21px,
-      rgba(20, 18, 15, 0.04) 22px
-    );
-  background-size:
-    100% 22px,
-    22px 100%,
-    100% 100%,
-    100% 100%;
+    linear-gradient(0deg, rgba(10, 10, 10, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 10, 10, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
   pointer-events: none;
 }
 
 .hero-inner {
   text-align: center;
   z-index: 1;
-  padding: 14px 12px 18px;
+  padding: 12px 10px 14px;
   position: relative;
-  /* Avoid width: % on .game-canvas resolving against an intrinsic 0-width parent
-     (flex-centered block + only out-of-flow corner siblings → collapsed canvas). */
   width: 100%;
   max-width: 640px;
   margin-left: auto;
@@ -58,21 +38,27 @@
   max-width: 600px;
   height: min(400px, 52vw);
   min-height: 260px;
-  border: 3px solid var(--rule);
-  box-shadow:
-    inset 0 0 0 2px var(--ochre-pale),
-    4px 5px 0 rgba(20, 18, 15, 0.15);
+  border: 1px solid var(--rule);
+  box-shadow: inset 0 0 0 1px var(--accent-yellow-pale);
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--tile-blue) 0%, #a8cfc4 100%);
+  background: linear-gradient(180deg, var(--tile-blue) 0%, var(--paper-2) 100%);
   outline: none;
 }
 
 .hero-inner .game-canvas:focus-visible {
   box-shadow:
-    inset 0 0 0 2px var(--ochre-pale),
-    0 0 0 2px var(--terracotta),
-    4px 5px 0 rgba(20, 18, 15, 0.15);
+    inset 0 0 0 1px var(--accent-yellow-pale),
+    0 0 0 1px var(--accent-orange);
+}
+
+.hero-inner .game-canvas__fence {
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed rgba(10, 10, 10, 0.35);
+  border-radius: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-inner .game-canvas__popup-backdrop {
@@ -83,24 +69,26 @@
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background: rgba(20, 18, 15, 0.28);
+  background: rgba(10, 10, 10, 0.25);
   cursor: pointer;
 }
 
 .hero-inner .game-canvas__popup-card {
   cursor: default;
   max-width: 280px;
-  padding: 18px 20px 16px;
-  border: 3px solid var(--black);
-  background: var(--paper-cool);
-  box-shadow: 4px 5px 0 rgba(20, 18, 15, 0.2);
+  padding: 14px 16px 12px;
+  border: 1px solid var(--black);
+  background: var(--paper);
   text-align: center;
 }
 
 .hero-inner .game-canvas__popup-text {
   font-family: var(--serif);
-  font-size: 17px;
-  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px;
   color: var(--black);
 }
 
@@ -111,9 +99,9 @@
 .illo-box {
   width: 210px;
   height: 210px;
-  margin: 0 auto 12px;
-  border: 3px solid var(--black);
-  background: var(--lime-pale);
+  margin: 0 auto 10px;
+  border: 1px solid var(--black);
+  background: var(--accent-yellow-pale);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,78 +111,82 @@
 }
 
 .illo-box:hover {
-  background: var(--pink-pale);
+  background: var(--accent-cobalt-pale);
 }
 
 .illo-corner {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 .illo-corner.tl {
-  top: -1px;
-  left: -1px;
-  border-top: 3px solid var(--pink);
-  border-left: 3px solid var(--pink);
+  top: 0;
+  left: 0;
+  border-top: 2px solid var(--accent-orange);
+  border-left: 2px solid var(--accent-orange);
 }
 
 .illo-corner.tr {
-  top: -1px;
-  right: -1px;
-  border-top: 3px solid var(--orange);
-  border-right: 3px solid var(--orange);
+  top: 0;
+  right: 0;
+  border-top: 2px solid var(--accent-cobalt);
+  border-right: 2px solid var(--accent-cobalt);
 }
 
 .illo-corner.bl {
-  bottom: -1px;
-  left: -1px;
-  border-bottom: 3px solid var(--orange);
-  border-left: 3px solid var(--orange);
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid var(--accent-cobalt);
+  border-left: 2px solid var(--accent-cobalt);
 }
 
 .illo-corner.br {
-  bottom: -1px;
-  right: -1px;
-  border-bottom: 3px solid var(--pink);
-  border-right: 3px solid var(--pink);
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid var(--accent-orange);
+  border-right: 2px solid var(--accent-orange);
 }
 
 .illo-hint {
   font-family: var(--serif);
-  font-style: italic;
-  font-size: 12px;
-  color: var(--dark-green);
-  line-height: 1.6;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--umber);
+  line-height: 1.5;
   text-align: center;
 }
 
 .hero-name {
   font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 400;
-  font-variant: small-caps;
-  letter-spacing: 0.08em;
+  font-size: 22px;
+  font-weight: 700;
+  font-variant: all-small-caps;
+  letter-spacing: 0.12em;
   color: var(--black);
 }
 
 .hero-name em {
-  color: var(--terracotta);
-  font-style: italic;
+  color: var(--accent-orange);
+  font-style: normal;
   font-variant: normal;
 }
 
 .hero-sub {
   font-family: var(--serif);
-  font-style: italic;
-  font-size: 13px;
-  color: var(--sage-deep);
-  margin: 4px 0 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--umber);
+  margin: 3px 0 6px;
 }
 
 .hero-tags {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 3px;
   flex-wrap: wrap;
 }

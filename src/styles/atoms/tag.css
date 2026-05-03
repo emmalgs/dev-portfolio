@@ -1,27 +1,28 @@
 .tag {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.05em;
+  font-size: 9px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 2px 6px;
-  border: 2px solid var(--black);
+  padding: 1px 5px;
+  border: 1px solid var(--black);
 }
 
 .tag.l {
-  background: var(--lime);
+  background: var(--accent-yellow);
+  color: var(--ink);
 }
 
 .tag.g {
-  background: var(--dark-green);
-  color: var(--lime-pale);
+  background: var(--accent-cobalt);
+  color: var(--paper);
 }
 
 .tag.p {
-  background: var(--pink);
+  background: var(--accent-orange);
   color: var(--paper);
 }
 
 .tag.o {
-  background: var(--orange);
+  background: var(--accent-orange);
   color: var(--paper);
 }

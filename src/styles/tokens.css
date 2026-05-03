@@ -1,48 +1,53 @@
 :root {
-  /* patchwork / garden-paper system (miniature + print + isotype cues) */
-  --page-bg: #3a4540;
-  --page-bg-highlight: #4d5a54;
-  --paper: #f3ece2;
-  --paper-2: #e6ddd0;
-  --paper-cool: #dee8e4;
-  --tile-blue: #c5ddd6;
-  --tile-blue-deep: #9ec4b8;
-  --ink: #14120f;
-  --rule: #0d0c0b;
-  --rule-muted: rgba(20, 18, 15, 0.35);
+  /* utilitarian / ledger — parchment, fine rules, orange · cobalt · yellow */
+  --page-bg: #d9cbb5;
+  --page-bg-highlight: #e8dcc8;
+  --paper: #f7f0e6;
+  --paper-2: #ebe0d0;
+  --paper-cool: #f0ebe3;
+  --tile-blue: #e2eaf7;
+  --tile-blue-deep: #c5d4ef;
+  --ink: #0a0a0a;
+  --rule: #0a0a0a;
+  --rule-muted: rgba(10, 10, 10, 0.32);
 
-  --ochre: #c9a032;
-  --ochre-pale: #e9d89a;
-  --terracotta: #b64a3c;
-  --terracotta-pale: #e8c9bf;
-  --sage: #4f6754;
-  --sage-deep: #2d4134;
-  --slate: #2a3d4f;
-  --umber: #5c4030;
+  --accent-orange: #e04a18;
+  --accent-cobalt: #1e4ed8;
+  --accent-yellow: #e2b400;
+  --accent-orange-pale: #fad4c8;
+  --accent-cobalt-pale: #d8e4fc;
+  --accent-yellow-pale: #f5e6a8;
 
-  --chart-lime: #9cb336;
-  --chart-lime-pale: #dde6a8;
-  --dust-rose: #b75d6e;
-  --dust-rose-pale: #efd8dd;
+  --ochre: var(--accent-yellow);
+  --ochre-pale: var(--accent-yellow-pale);
+  --terracotta: var(--accent-orange);
+  --terracotta-pale: var(--accent-orange-pale);
+  --sage: #1a3a7a;
+  --sage-deep: #0f172a;
+  --slate: var(--accent-cobalt);
+  --umber: #3d3428;
 
-  /* legacy names — mapped so existing components keep working */
+  --chart-lime: var(--accent-yellow);
+  --chart-lime-pale: var(--accent-yellow-pale);
+  --dust-rose: var(--accent-orange);
+  --dust-rose-pale: var(--accent-orange-pale);
+
   --white: var(--paper);
   --off-white: var(--paper-2);
-  --lime: var(--chart-lime);
-  --lime-pale: var(--chart-lime-pale);
-  --lime-dark: #5a6d24;
-  --pink: var(--dust-rose);
-  --pink-pale: var(--dust-rose-pale);
-  --dark-green: var(--sage-deep);
-  --mid-green: var(--sage);
-  --orange: #b8582e;
-  --orange-pale: #e5cdb8;
-  --cobalt: var(--slate);
+  --lime: var(--accent-yellow);
+  --lime-pale: var(--accent-yellow-pale);
+  --lime-dark: #9a7200;
+  --pink: var(--accent-orange);
+  --pink-pale: var(--accent-orange-pale);
+  --dark-green: var(--accent-cobalt);
+  --mid-green: #2563eb;
+  --orange: var(--accent-orange);
+  --orange-pale: var(--accent-orange-pale);
+  --cobalt: var(--accent-cobalt);
   --black: var(--ink);
-  --panel: #e0d8cb;
+  --panel: var(--paper-2);
 
-  /* VT323 = bitmap DOS / terminal feel for all UI mono */
   --mono: var(--font-console), "Courier New", Courier, monospace;
-  --serif: var(--font-serif), "Palatino Linotype", Palatino, Georgia, serif;
+  --serif: var(--font-serif), "Arial Narrow", Arial, sans-serif;
   --vt: var(--font-console), "Courier New", Courier, monospace;
 }

@@ -5,6 +5,12 @@ import { GameCanvas } from "../components/os/organisms/GameCanvas";
 import { useGame } from "../contexts/GameContext";
 
 export const GamePage = () => {
-  const { gameState, dismissPopup } = useGame();
-  return <GameCanvas gameState={gameState} onDismissPopup={dismissPopup} />;
+  const { gameState, dismissPopup, setPlayBounds } = useGame();
+  return (
+    <GameCanvas
+      gameState={gameState}
+      onDismissPopup={dismissPopup}
+      setPlayBounds={setPlayBounds}
+    />
+  );
 };

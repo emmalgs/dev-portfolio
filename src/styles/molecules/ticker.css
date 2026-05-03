@@ -1,12 +1,13 @@
 .ticker {
-  background: var(--lime);
-  color: var(--black);
+  background: var(--accent-yellow-pale);
+  color: var(--ink);
   font-family: var(--vt);
-  font-size: 14px;
+  font-size: 11px;
+  letter-spacing: 0.03em;
   padding: 2px 8px;
   overflow: hidden;
   white-space: nowrap;
-  border-bottom: 2px solid var(--black);
+  border-bottom: 1px solid var(--rule);
 }
 .ticker-inner {
   display: inline-block;

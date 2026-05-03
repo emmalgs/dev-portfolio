@@ -8,10 +8,10 @@ import { CtaLink } from "../atoms/CtaLink";
 import { useModal } from "../../../contexts/ModalContext";
 
 const TIMELINE_SEGMENTS = [
-  { label: "2014–18", sublabel: "ART", flex: 2, bg: "var(--lime-pale)" },
-  { label: "18–22", sublabel: "STUDIO", flex: 2, bg: "var(--orange-pale)" },
-  { label: "23", sublabel: "EPIC", flex: 1, bg: "var(--pink-pale)" },
-  { label: "23–NOW", sublabel: "OLIO", flex: 3, bg: "var(--lime)" },
+  { label: "2014–18", sublabel: "ART", flex: 2, bg: "var(--accent-yellow-pale)" },
+  { label: "18–22", sublabel: "STUDIO", flex: 2, bg: "var(--accent-cobalt-pale)" },
+  { label: "23", sublabel: "EPIC", flex: 1, bg: "var(--accent-orange-pale)" },
+  { label: "23–NOW", sublabel: "OLIO", flex: 3, bg: "var(--accent-yellow)" },
 ];
 
 export function RightPanel() {
@@ -28,15 +28,15 @@ export function RightPanel() {
             modalBody="AI-contextualized SMS with vector conversation memory. Next.js · Twilio · LLM APIs · Vector DB · PostgreSQL · Vercel"
           >
             <svg viewBox="0 0 60 44" className="mini-svg">
-              <polyline points="4,36 12,24 22,28 32,14 42,20 54,8" fill="none" stroke="#e8638c" strokeWidth="1.5" />
-              <polyline points="4,40 12,32 22,34 32,22 42,26 54,16" fill="none" stroke="#b8d400" strokeWidth="1" />
-              <line x1="0" y1="42" x2="60" y2="42" stroke="#111" strokeWidth="0.5" />
+              <polyline points="4,36 12,24 22,28 32,14 42,20 54,8" fill="none" stroke="#e04a18" strokeWidth="1.5" />
+              <polyline points="4,40 12,32 22,34 32,22 42,26 54,16" fill="none" stroke="#1e4ed8" strokeWidth="1" />
+              <line x1="0" y1="42" x2="60" y2="42" stroke="#0a0a0a" strokeWidth="0.5" />
             </svg>
           </Thumb>
           <IlloThumb />
           <IlloThumb />
           <Thumb
-            bg="var(--orange-pale)"
+            bg="var(--accent-orange-pale)"
             label="EARPLANES"
             modalTitle="// EARPLANES"
             modalBody="iOS barometric pressure monitor. React Native · Swift · Xcode · iOS SDK. Swift quantizer resolved critical crash on 14+ hour flights."
@@ -47,8 +47,8 @@ export function RightPanel() {
               <circle cx="30" cy="26" r="6" fill="none" stroke="#ccc" strokeWidth="0.7" />
               <line x1="10" y1="26" x2="50" y2="26" stroke="#ccc" strokeWidth="0.5" />
               <line x1="30" y1="6" x2="30" y2="46" stroke="#ccc" strokeWidth="0.5" />
-              <polygon points="30,10 38,32 22,32" fill="rgba(232,98,26,0.3)" stroke="var(--orange)" strokeWidth="1" />
-              <circle cx="30" cy="26" r="2" fill="var(--orange)" />
+              <polygon points="30,10 38,32 22,32" fill="rgba(224,74,24,0.35)" stroke="var(--accent-orange)" strokeWidth="1" />
+              <circle cx="30" cy="26" r="2" fill="var(--accent-orange)" />
             </svg>
           </Thumb>
         </div>
@@ -58,7 +58,7 @@ export function RightPanel() {
         <div className="ann" style={{ padding: "4px 5px", lineHeight: 1.7 }}>
           <span className="grn">EPICODUS · 2023</span><br />
           Full Stack Dev<br />
-          <span style={{ color: "var(--pink)" }}>↳ Olio Apps intern</span>
+          <span style={{ color: "var(--accent-orange)" }}>↳ Olio Apps intern</span>
         </div>
         <div style={{ height: "1px", background: "#ccc", margin: "0 5px" }} />
         <div className="ann" style={{ padding: "4px 5px", lineHeight: 1.7 }}>

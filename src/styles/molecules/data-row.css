@@ -17,17 +17,17 @@
 }
 
 .dv.g {
-  color: var(--sage-deep);
+  color: var(--accent-cobalt);
 }
 
 .dv.p {
-  color: var(--terracotta);
+  color: var(--accent-orange);
 }
 
 .dv.o {
-  color: var(--orange);
+  color: var(--accent-orange);
 }
 
 .dv.l {
-  color: var(--lime-dark);
+  color: #9a7200;
 }

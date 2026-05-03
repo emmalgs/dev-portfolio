@@ -1,11 +1,13 @@
 // src/game/systems/LassoSystem.ts
 
+import { PlayBounds, isLassoInBounds } from "../playspace";
 import { GameState } from "../state/GameState";
 
 export const updateLasso = (
   state: GameState,
   input: { keys: Record<string, boolean>; justPressed: Record<string, boolean> },
-  delta: number
+  _delta: number,
+  bounds: PlayBounds
 ): GameState => {
   let lasso = state.lasso;
 
@@ -38,6 +40,10 @@ export const updateLasso = (
   distanceTraveled += speed;
 
   if (distanceTraveled > lasso.maxDistance) {
+    return { ...state, lasso: null };
+  }
+
+  if (!isLassoInBounds(x, y, bounds)) {
     return { ...state, lasso: null };
   }
 

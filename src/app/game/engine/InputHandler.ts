@@ -3,9 +3,24 @@
 const keys: Record<string, boolean> = {};
 const justPressed: Record<string, boolean> = {};
 
+function gameCanvasIsFocused(): boolean {
+  const el = document.activeElement;
+  return el instanceof HTMLElement && el.classList.contains("game-canvas");
+}
+
 function onKeyDown(e: KeyboardEvent) {
   if (e.code === "Space") {
     e.preventDefault(); // stops page scroll
+  }
+
+  if (
+    gameCanvasIsFocused() &&
+    (e.code === "ArrowUp" ||
+      e.code === "ArrowDown" ||
+      e.code === "ArrowLeft" ||
+      e.code === "ArrowRight")
+  ) {
+    e.preventDefault();
   }
 
   if (!keys[e.code]) {

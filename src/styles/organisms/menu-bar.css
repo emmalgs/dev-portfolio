@@ -1,21 +1,21 @@
 .menu-bar {
-  background: linear-gradient(180deg, #2a2824 0%, var(--ink) 100%);
-  color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: 11px;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 5px 10px;
+  padding: 4px 8px;
   display: flex;
-  gap: 14px;
+  gap: 12px;
   align-items: center;
-  border-bottom: 4px solid var(--ochre);
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--rule);
+  box-shadow: inset 0 -2px 0 var(--accent-yellow);
 }
 
 .menu-bar .logo {
-  color: var(--ochre);
-  font-size: 16px;
+  color: var(--accent-cobalt);
+  font-size: 14px;
   line-height: 1;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .menu-item:hover {
-  background: var(--terracotta-pale);
+  background: var(--accent-yellow-pale);
   color: var(--ink);
   border-color: var(--rule);
 }
@@ -34,9 +34,10 @@
 .menu-bar .menu-right {
   margin-left: auto;
   font-family: var(--serif);
-  font-style: italic;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  color: var(--tile-blue);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
 }

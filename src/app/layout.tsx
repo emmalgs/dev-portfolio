@@ -1,19 +1,17 @@
 import type { Metadata } from 'next'
-import { VT323, IM_Fell_English } from 'next/font/google'
+import { DotGothic16, Archivo_Narrow } from 'next/font/google'
 import './globals.css'
 
-const vt323 = VT323({
+const dotGothic = DotGothic16({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-console',
 })
 
-const imFellEnglish = IM_Fell_English({
-  weight: '400',
-  style: ['normal', 'italic'],
+const archivoNarrow = Archivo_Narrow({
+  weight: ['400', '600', '700'],
   subsets: ['latin'],
   variable: '--font-serif',
-  adjustFontFallback: false,
 })
 
 export const metadata: Metadata = {
@@ -23,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${vt323.variable} ${imFellEnglish.variable}`}>
+    <html lang="en" className={`${dotGothic.variable} ${archivoNarrow.variable}`}>
       <body>{children}</body>
     </html>
   )

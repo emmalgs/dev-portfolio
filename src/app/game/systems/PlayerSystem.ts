@@ -1,12 +1,14 @@
 // src/game/systems/PlayerSystem.ts
 
+import { PlayBounds, clampPlayerPosition } from "../playspace";
 import { GameState } from "../state/GameState";
 
 const SPEED = 2;
 
 export const updatePlayer = (
   state: GameState,
-  input: Record<string, boolean>
+  input: Record<string, boolean>,
+  bounds: PlayBounds
 ): GameState => {
   let { x, y, direction } = state.player;
 
@@ -42,12 +44,14 @@ export const updatePlayer = (
     y += SPEED * 0.3;
   }
 
+  const clamped = clampPlayerPosition(x, y, bounds);
+
   return {
     ...state,
     player: {
       ...state.player,
-      x,
-      y,
+      x: clamped.x,
+      y: clamped.y,
       direction,
     },
   };

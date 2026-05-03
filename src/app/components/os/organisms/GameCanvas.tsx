@@ -1,15 +1,36 @@
 // src/components/GameCanvas.tsx
 
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { GameState } from "../../../game/state/GameState";
 import { Button } from "../atoms/Button";
 
 type Props = {
   gameState: GameState;
   onDismissPopup: () => void;
+  setPlayBounds: (width: number, height: number) => void;
 };
 
-export const GameCanvas: React.FC<Props> = ({ gameState, onDismissPopup }) => {
+export const GameCanvas: React.FC<Props> = ({
+  gameState,
+  onDismissPopup,
+  setPlayBounds,
+}) => {
+  const canvasRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const el = canvasRef.current;
+    if (!el) return;
+
+    const publish = () => {
+      setPlayBounds(el.clientWidth, el.clientHeight);
+    };
+
+    publish();
+    const ro = new ResizeObserver(publish);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [setPlayBounds]);
+
   useEffect(() => {
     if (!gameState.popup) return;
     const onKey = (e: KeyboardEvent) => {
@@ -20,7 +41,8 @@ export const GameCanvas: React.FC<Props> = ({ gameState, onDismissPopup }) => {
   }, [gameState.popup, onDismissPopup]);
 
   return (
-    <div tabIndex={0} className="game-canvas">
+    <div ref={canvasRef} tabIndex={0} className="game-canvas">
+      <div className="game-canvas__fence" aria-hidden />
       {/* Player */}
       <div style={{ position: "absolute", left: gameState.player.x, top: gameState.player.y }}>
         🤠🐎
