@@ -1,9 +1,14 @@
 /*
- * Palette + roles — aligned with emma_portfolio_map_panels.html :root
+ * Palette + roles — aligned with emma_portfolio_v3_grid_modals.html :root
  * Legacy aliases (--accent-*, --paper-*, --ink) kept so molecules keep working.
  */
 :root {
-  --white: #f5f5ef;
+  --black: #111111;
+  --white: #f5f5f0;
+  --orange: #EA3E17;
+  --grid-line: rgba(0, 0, 0, 0.1);
+
+  /* Legacy colors for backwards compatibility */
   --off-white: #eaeae3;
   --lime: #b8d400;
   --lime-pale: #e2f07a;
@@ -12,10 +17,8 @@
   --pink-pale: #f7c4d4;
   --dark-green: #1a3d2b;
   --mid-green: #2d6644;
-  --orange: #e8621a;
   --orange-pale: #f5c4a0;
   --cobalt: #1a4a8a;
-  --black: #111111;
   --panel: #e2e2da;
 
   --paper: var(--white);
@@ -27,14 +30,14 @@
   --rule: var(--black);
   --rule-muted: rgba(17, 17, 17, 0.35);
 
-  --page-bg: var(--dark-green);
+  --page-bg: var(--white);
   --page-bg-highlight: transparent;
 
-  --text-muted: #777;
-  --text-soft: #444;
+  --text-muted: #888;
+  --text-soft: #555;
   --umber: var(--text-soft);
 
-  --mono: var(--font-share-tech-mono), "Share Tech Mono", monospace;
+  --mono: var(--font-share-tech-mono), "Space Mono", monospace;
   --serif: var(--font-im-fell), "IM Fell English", serif;
   --vt: var(--font-vt323), "VT323", monospace;
 
