@@ -6,7 +6,7 @@
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  background: var(--white);
+  background: transparent;
   color: var(--black);
   position: relative;
   z-index: 10;
@@ -21,31 +21,16 @@
 .portfolio-canvas {
   flex: 1;
   position: relative;
-  min-height: calc(100vh - 56px);
-  overflow: auto;
-  padding: 16px;
-  margin-top: 28px;
-  margin-right: 60px;
-  margin-bottom: 28px;
-  background: var(--white);
+  min-height: calc(100vh - 32px);
+  overflow: hidden;
+  padding: 20px;
+  margin-top: 32px;
+  background: transparent;
   z-index: 10;
 }
 
 .portfolio-right-nav {
-  position: fixed;
-  top: 28px;
-  right: 0;
-  bottom: 28px;
-  width: 60px;
-  background: var(--white);
-  border-left: 1.5px solid var(--black);
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 8px;
-  gap: 4px;
-  overflow-y: auto;
+  display: none;
 }
 
 .portfolio-right-nav__label {

@@ -1,21 +1,19 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useModal } from "@/app/contexts/ModalContext";
 import { projects } from "@/data/projects";
 import type { PortfolioProject } from "@/data/projects";
 
-type ProjectsWindowProps = {
-  filter: string;
-};
 
-export function ProjectsWindow({ filter }: ProjectsWindowProps) {
+export function ProjectsWindow() {
+  const [localFilter, setLocalFilter] = useState("ALL");
   const { openModal } = useModal();
 
   const visible = useMemo(() => {
-    if (filter === "ALL") return projects;
-    return projects.filter((p) => p.categories.includes(filter));
-  }, [filter]);
+    if (localFilter === "ALL") return projects;
+    return projects.filter((p) => p.categories.includes(localFilter));
+  }, [localFilter]);
 
   const openDetail = (p: PortfolioProject) => {
     openModal(p.modalTitle, p.modalBody);
@@ -23,6 +21,13 @@ export function ProjectsWindow({ filter }: ProjectsWindowProps) {
 
   return (
     <div className="window-body-prose" style={{ maxHeight: "min(300px, 42vh)" }}>
+      <div className="window-filter-row">
+        <p>FILTER BY:</p>
+        <button type="button" className="tb" onClick={() => setLocalFilter("ALL")}>ALL</button>
+        <button type="button" className="tb" onClick={() => setLocalFilter("FRONTEND")}>FRONTEND</button>
+        <button type="button" className="tb" onClick={() => setLocalFilter("BACKEND")}>BACKEND</button>
+        <button type="button" className="tb" onClick={() => setLocalFilter("FULL STACK")}>FULL STACK</button>
+      </div>
       {visible.length === 0 ? (
         <p style={{ margin: 0 }}>NO PROJECTS MATCH.</p>
       ) : (

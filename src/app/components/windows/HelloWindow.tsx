@@ -8,7 +8,7 @@ export function HelloWindow() {
       <h3>EMMA GERIG · FULL-STACK</h3>
       <p>
         Hood River, Oregon — open to remote. Three-plus years shipping production web, mobile adjacency,
-        and backend systems (TypeScript, React, Node, Postgres, LLM integrations).
+        and backend systems (TypeScript, React, Node, Postgres, LLM integrations).HEY!!
       </p>
       <p>
         Drag windows by the title bar. Closed stacks pin to the right dock — click to reopen.

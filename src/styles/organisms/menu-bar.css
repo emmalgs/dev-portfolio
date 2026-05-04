@@ -4,18 +4,18 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 28px;
-  background: var(--black);
-  color: var(--white);
+  height: 32px;
+  background: var(--forest);
+  color: var(--cream);
   font-family: var(--mono);
   font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 12px;
+  padding: 0 16px;
   z-index: 100;
-  letter-spacing: 0.08em;
-  border-bottom: 1px solid var(--black);
+  letter-spacing: 0.15em;
+  border-bottom: 2px solid var(--black);
 }
 
 .menu-bar .logo {
@@ -29,22 +29,23 @@
 }
 
 .menu-name {
-  color: var(--orange);
+  color: var(--cream);
   font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0.12em;
 }
 
 .menu-sep {
-  color: #555;
+  color: rgba(245, 240, 232, 0.5);
 }
 
 .menu-item {
   cursor: pointer;
-  color: var(--white);
+  color: var(--cream);
 }
 
 .menu-item:hover {
-  color: var(--orange);
+  color: var(--forest);
 }
 
 .menu-bar .menu-right,
@@ -52,15 +53,15 @@
   display: flex;
   gap: 16px;
   font-size: 10px;
-  color: #888;
+  color: rgba(245, 240, 232, 0.7);
   margin-left: auto;
 }
 
 .menu-right a {
-  color: #888;
+  color: rgba(245, 240, 232, 0.7);
   text-decoration: none;
 }
 
 .menu-right a:hover {
-  color: var(--orange);
+  color: var(--forest);
 }

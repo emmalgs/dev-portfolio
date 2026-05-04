@@ -3,24 +3,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3px 8px;
+  padding: 6px 12px;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   cursor: move;
   user-select: none;
+  border-bottom: 2px solid var(--black);
 }
 
 .barAccent {
   composes: bar;
-  background: var(--orange);
-  color: var(--white);
+  background: var(--forest);
+  color: var(--cream);
 }
 
 .barPlain {
   composes: bar;
-  background: var(--black);
-  color: var(--white);
+  background: var(--cream);
+  color: var(--black);
+  font-weight: 700;
 }
 
 .label {
@@ -32,21 +34,20 @@
 .close {
   flex-shrink: 0;
   cursor: pointer;
-  background: none;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: var(--white);
+  background: transparent;
+  border: none;
+  color: inherit;
   font-family: var(--mono);
-  font-size: 9px;
-  padding: 0 4px;
-  line-height: 14px;
+  font-size: 16px;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
 }
 
 .close:hover {
-  background: var(--white);
-  color: var(--black);
+  opacity: 0.7;
 }
 
 .barAccent .close:hover {
-  background: var(--white);
-  color: var(--black);
+  opacity: 0.7;
 }

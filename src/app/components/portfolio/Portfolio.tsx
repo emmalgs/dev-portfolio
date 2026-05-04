@@ -5,12 +5,10 @@ import { GameProvider } from "@/app/contexts/GameContext";
 import { ModalProvider } from "@/app/contexts/ModalContext";
 import { PastureGateProvider } from "@/app/contexts/PastureGateContext";
 import { WindowProvider } from "@/state/windowContext";
-import { Toolbar } from "@/app/components/os/organisms/Toolbar";
 import { Ticker } from "@/app/components/os/molecules/Ticker";
 import { Modal } from "@/app/components/os/organisms/Modal";
 import { GameModal } from "@/app/components/os/organisms/GameModal";
 import { Header } from "./Header";
-import { Footer } from "./Footer";
 import { Canvas } from "./Canvas";
 import { RightNav } from "./RightNav";
 import { MobileClosedDock } from "./MobileClosedDock";
@@ -31,7 +29,6 @@ export function Portfolio() {
             <GameModal open={pastureOpen} onClose={() => setPastureOpen(false)} />
             <div className="portfolio-root">
               <Header />
-              <Toolbar filter={projectFilter} onFilterChange={setProjectFilter} />
               <div className="portfolio-body">
                 <Canvas projectFilter={projectFilter} />
                 <RightNav />
@@ -40,7 +37,6 @@ export function Portfolio() {
               <div className="portfolio-ticker-wrap">
                 <Ticker text={TICKER_TEXT} />
               </div>
-              <Footer />
             </div>
           </PastureGateProvider>
         </WindowProvider>

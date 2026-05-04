@@ -2,16 +2,15 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  min-width: 220px;
-  max-width: min(360px, calc(100vw - 48px));
-  background: var(--white);
-  border: 1.5px solid var(--black);
+  min-width: 280px;
+  max-width: min(420px, calc(100vw - 48px));
+  background: var(--cream);
+  border: 2px solid var(--black);
   z-index: 20;
-  transition: box-shadow 0.15s;
+  box-shadow: none;
 }
 
 .window:hover {
-  box-shadow: 4px 4px 0 var(--black);
   z-index: 30;
 }
 

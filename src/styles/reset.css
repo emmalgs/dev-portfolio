@@ -7,7 +7,7 @@
 }
 
 body {
-  background: var(--white);
+  background: var(--cream);
   font-family: var(--mono);
   font-size: 11px;
   line-height: 1.7;
@@ -19,14 +19,13 @@ body {
   -moz-osx-font-smoothing: auto;
 }
 
-/* ── GRAPH PAPER GRID ─────────────────── */
+/* ── DOT GRID BACKGROUND ─────────────────── */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image:
-    repeating-linear-gradient(0deg, transparent 0, transparent calc(28px - 1px), var(--grid-line) calc(28px - 1px), var(--grid-line) 28px),
-    repeating-linear-gradient(90deg, transparent 0, transparent calc(28px - 1px), var(--grid-line) calc(28px - 1px), var(--grid-line) 28px);
+  background-image: radial-gradient(circle, var(--grid-line) 1px, transparent 1px);
+  background-size: 20px 20px;
   pointer-events: none;
   z-index: 0;
 }
