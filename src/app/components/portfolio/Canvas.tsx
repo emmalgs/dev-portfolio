@@ -64,8 +64,8 @@ export function Canvas() {
 
   // Calculate icon positions in a grid
   const getIconPosition = (index: number) => {
-    const startX = 20;
-    const startY = 20;
+    const startX = 80;
+    const startY = 50;
     const gridSpacing = 100;
     const iconsPerRow = 6;
 

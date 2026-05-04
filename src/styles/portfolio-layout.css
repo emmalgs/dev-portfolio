@@ -15,7 +15,6 @@
 .dot-background {
   position: fixed;
   color: var(--forest);
-  /* Center the background in the viewport */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -30,6 +29,7 @@
   line-height: 0.1;
   letter-spacing: 0.2em;
   z-index: -1;
+  overflow: hidden;
 }
 
 .portfolio-body {
