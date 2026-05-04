@@ -1,12 +1,16 @@
 .ticker {
-  background: var(--lime);
-  color: var(--black);
-  font-family: var(--vt);
-  font-size: 14px;
+  background: var(--light-grey);
+  color: var(--forest);
+  font-family: var(--mono);
+  font-size: 20px;
   padding: 2px 8px;
   overflow: hidden;
   white-space: nowrap;
-  border-bottom: 2px solid var(--black);
+  border-bottom: 2px solid var(--forest);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ticker-inner {
