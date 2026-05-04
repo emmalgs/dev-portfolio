@@ -22,7 +22,7 @@ export function ProjectsWindow() {
   return (
     <div className="window-body-prose" style={{ maxHeight: "min(300px, 42vh)" }}>
       <div className="window-filter-row">
-        <p>FILTER BY:</p>
+        <p>SORT BY:</p>
         <button type="button" className="tb" onClick={() => setLocalFilter("ALL")}>ALL</button>
         <button type="button" className="tb" onClick={() => setLocalFilter("FRONTEND")}>FRONTEND</button>
         <button type="button" className="tb" onClick={() => setLocalFilter("BACKEND")}>BACKEND</button>

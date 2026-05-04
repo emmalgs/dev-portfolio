@@ -14,7 +14,7 @@ const windows: ReadonlyArray<WindowState> = [
   },
   {
     id: "projects",
-    label: "PROJ",
+    label: "PROJECTS",
     status: "open",
     accent: false,
     zIndex: 10,
