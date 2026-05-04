@@ -18,7 +18,6 @@ const TICKER_TEXT =
 
 export function Portfolio() {
   const [pastureOpen, setPastureOpen] = useState(false);
-  const [projectFilter, setProjectFilter] = useState("ALL");
 
   return (
     <GameProvider>
@@ -30,7 +29,7 @@ export function Portfolio() {
             <div className="portfolio-root">
               <Header />
               <div className="portfolio-body">
-                <Canvas projectFilter={projectFilter} />
+                <Canvas />
                 <RightNav />
               </div>
               <MobileClosedDock />

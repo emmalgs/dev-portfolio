@@ -1,28 +1,58 @@
 "use client";
 
 import React from "react";
-import { useModal } from "@/app/contexts/ModalContext";
-import { Button } from "../os/atoms/Button";
+
+const ASCII_ART = [
+  "      %%%",
+  "   =====",
+  "  &%&%%%&",
+  "  %& < <% ",
+  "   &\\__/",
+  "    \\ |____",
+  "   .', ,  ()",
+  "  / -.  _)| ",
+  " |_(_.    |",
+  " '-'\\  )  |",
+  " mrf )    |",
+  "    /  .  ).",
+  "   /    _. |",
+  " /'---':.-'|",
+  "(__.' /    /",
+  " \\   ( /  /",
+  "  \\ /  _  | ",
+  "   \\  |  '|",
+  "   | . \\  |",
+  "   |(     | ",
+  "   |  \\ \\ |",
+  "    \\  )\\ |",
+  "   __)/ / \\",
+  "--\"--(_.Ooo'----",
+].join("\n");
 
 export function ArtWindow() {
-  const { openModal } = useModal();
-
   return (
     <div className="window-body-prose">
-      <p style={{ fontFamily: "var(--serif)", fontStyle: "italic" }}>
-        Active studio practice — solo shows, PNCA adjunct, illustration 2014–2023.
+      <p>I am also an artist</p>
+      <p>
+        You can view my art at{" "}
+        <a
+          href="https://www.emmagerig.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          emmagerig.com
+        </a>
       </p>
-      <Button
-        type="button"
-        onClick={() =>
-          openModal(
-            "// ALSO AN ARTIST",
-            "Active painting studio. Solo shows. Adjunct at PNCA. Illustrator, 2014–2023.<br><br><strong>↗ emmagerig.com</strong>",
-          )
-        }
+      <pre
+        style={{
+          fontFamily: "var(--mono)",
+          fontStyle: "normal",
+          margin: 0,
+          whiteSpace: "pre",
+        }}
       >
-        MORE ↗
-      </Button>
+        {ASCII_ART}
+      </pre>
     </div>
   );
 }

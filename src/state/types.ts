@@ -1,7 +1,6 @@
 export type WindowId =
   | "hello"
   | "projects"
-  | "stack"
   | "status"
   | "education"
   | "contact"
