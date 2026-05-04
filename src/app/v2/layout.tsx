@@ -2,11 +2,11 @@ import Canvas from "./Canvas";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-export function Main() {
+export default function V2Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <Header />
-      <Canvas />
+      <Canvas>{children}</Canvas>
       <Footer />
     </div>
   );

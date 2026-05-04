@@ -1,6 +1,5 @@
-// import { Portfolio } from "./components/portfolio/Portfolio";
-import { Main } from "./v2/Main";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <Main />;
+  redirect("/v2");
 }
