@@ -1,10 +1,11 @@
 .window {
   position: absolute;
+  font-family: var(--mono);
   display: flex;
   flex-direction: column;
   min-width: 280px;
   max-width: min(420px, calc(100vw - 48px));
-  background: var(--cream);
+  background: var(--light-grey);
   border: 2px solid var(--forest);
   z-index: 20;
   box-shadow: none;

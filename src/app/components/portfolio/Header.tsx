@@ -7,12 +7,12 @@ export function Header() {
     <header className="menu-bar">
       <div className="menu-left">
         <span className="menu-name">EMMA GERIG</span>
-        <span className="menu-sep">·</span>
-        <span>Full Stack Engineer</span>
-        <span className="menu-sep">·</span>
-        <span>Hood River, OR</span>
-        <span className="menu-sep">·</span>
-        <span>Open to Remote</span>
+        <span>{`<<>><<>>`}</span>
+        <span>FULL STACK ENGINEER</span>
+        <span>{`<<>><<>>`}</span>
+        <span>HOOD RIVER, OR</span>
+        <span>{`<<>><<>>`}</span>
+        <span>OPEN TO REMOTE</span>
       </div>
       <div className="menu-right">
         <a href="https://linkedin.com/in/emma-gerig" target="_blank" rel="noopener noreferrer">LinkedIn</a>
