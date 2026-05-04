@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { GameLoopGate } from "../../../contexts/GameContext";
-import { clearAllTouchKeys } from "../../../game/engine/InputHandler";
-import { GamePage } from "../../../pages/GamePage";
+import { GameLoopGate } from "../../contexts/GameContext";
+import { clearAllTouchKeys } from "../../game/engine/InputHandler";
+import { GamePage } from "./GamePage";
 
 type GameModalProps = {
   open: boolean;

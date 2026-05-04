@@ -27,10 +27,11 @@
   --gray-dark: var(--text-muted);
   --gray-darker: var(--text-soft);
 
-  /* Fonts */
-  --mono: var(--font-share-tech-mono), "Space Mono", monospace;
-  --serif: var(--font-im-fell), "IM Fell English", serif;
-  --vt: var(--font-vt323), "VT323", monospace;
+  /* Fonts — Iosevka Charon app-wide */
+  --font-app: "Iosevka Charon", ui-monospace, monospace;
+  --mono: var(--font-app);
+  --serif: var(--font-app);
+  --vt: var(--font-app);
 
   /* Legacy aliases for backwards compatibility */
   --off-white: var(--cream);

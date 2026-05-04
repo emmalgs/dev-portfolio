@@ -1,34 +1,22 @@
 /* ── DESIGN SYSTEM ───────────────────────────────────────────────────────── */
-/* tokens → reset → atoms → molecules → organisms                            */
+/* tokens → reset → atoms → molecules → organisms                           */
+
+@import url('https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 @import '../styles/tokens.css';
 @import '../styles/reset.css';
 
 /* atoms */
 @import '../styles/atoms/button.css';
-@import '../styles/atoms/tag.css';
-@import '../styles/atoms/separator.css';
-@import '../styles/atoms/blink.css';
 @import '../styles/atoms/cta-link.css';
 
 /* molecules */
-@import '../styles/molecules/skill-bar.css';
 @import '../styles/molecules/data-row.css';
-@import '../styles/molecules/thumb.css';
 @import '../styles/molecules/panel-section.css';
-@import '../styles/molecules/legend.css';
-@import '../styles/molecules/annotation.css';
-@import '../styles/molecules/timeline.css';
 @import '../styles/molecules/ticker.css';
-@import '../styles/molecules/project-card.css';
 
 /* organisms */
 @import '../styles/organisms/menu-bar.css';
-@import '../styles/organisms/toolbar.css';
-@import '../styles/organisms/panel.css';
-@import '../styles/organisms/hero.css';
-@import '../styles/organisms/project-grid.css';
-@import '../styles/organisms/status-bar.css';
 @import '../styles/organisms/modal.css';
 @import '../styles/organisms/game-modal.css';
 

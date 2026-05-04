@@ -7,7 +7,7 @@ import { PastureGateProvider } from "@/app/contexts/PastureGateContext";
 import { WindowProvider } from "@/state/windowContext";
 import { Ticker } from "@/app/components/os/molecules/Ticker";
 import { Modal } from "@/app/components/os/organisms/Modal";
-import { GameModal } from "@/app/components/os/organisms/GameModal";
+import { GameModal } from "@/app/game/components/GameModal";
 import { Header } from "./Header";
 import { Canvas } from "./Canvas";
 import { RightNav } from "./RightNav";

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback } from "react";
-import { setTouchKey } from "../../../game/engine/InputHandler";
+import { setTouchKey } from "../../game/engine/InputHandler";
 
 const ARROW_UP = "ArrowUp";
 const ARROW_DOWN = "ArrowDown";

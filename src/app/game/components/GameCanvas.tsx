@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
-import { getBackpackItemById } from "../../../data/resumeBackpack";
-import { clearAllTouchKeys } from "../../../game/engine/InputHandler";
-import { PLAYER_H, PLAYER_W, SHEEP_H, SHEEP_W } from "../../../game/playspace";
-import { GameState } from "../../../game/state/GameState";
-import { Button } from "../atoms/Button";
+import { getBackpackItemById } from "../../data/resumeBackpack";
+import { clearAllTouchKeys } from "../../game/engine/InputHandler";
+import { PLAYER_H, PLAYER_W, SHEEP_H, SHEEP_W } from "../../game/playspace";
+import { GameState } from "../../game/state/GameState";
+import { Button } from "../../components/os/atoms/Button";
 import { GameTouchControls } from "./GameTouchControls";
 
 type Props = {
