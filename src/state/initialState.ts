@@ -29,14 +29,6 @@ const windows: ReadonlyArray<WindowState> = [
     position: { x: snap(700), y: snap(16) },
   },
   {
-    id: "stack",
-    label: "STACK",
-    status: "open",
-    accent: false,
-    zIndex: 10,
-    position: { x: snap(16), y: snap(224) },
-  },
-  {
     id: "education",
     label: "EDU",
     status: "open",
