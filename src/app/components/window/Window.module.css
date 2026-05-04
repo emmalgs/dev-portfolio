@@ -5,7 +5,7 @@
   min-width: 280px;
   max-width: min(420px, calc(100vw - 48px));
   background: var(--cream);
-  border: 2px solid var(--black);
+  border: 2px solid var(--forest);
   z-index: 20;
   box-shadow: none;
 }

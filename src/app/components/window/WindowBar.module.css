@@ -4,25 +4,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 6px 12px;
-  font-family: var(--mono);
-  font-size: 11px;
+  font-size: 24px;
   letter-spacing: 0.08em;
   cursor: move;
   user-select: none;
-  border-bottom: 2px solid var(--black);
-}
-
-.barAccent {
-  composes: bar;
   background: var(--forest);
-  color: var(--cream);
-}
-
-.barPlain {
-  composes: bar;
-  background: var(--cream);
-  color: var(--black);
-  font-weight: 700;
+  color: var(--light-grey);
 }
 
 .label {
@@ -37,7 +24,6 @@
   background: transparent;
   border: none;
   color: inherit;
-  font-family: var(--mono);
   font-size: 16px;
   padding: 0;
   line-height: 1;
@@ -48,6 +34,3 @@
   opacity: 0.7;
 }
 
-.barAccent .close:hover {
-  opacity: 0.7;
-}

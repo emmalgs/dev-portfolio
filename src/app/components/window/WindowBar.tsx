@@ -11,11 +11,10 @@ type WindowBarProps = {
   className?: string;
 };
 
-export function WindowBar({ label, accent, onClose, onDragStart, className }: WindowBarProps) {
-  const barClass = accent ? styles.barAccent : styles.barPlain;
+export function WindowBar({ label, onClose, onDragStart }: WindowBarProps) {
   return (
     <div
-      className={[barClass, className].filter(Boolean).join(" ")}
+      className={styles.bar}
       onMouseDown={(e) => {
         if ((e.target as HTMLElement).closest("button")) return;
         onDragStart(e);
