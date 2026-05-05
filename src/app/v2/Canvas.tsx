@@ -14,7 +14,6 @@ const Body = styled.div`
 
 const NavList = styled.ul`
   display: flex;
-  flex-direction: column;
   gap: 16px;
 `;
 
@@ -23,7 +22,7 @@ export default function Canvas({ children }: { children: ReactNode }) {
     <Body>
       <NavList>
         <li>
-          <Link href="/v2">Home</Link>
+          <Link href="/v2/about">About</Link>
         </li>
         <li>
           <Link href="/v2/education">Education</Link>
