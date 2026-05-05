@@ -18,7 +18,13 @@ export function Header() {
         <a href="https://linkedin.com/in/emma-gerig" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/emmalgs" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="http://emmagerig.com" target="_blank" rel="noopener noreferrer">emmagerig.com</a>
-        <a href="#" style={{ color: 'var(--orange)' }}>⬇ Resume</a>
+        <a
+          href="/resume.pdf"
+          download="Emma-Gerig-Resume.pdf"
+          style={{ color: "var(--orange)" }}
+        >
+          ⬇ Resume
+        </a>
       </div>
     </header>
   );

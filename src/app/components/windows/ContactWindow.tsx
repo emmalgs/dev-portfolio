@@ -9,7 +9,7 @@ export function ContactWindow() {
       <CtaLink href="https://www.linkedin.com/in/emma-gerig/">⬡ LINKEDIN</CtaLink>
       <CtaLink href="https://github.com/emmalgs">⬡ GITHUB</CtaLink>
       <CtaLink href="mailto:elgerig@gmail.com">⬡ EMAIL</CtaLink>
-      <CtaLink href="/resume.pdf" variant="p">
+      <CtaLink href="/resume.pdf" download="Emma-Gerig-Resume.pdf" variant="p">
         ⬇ RESUME PDF
       </CtaLink>
     </div>
