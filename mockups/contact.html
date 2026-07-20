@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Emma Gerig</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fontdiner+Swanky&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <nav class="nav">
+        <a class="dot" href="home.html" aria-label="Home"></a>
+        <a class="dot" href="about.html" aria-label="About"></a>
+        <a class="dot" href="work.html" aria-label="Work"></a>
+        <a class="dot is-current" href="contact.html" aria-label="Contact"></a>
+      </nav>
+
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          width: fit-content;
+          margin-top: 180px;
+          margin-left: 20vw;
+        "
+      >
+        <h1 class="text-title">Let's<br />Chat</h1>
+        <div class="divider" style="height: 150px"></div>
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <a
+            class="text-info"
+            href="#"
+            style="color: inherit; text-decoration: none"
+            >linkedin</a
+          >
+          <a
+            class="text-info"
+            href="#"
+            style="color: inherit; text-decoration: none"
+            >github</a
+          >
+          <button
+            type="button"
+            id="copy-email"
+            class="text-info"
+            style="
+              all: unset;
+              cursor: pointer;
+              font-family: var(--font-body);
+              font-size: 20px;
+            "
+          >
+            email
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="illustration"
+        style="
+          width: 340px;
+          height: 165px;
+          position: absolute;
+          right: 56px;
+          bottom: 40px;
+        "
+      ></div>
+    </div>
+
+    <div class="toast" id="toast">email copied to clipboard</div>
+
+    <script>
+      var EMAIL = "elgerig@gmail.com"; // placeholder — swap for the public contact address
+      var btn = document.getElementById("copy-email");
+      var toast = document.getElementById("toast");
+      var hideTimer;
+
+      btn.addEventListener("click", function () {
+        navigator.clipboard.writeText(EMAIL).catch(function () {
+          /* clipboard API unavailable; ignore for mockup purposes */
+        });
+        toast.classList.add("is-visible");
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(function () {
+          toast.classList.remove("is-visible");
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

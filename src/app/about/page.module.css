@@ -1,0 +1,14 @@
+.intro {
+  text-align: center;
+  margin-top: 96px;
+}
+
+.description {
+  display: block;
+  max-width: 620px;
+  margin: 32px auto 0;
+}
+
+.illustration {
+  margin: 56px auto 0;
+}

@@ -1,0 +1,26 @@
+.illustration {
+  background: var(--dot-gray);
+  border: 1px solid var(--ink);
+  background-image: linear-gradient(
+      to top right,
+      transparent calc(50% - 0.5px),
+      var(--ink) calc(50% - 0.5px),
+      var(--ink) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px)
+    ),
+    linear-gradient(
+      to top left,
+      transparent calc(50% - 0.5px),
+      var(--ink) calc(50% - 0.5px),
+      var(--ink) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px)
+    );
+}
+
+.label {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  font-size: 14px;
+  color: #6b6b6b;
+}

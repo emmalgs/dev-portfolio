@@ -1,0 +1,25 @@
+.heroRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: fit-content;
+  margin-top: 180px;
+  margin-left: 20vw;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.illustration {
+  position: absolute;
+  right: 56px;
+  bottom: 40px;
+}

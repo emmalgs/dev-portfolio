@@ -1,0 +1,5 @@
+.shell {
+  position: relative;
+  min-height: 100vh;
+  padding: 64px 56px 40px;
+}

@@ -1,0 +1,30 @@
+.resumeLink {
+  text-align: center;
+  margin-top: 56px;
+}
+
+.resumeLink a {
+  color: inherit;
+}
+
+.statements {
+  margin-top: 72px;
+}
+
+.statement1 {
+  margin-left: 180px;
+}
+
+.statement2 {
+  margin-left: 300px;
+  margin-top: 56px;
+}
+
+.statement3 {
+  margin-left: 420px;
+  margin-top: 56px;
+}
+
+.illustration {
+  margin-top: 56px;
+}

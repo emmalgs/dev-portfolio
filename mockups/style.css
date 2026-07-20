@@ -1,0 +1,160 @@
+/* Shared styles for static HTML page mockups.
+   Type styles: title = Fontdiner Swanky 62px, body = DM Sans 28px, info = DM Sans 20px. */
+
+:root {
+  --page-bg: #f2f1ee;
+  --card-bg: #faf3e6;
+  --ink: #000;
+  --label-gray: #b7b2a8;
+  --dot-gray: #d9d9d9;
+  --font-title: "Fontdiner Swanky", cursive;
+  --font-body: "DM Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--page-bg);
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+.page-frame {
+  max-width: 1176px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+}
+
+.route-label {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--label-gray);
+  margin: 0 0 0 12px;
+  padding-bottom: 16px;
+}
+
+.card {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 16px 16px 0 0;
+  min-height: 800px;
+  padding: 64px 56px 40px;
+}
+
+/* nav: the four Home / About / Work / Contact buttons */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav .dot {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--dot-gray);
+  transition: opacity 0.15s ease;
+}
+
+.nav .dot:hover {
+  opacity: 0.7;
+}
+
+.nav .dot.is-current {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* illustration placeholder: gray box with a crossed X, per hand-drawn wireframe convention */
+.illustration {
+  position: relative;
+  background: var(--dot-gray);
+  border: 1px solid var(--ink);
+  background-image: linear-gradient(
+      to top right,
+      transparent calc(50% - 0.5px),
+      var(--ink) calc(50% - 0.5px),
+      var(--ink) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px)
+    ),
+    linear-gradient(
+      to top left,
+      transparent calc(50% - 0.5px),
+      var(--ink) calc(50% - 0.5px),
+      var(--ink) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px)
+    );
+}
+
+.illustration__label {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+/* type styles */
+.text-title {
+  font-family: var(--font-title);
+  font-size: 62px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.text-info {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.divider {
+  width: 1px;
+  background: var(--ink);
+  align-self: stretch;
+}
+
+/* toast notification, used on the contact page for "email copied to clipboard" */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  transform: translate(-50%, 16px);
+  background: var(--ink);
+  color: var(--card-bg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

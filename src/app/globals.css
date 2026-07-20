@@ -1,27 +1,52 @@
-/* ── DESIGN SYSTEM ───────────────────────────────────────────────────────── */
-/* tokens → reset → atoms → molecules → organisms                           */
-/* Iosevka Charon is loaded in layout.tsx (<link>) — @import here is unreliable in Next.js. */
+:root {
+  --bg: #faf3e6;
+  --ink: #000;
+  --dot-gray: #d9d9d9;
+  --font-title: var(--font-fontdiner-swanky), cursive;
+  --font-body: var(--font-dm-sans), sans-serif;
+}
 
-@import '../styles/tokens.css';
-@import '../styles/reset.css';
+* {
+  box-sizing: border-box;
+}
 
-/* atoms */
-@import '../styles/atoms/button.css';
-@import '../styles/atoms/cta-link.css';
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
-/* molecules */
-@import '../styles/molecules/data-row.css';
-@import '../styles/molecules/panel-section.css';
-@import '../styles/molecules/ticker.css';
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
 
-/* organisms */
-@import '../styles/organisms/menu-bar.css';
-@import '../styles/organisms/modal.css';
-@import '../styles/organisms/game-modal.css';
+/* type styles: title / body / info */
+.text-title {
+  font-family: var(--font-title);
+  font-size: 62px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
 
-/* portfolio v3 shell */
-@import '../styles/portfolio-layout.css';
-@import '../styles/game-window.css';
+.text-body {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0;
+}
 
-/* global layout */
-@import '../styles/main.css';
+.text-info {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.divider {
+  width: 1px;
+  background: var(--ink);
+}
