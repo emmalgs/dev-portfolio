@@ -1,5 +1,4 @@
 import { PageShell } from "../components/PageShell";
-import { Nav } from "../components/Nav";
 import { Illustration } from "../components/Illustration";
 import { CopyEmailButton } from "../components/CopyEmailButton";
 import { CONTACT_EMAIL } from "../siteConfig";
@@ -8,8 +7,6 @@ import styles from "./page.module.css";
 export default function ContactPage() {
   return (
     <PageShell>
-      <Nav />
-
       <div className={styles.heroRow}>
         <h1 className="text-title">
           Let&apos;s

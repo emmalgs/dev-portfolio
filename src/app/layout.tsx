@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Fontdiner_Swanky } from "next/font/google";
+import { FloatingNav } from "./components/FloatingNav";
+import { PageTransition } from "./components/PageTransition";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -22,7 +24,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${fontdinerSwanky.variable}`}>
-      <body>{children}</body>
+      <body>
+        <FloatingNav />
+        <PageTransition>{children}</PageTransition>
+      </body>
     </html>
   );
 }

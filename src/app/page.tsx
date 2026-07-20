@@ -1,5 +1,4 @@
 import { PageShell } from "./components/PageShell";
-import { Nav } from "./components/Nav";
 import { Illustration } from "./components/Illustration";
 import styles from "./page.module.css";
 
@@ -21,8 +20,6 @@ export default function HomePage() {
           <p className="text-info">technical depth</p>
         </div>
       </div>
-
-      <Nav className={styles.nav} />
     </PageShell>
   );
 }

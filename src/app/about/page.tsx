@@ -1,13 +1,10 @@
 import { PageShell } from "../components/PageShell";
-import { Nav } from "../components/Nav";
 import { Illustration } from "../components/Illustration";
 import styles from "./page.module.css";
 
 export default function AboutPage() {
   return (
     <PageShell>
-      <Nav />
-
       <div className={styles.intro}>
         <p className="text-body">software engineer with an mfa in craft</p>
         <p className={`text-info ${styles.description}`}>

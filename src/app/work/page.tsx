@@ -1,13 +1,10 @@
 import { PageShell } from "../components/PageShell";
-import { Nav } from "../components/Nav";
 import { Illustration } from "../components/Illustration";
 import styles from "./page.module.css";
 
 export default function WorkPage() {
   return (
     <PageShell>
-      <Nav />
-
       <p className={`text-info ${styles.resumeLink}`}>
         <a href="/resume.pdf" download>
           download resume
