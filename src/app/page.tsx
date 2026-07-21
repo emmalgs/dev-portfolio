@@ -1,5 +1,6 @@
 import { PageShell } from "./components/PageShell";
 import { Illustration } from "./components/Illustration";
+import { HeroDivider } from "./components/HeroDivider";
 import styles from "./page.module.css";
 
 export default function HomePage() {
@@ -13,7 +14,7 @@ export default function HomePage() {
           <br />
           Gerig
         </h1>
-        <div className="divider" style={{ height: 110 }} />
+        <HeroDivider height={110} />
         <div className={styles.tags}>
           <p className="text-info">visual craft</p>
           <p className="text-info">systems thinking</p>
