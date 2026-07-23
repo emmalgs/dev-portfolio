@@ -6,7 +6,13 @@ import styles from "./page.module.css";
 export default function HomePage() {
   return (
     <PageShell>
-      {/* <Illustration width={370} height={165} label="illustration" className={styles.illustration} /> */}
+      <Illustration
+        src="/images/art_1.png"
+        alt="Dragon lady illustration"
+        width={550}
+        height={300}
+        className={styles.illustration}
+      />
 
       <div className={styles.heroRow}>
         <h1 className="text-title">
@@ -14,7 +20,7 @@ export default function HomePage() {
           <br />
           Gerig
         </h1>
-        <HeroDivider height={110} />
+        <HeroDivider height={100} />
         <div className={styles.tags}>
           <p className="text-info">visual craft</p>
           <p className="text-info">systems thinking</p>

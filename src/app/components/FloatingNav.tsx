@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Nav } from "./Nav";
 import styles from "./FloatingNav.module.css";
 
-const NAV_TOP_HOME = 400;
+const NAV_TOP_HOME = 500;
 const NAV_TOP_DEFAULT = 64;
 
 /**

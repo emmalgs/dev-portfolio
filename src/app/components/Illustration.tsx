@@ -1,6 +1,9 @@
+import Image from "next/image";
 import styles from "./Illustration.module.css";
 
 type IllustrationProps = {
+  src?: string;
+  alt?: string;
   width?: number | string;
   height?: number | string;
   label?: string;
@@ -8,8 +11,21 @@ type IllustrationProps = {
   style?: React.CSSProperties;
 };
 
-/** Placeholder for artwork that will be swapped in later. */
-export function Illustration({ width, height, label, className, style }: IllustrationProps) {
+/** Renders artwork when a src is provided; otherwise falls back to a placeholder. */
+export function Illustration({ src, alt, width, height, label, className, style }: IllustrationProps) {
+  if (src) {
+    return (
+      <Image
+        src={src}
+        alt={alt ?? ""}
+        width={typeof width === "number" ? width : undefined}
+        height={typeof height === "number" ? height : undefined}
+        className={className}
+        style={{ display: "block", width, height, position: label ? "relative" : undefined, ...style }}
+      />
+    );
+  }
+
   return (
     <div
       className={`${styles.illustration} ${className ?? ""}`}

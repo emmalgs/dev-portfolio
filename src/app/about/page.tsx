@@ -13,7 +13,7 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* <Illustration width={340} height={165} className={styles.illustration} /> */}
+      <Illustration width={340} height={165} className={styles.illustration} />
     </PageShell>
   );
 }
