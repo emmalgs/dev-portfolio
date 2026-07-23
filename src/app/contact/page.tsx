@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { PageShell } from "../components/PageShell";
 import { Illustration } from "../components/Illustration";
-import { CopyEmailButton } from "../components/CopyEmailButton";
+import { ContactForm } from "../components/ContactForm";
 import { SpotlightTitle } from "../components/SpotlightTitle";
-import { CONTACT_EMAIL } from "../siteConfig";
 import styles from "./page.module.css";
+import { HeroDivider } from "../components/HeroDivider";
 
 export default function ContactPage() {
   return (
@@ -14,22 +15,24 @@ export default function ContactPage() {
           <br />
           Chat
         </SpotlightTitle>
-        <div className="divider" style={{ height: 150 }} />
-        <div className={styles.links}>
-          <a className={`text-info ${styles.link}`} href="#">
-            linkedin
-          </a>
-          <a className={`text-info ${styles.link}`} href="#">
-            github
-          </a>
-          <CopyEmailButton email={CONTACT_EMAIL} />
+        <HeroDivider height={280} />
+        <div className={styles.contactColumn}>
+          <div className={styles.links}>
+            <a className={styles.link} target="blank" href="https://www.linkedin.com/in/emma-gerig">
+              <Image src="/images/linkedinMove.gif" alt="linkedin" width={40} height={40} unoptimized />
+            </a>
+            <a className={styles.link} target="blank" href="https://www.github.com/emmalgs">
+              <Image src="/images/githubMove.gif" alt="github" width={40} height={40} unoptimized />
+            </a>
+          </div>
+          <ContactForm />
         </div>
       </div>
 
       <Illustration
         src="/images/art_4.png"
-        width={540}
-        height={265}
+        width={480}
+        height={235}
         className={styles.illustration}
       />
     </PageShell>

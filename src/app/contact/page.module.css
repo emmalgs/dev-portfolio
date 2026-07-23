@@ -7,13 +7,20 @@
   margin-left: 20vw;
 }
 
-.links {
+.contactColumn {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
   gap: 18px;
 }
 
 .link {
+  display: flex;
   color: inherit;
   text-decoration: none;
 }
