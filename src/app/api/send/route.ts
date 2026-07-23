@@ -38,35 +38,54 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "All fields are required." }, { status: 400 });
   }
 
-  const html = `
-    <h1>Thank you for contacting me!</h1>
-    <p>I&apos;ll get back to you as soon as possible.</p>
-    <hr />
-    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+  const notifyHtml = `
+    <h1>New contact form submission</h1>
     <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
     <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
     <p><strong>Message:</strong></p>
     <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
   `;
 
+  const replyHtml = `
+    <h1>Thank you for contacting me!</h1>
+    <p>I&apos;ll get back to you as soon as possible.</p>
+    <hr />
+    <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+    <p><strong>Message:</strong></p>
+    <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
+  `;
+
+  function errorMessage(error: unknown) {
+    return typeof error === "object" && error !== null && "message" in error
+      ? String((error as { message: unknown }).message)
+      : "Send failed.";
+  }
+
   try {
     const resend = new Resend(apiKey);
-    const { data, error } = await resend.emails.send({
-      from: fromEmail,
-      to: [myEmail, email],
-      subject,
-      html,
-    });
 
-    if (error) {
-      const msg =
-        typeof error === "object" && error !== null && "message" in error
-          ? String((error as { message: unknown }).message)
-          : "Send failed.";
-      return NextResponse.json({ error: msg }, { status: 502 });
+    const [notify, reply] = await Promise.all([
+      resend.emails.send({
+        from: fromEmail,
+        to: [myEmail],
+        reply_to: email,
+        subject: `New message: ${subject}`,
+        html: notifyHtml,
+      }),
+      resend.emails.send({
+        from: fromEmail,
+        to: [email],
+        subject,
+        html: replyHtml,
+      }),
+    ]);
+
+    if (notify.error) {
+      return NextResponse.json({ error: errorMessage(notify.error) }, { status: 502 });
     }
 
-    return NextResponse.json({ data });
+    return NextResponse.json({ data: notify.data, replyError: reply.error ? errorMessage(reply.error) : null });
   } catch (err) {
     const msg = err instanceof Error ? err.message : "Send failed.";
     return NextResponse.json({ error: msg }, { status: 500 });
