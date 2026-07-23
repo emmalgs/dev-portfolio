@@ -21,7 +21,7 @@ export default function HomePage() {
           <br />
           Gerig
         </SpotlightTitle>
-        <HeroDivider height={100} />
+        <HeroDivider height={120} />
         <div className={styles.tags}>
           <p className="text-info">visual craft</p>
           <p className="text-info">systems thinking</p>
