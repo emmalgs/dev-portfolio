@@ -1,6 +1,7 @@
 import { PageShell } from "./components/PageShell";
 import { Illustration } from "./components/Illustration";
 import { HeroDivider } from "./components/HeroDivider";
+import { SpotlightTitle } from "./components/SpotlightTitle";
 import styles from "./page.module.css";
 
 export default function HomePage() {
@@ -15,11 +16,11 @@ export default function HomePage() {
       />
 
       <div className={styles.heroRow}>
-        <h1 className="text-title">
+        <SpotlightTitle>
           Emma
           <br />
           Gerig
-        </h1>
+        </SpotlightTitle>
         <HeroDivider height={100} />
         <div className={styles.tags}>
           <p className="text-info">visual craft</p>

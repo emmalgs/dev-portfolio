@@ -1,0 +1,26 @@
+.wrap {
+  position: relative;
+}
+
+.base {
+  position: relative;
+}
+
+.spot {
+  position: absolute;
+  inset: 0;
+  color: #de5e35;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(
+    circle 50px at var(--spot-x, -9999px) var(--spot-y, -9999px),
+    black 0,
+    black 99%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 50px at var(--spot-x, -9999px) var(--spot-y, -9999px),
+    black 0,
+    black 99%,
+    transparent 100%
+  );
+}

@@ -1,6 +1,7 @@
 import { PageShell } from "../components/PageShell";
 import { Illustration } from "../components/Illustration";
 import { CopyEmailButton } from "../components/CopyEmailButton";
+import { SpotlightTitle } from "../components/SpotlightTitle";
 import { CONTACT_EMAIL } from "../siteConfig";
 import styles from "./page.module.css";
 
@@ -8,11 +9,11 @@ export default function ContactPage() {
   return (
     <PageShell>
       <div className={styles.heroRow}>
-        <h1 className="text-title">
+        <SpotlightTitle>
           Let&apos;s
           <br />
           Chat
-        </h1>
+        </SpotlightTitle>
         <div className="divider" style={{ height: 150 }} />
         <div className={styles.links}>
           <a className={`text-info ${styles.link}`} href="#">
