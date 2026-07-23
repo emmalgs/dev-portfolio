@@ -12,12 +12,23 @@ export default function WorkPage() {
       </p>
 
       <div className={styles.statements}>
-        <p className={`text-body ${styles.statement1}`}>i design with the data model already in hand.</p>
-        <p className={`text-body ${styles.statement2}`}>i build what i design.</p>
-        <p className={`text-body ${styles.statement3}`}>i speak design to engineers and engineering to designers.</p>
+        <p className={`text-body ${styles.statement1}`}>
+          i design with the data model already in hand.
+        </p>
+        <p className={`text-body ${styles.statement2}`}>
+          i build what i design.
+        </p>
+        <p className={`text-body ${styles.statement3}`}>
+          i speak design to engineers and engineering to designers.
+        </p>
       </div>
 
-      {/* <Illustration width={340} height={165} className={styles.illustration} /> */}
+      <Illustration
+        src="/images/art_3.png"
+        width={340}
+        height={165}
+        className={styles.illustration}
+      />
     </PageShell>
   );
 }

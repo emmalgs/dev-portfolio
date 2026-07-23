@@ -25,7 +25,12 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <Illustration width={340} height={165} className={styles.illustration} />
+      <Illustration
+        src="/images/art_4.png"
+        width={540}
+        height={265}
+        className={styles.illustration}
+      />
     </PageShell>
   );
 }
