@@ -10,3 +10,17 @@
   transform-origin: center;
   border-radius: 2px;
 }
+
+.wrapHorizontal {
+  position: relative;
+  width: 64px;
+  height: 2px;
+}
+
+.lineHorizontal {
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  transform-origin: center;
+  border-radius: 2px;
+}

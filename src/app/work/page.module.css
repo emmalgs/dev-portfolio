@@ -28,3 +28,27 @@
 .illustration {
   margin-top: 56px;
 }
+
+@media (max-width: 640px) {
+  .resumeLink {
+    margin-top: 130px;
+  }
+
+  .statements {
+    margin-top: 40px;
+  }
+
+  .statement1 {
+    margin-left: 0;
+  }
+
+  .statement2 {
+    margin-left: 24px;
+    margin-top: 32px;
+  }
+
+  .statement3 {
+    margin-left: 48px;
+    margin-top: 32px;
+  }
+}

@@ -21,7 +21,14 @@ export function Illustration({ src, alt, width, height, label, className, style 
         width={typeof width === "number" ? width : undefined}
         height={typeof height === "number" ? height : undefined}
         className={className}
-        style={{ display: "block", width, height, position: label ? "relative" : undefined, ...style }}
+        style={{
+          display: "block",
+          width: "100%",
+          height: "auto",
+          maxWidth: width,
+          position: label ? "relative" : undefined,
+          ...style,
+        }}
       />
     );
   }

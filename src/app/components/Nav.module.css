@@ -38,3 +38,22 @@
   border: 2px solid #de5e35;
   pointer-events: none;
 }
+
+@media (max-width: 640px) {
+  .nav {
+    gap: 24px;
+  }
+
+  .dotWrap {
+    width: 44px;
+    height: 44px;
+  }
+
+  .dot {
+    outline-offset: 4px;
+  }
+
+  .selectedRing {
+    inset: -6px;
+  }
+}

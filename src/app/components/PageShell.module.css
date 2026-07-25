@@ -3,3 +3,10 @@
   min-height: 100vh;
   padding: 50px 56px 40px;
 }
+
+@media (max-width: 640px) {
+  .shell {
+    padding: 28px 20px 32px;
+    overflow-x: hidden;
+  }
+}
