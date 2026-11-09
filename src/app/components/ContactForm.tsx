@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./ContactForm.module.css";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -8,6 +8,11 @@ type Status = "idle" | "sending" | "success" | "error";
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const loadedAt = useRef<number | null>(null);
+
+  useEffect(() => {
+    loadedAt.current = Date.now();
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,6 +29,8 @@ export function ContactForm() {
           email: data.get("email"),
           subject: data.get("subject"),
           message: data.get("message"),
+          website: data.get("website"),
+          elapsedMs: loadedAt.current ? Date.now() - loadedAt.current : null,
         }),
       });
 
@@ -46,6 +53,15 @@ export function ContactForm() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
+      {/* Honeypot: hidden from humans, bots fill it in. */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}
+      />
       <div className={styles.row}>
         <input className={styles.input} type="text" name="name" placeholder="name" required />
         <input className={styles.input} type="email" name="email" placeholder="email" required />
